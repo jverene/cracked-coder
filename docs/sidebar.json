@@ -15,13 +15,13 @@
           { "label": "Examples", "slug": "docs/get-started/examples" },
           { "label": "CLI cheatsheet", "slug": "docs/cli/cli-reference" },
           {
-            "label": "Gemini 3 on Gemini CLI",
+            "label": "Cracked 3 on Cracked Coder",
             "slug": "docs/get-started/gemini-3"
           }
         ]
       },
       {
-        "label": "Use Gemini CLI",
+        "label": "Use Cracked Coder",
         "items": [
           {
             "label": "File management",
@@ -148,7 +148,7 @@
             "slug": "docs/cli/enterprise"
           },
           {
-            "label": "Ignore files (.geminiignore)",
+            "label": "Ignore files (.crackedignore)",
             "slug": "docs/cli/gemini-ignore"
           },
           {
@@ -156,7 +156,7 @@
             "slug": "docs/cli/generation-settings"
           },
           {
-            "label": "Project context (GEMINI.md)",
+            "label": "Project context (CRACKED.md)",
             "slug": "docs/cli/gemini-md"
           },
           { "label": "Settings", "slug": "docs/cli/settings" },

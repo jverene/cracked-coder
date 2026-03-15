@@ -1,15 +1,15 @@
-# Gemini CLI settings (`/settings` command)
+# Cracked Coder settings (`/settings` command)
 
-Control your Gemini CLI experience with the `/settings` command. The `/settings`
-command opens a dialog to view and edit all your Gemini CLI settings, including
+Control your Cracked Coder experience with the `/settings` command. The `/settings`
+command opens a dialog to view and edit all your Cracked Coder settings, including
 your UI experience, keybindings, and accessibility features.
 
-Your Gemini CLI settings are stored in a `settings.json` file. In addition to
+Your Cracked Coder settings are stored in a `settings.json` file. In addition to
 using the `/settings` command, you can also edit them in one of the following
 locations:
 
-- **User settings**: `~/.gemini/settings.json`
-- **Workspace settings**: `your-project/.gemini/settings.json`
+- **User settings**: `~/.cracked/settings.json`
+- **Workspace settings**: `your-project/.cracked/settings.json`
 
 Note: Workspace settings override user settings.
 
@@ -50,15 +50,15 @@ they appear in the UI.
 | Terminal Background Polling Interval | `ui.terminalBackgroundPollingInterval` | Interval in seconds to poll the terminal background color.                                                                                                        | `60`     |
 | Hide Window Title                    | `ui.hideWindowTitle`                   | Hide the window title bar                                                                                                                                         | `false`  |
 | Inline Thinking                      | `ui.inlineThinkingMode`                | Display model thinking inline: off or full.                                                                                                                       | `"off"`  |
-| Show Thoughts in Title               | `ui.showStatusInTitle`                 | Show Gemini CLI model thoughts in the terminal window title during the working phase                                                                              | `false`  |
+| Show Thoughts in Title               | `ui.showStatusInTitle`                 | Show Cracked Coder model thoughts in the terminal window title during the working phase                                                                              | `false`  |
 | Dynamic Window Title                 | `ui.dynamicWindowTitle`                | Update the terminal window title with current status icons (Ready: ◇, Action Required: ✋, Working: ✦)                                                            | `true`   |
-| Show Home Directory Warning          | `ui.showHomeDirectoryWarning`          | Show a warning when running Gemini CLI in the home directory.                                                                                                     | `true`   |
+| Show Home Directory Warning          | `ui.showHomeDirectoryWarning`          | Show a warning when running Cracked Coder in the home directory.                                                                                                     | `true`   |
 | Show Compatibility Warnings          | `ui.showCompatibilityWarnings`         | Show warnings about terminal or OS compatibility issues.                                                                                                          | `true`   |
 | Hide Tips                            | `ui.hideTips`                          | Hide helpful tips in the UI                                                                                                                                       | `false`  |
 | Escape Pasted @ Symbols              | `ui.escapePastedAtSymbols`             | When enabled, @ symbols in pasted text are escaped to prevent unintended @path expansion.                                                                         | `false`  |
 | Show Shortcuts Hint                  | `ui.showShortcutsHint`                 | Show the "? for shortcuts" hint above the input.                                                                                                                  | `true`   |
 | Hide Banner                          | `ui.hideBanner`                        | Hide the application banner                                                                                                                                       | `false`  |
-| Hide Context Summary                 | `ui.hideContextSummary`                | Hide the context summary (GEMINI.md, MCP servers) above the input.                                                                                                | `false`  |
+| Hide Context Summary                 | `ui.hideContextSummary`                | Hide the context summary (CRACKED.md, MCP servers) above the input.                                                                                                | `false`  |
 | Hide CWD                             | `ui.footer.hideCWD`                    | Hide the current working directory in the footer.                                                                                                                 | `false`  |
 | Hide Sandbox Status                  | `ui.footer.hideSandboxStatus`          | Hide the sandbox status indicator in the footer.                                                                                                                  | `false`  |
 | Hide Model Info                      | `ui.footer.hideModelInfo`              | Hide the model name and context usage in the footer.                                                                                                              | `false`  |
@@ -104,12 +104,12 @@ they appear in the UI.
 | UI Label                             | Setting                                           | Description                                                                                                                                                                                                                                 | Default |
 | ------------------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Memory Discovery Max Dirs            | `context.discoveryMaxDirs`                        | Maximum number of directories to search for memory.                                                                                                                                                                                         | `200`   |
-| Load Memory From Include Directories | `context.loadMemoryFromIncludeDirectories`        | Controls how /memory reload loads GEMINI.md files. When true, include directories are scanned; when false, only the current directory is used.                                                                                              | `false` |
+| Load Memory From Include Directories | `context.loadMemoryFromIncludeDirectories`        | Controls how /memory reload loads CRACKED.md files. When true, include directories are scanned; when false, only the current directory is used.                                                                                              | `false` |
 | Respect .gitignore                   | `context.fileFiltering.respectGitIgnore`          | Respect .gitignore files when searching.                                                                                                                                                                                                    | `true`  |
-| Respect .geminiignore                | `context.fileFiltering.respectGeminiIgnore`       | Respect .geminiignore files when searching.                                                                                                                                                                                                 | `true`  |
+| Respect .crackedignore                | `context.fileFiltering.respectGeminiIgnore`       | Respect .crackedignore files when searching.                                                                                                                                                                                                 | `true`  |
 | Enable Recursive File Search         | `context.fileFiltering.enableRecursiveFileSearch` | Enable recursive file search functionality when completing @ references in the prompt.                                                                                                                                                      | `true`  |
 | Enable Fuzzy Search                  | `context.fileFiltering.enableFuzzySearch`         | Enable fuzzy search when searching for files.                                                                                                                                                                                               | `true`  |
-| Custom Ignore File Paths             | `context.fileFiltering.customIgnoreFilePaths`     | Additional ignore file paths to respect. These files take precedence over .geminiignore and .gitignore. Files earlier in the array take precedence over files later in the array, e.g. the first file takes precedence over the second one. | `[]`    |
+| Custom Ignore File Paths             | `context.fileFiltering.customIgnoreFilePaths`     | Additional ignore file paths to respect. These files take precedence over .crackedignore and .gitignore. Files earlier in the array take precedence over files later in the array, e.g. the first file takes precedence over the second one. | `[]`    |
 
 ### Tools
 

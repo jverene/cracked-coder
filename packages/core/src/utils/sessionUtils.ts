@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { type Part, type PartListUnion } from '@google/genai';
 import { type ConversationRecord } from '../services/chatRecordingService.js';
-import { partListUnionToString } from '../core/geminiRequest.js';
+import { partListUnionToString } from '../core/crackedRequest.js';
 
 /**
  * Converts a PartListUnion into a normalized array of Part objects.

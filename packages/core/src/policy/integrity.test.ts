@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ describe('PolicyIntegrityManager', () => {
   let integrityStoragePath: string;
 
   beforeEach(async () => {
-    tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'gemini-cli-test-'));
+    tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cracked-coder-test-'));
     integrityStoragePath = path.join(tempDir, 'policy_integrity.json');
 
     vi.spyOn(Storage, 'getPolicyIntegrityStoragePath').mockReturnValue(

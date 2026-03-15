@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { renderHook } from '../../test-utils/render.js';
 import { useTerminalTheme } from './useTerminalTheme.js';
 import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { makeFakeConfig, type Config } from '@google/gemini-cli-core';
+import { makeFakeConfig, type Config } from '@cracked-coder/core';
 import os from 'node:os';
 import { themeManager } from '../themes/theme-manager.js';
 

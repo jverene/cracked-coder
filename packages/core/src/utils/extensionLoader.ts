@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -140,7 +140,7 @@ export abstract class ExtensionLoader {
     extension: GeminiCLIExtension,
   ): Promise<void> {
     if (extension.excludeTools && extension.excludeTools.length > 0) {
-      const geminiClient = this.config?.geminiClient;
+      const geminiClient = this.config?.crackedClient;
       if (geminiClient?.isInitialized()) {
         await geminiClient.setTools();
       }

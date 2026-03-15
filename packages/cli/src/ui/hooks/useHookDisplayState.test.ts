@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   CoreEvent,
   type HookStartPayload,
   type HookEndPayload,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { act } from 'react';
 import { WARNING_PROMPT_DURATION_MS } from '../constants.js';
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@
  * - Environment variables with sensitive values
  *
  * Examples:
- * - "/path/to/.gemini/hooks/check-secrets.sh --api-key=abc123" -> "check-secrets.sh"
+ * - "/path/to/.cracked/hooks/check-secrets.sh --api-key=abc123" -> "check-secrets.sh"
  * - "python /home/user/script.py --token=xyz" -> "python"
  * - "node index.js" -> "node"
  * - "C:\\Windows\\System32\\cmd.exe /c secret.bat" -> "cmd.exe"

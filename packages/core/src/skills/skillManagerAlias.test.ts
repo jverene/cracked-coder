@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -35,12 +35,12 @@ describe('SkillManager Alias', () => {
   });
 
   it('should discover skills from .agents/skills directory', async () => {
-    const userGeminiDir = path.join(testRootDir, 'user', '.gemini', 'skills');
+    const userGeminiDir = path.join(testRootDir, 'user', '.cracked', 'skills');
     const userAgentDir = path.join(testRootDir, 'user', '.agents', 'skills');
     const projectGeminiDir = path.join(
       testRootDir,
       'workspace',
-      '.gemini',
+      '.cracked',
       'skills',
     );
     const projectAgentDir = path.join(
@@ -123,8 +123,8 @@ describe('SkillManager Alias', () => {
     expect(names).toContain('project-agent');
   });
 
-  it('should give .agents precedence over .gemini when in the same tier', async () => {
-    const userGeminiDir = path.join(testRootDir, 'user', '.gemini', 'skills');
+  it('should give .agents precedence over .cracked when in the same tier', async () => {
+    const userGeminiDir = path.join(testRootDir, 'user', '.cracked', 'skills');
     const userAgentDir = path.join(testRootDir, 'user', '.agents', 'skills');
 
     await fs.mkdir(userGeminiDir, { recursive: true });

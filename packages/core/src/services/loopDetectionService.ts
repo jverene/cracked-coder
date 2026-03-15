@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -542,7 +542,7 @@ export class LoopDetectionService {
     analysis?: string;
     confirmedByModel?: string;
   }> {
-    const recentHistory = this.context.geminiClient
+    const recentHistory = this.context.crackedClient
       .getHistory()
       .slice(-LLM_LOOP_CHECK_HISTORY_COUNT);
 

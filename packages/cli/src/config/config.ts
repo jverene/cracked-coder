@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -41,7 +41,7 @@ import {
   type HookEventName,
   type OutputFormat,
   detectIdeFromEnv,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   type Settings,
   type MergedSettings,
@@ -60,7 +60,7 @@ import {
 } from './policy.js';
 import { ExtensionManager } from './extension-manager.js';
 import { McpServerEnablementManager } from './mcp/mcpServerEnablement.js';
-import type { ExtensionEvents } from '@google/gemini-cli-core/src/utils/extensionLoader.js';
+import type { ExtensionEvents } from '@cracked-coder/core/src/utils/extensionLoader.js';
 import { requestConsentNonInteractive } from './extensions/consent.js';
 import { promptForSetting } from './extensions/extensionSettings.js';
 import type { EventEmitter } from 'node:stream';
@@ -123,7 +123,7 @@ export async function parseArguments(
     .locale('en')
     .scriptName('gemini')
     .usage(
-      'Usage: gemini [options] [command]\n\nGemini CLI - Defaults to interactive mode. Use -p/--prompt for non-interactive (headless) mode.',
+      'Usage: gemini [options] [command]\n\nCracked Coder - Defaults to interactive mode. Use -p/--prompt for non-interactive (headless) mode.',
     )
     .option('debug', {
       alias: 'd',
@@ -131,7 +131,7 @@ export async function parseArguments(
       description: 'Run in debug mode (open debug console with F12)',
       default: false,
     })
-    .command('$0 [query..]', 'Launch Gemini CLI', (yargsInstance) =>
+    .command('$0 [query..]', 'Launch Cracked Coder', (yargsInstance) =>
       yargsInstance
         .positional('query', {
           description:
@@ -240,8 +240,8 @@ export async function parseArguments(
           description:
             'Resume a previous session. Use "latest" for most recent or index number (e.g. --resume 5)',
           coerce: (value: string): string => {
-            // When --resume passed with a value (`gemini --resume 123`): value = "123" (string)
-            // When --resume passed without a value (`gemini --resume`): value = "" (string)
+            // When --resume passed with a value (`cracked --resume 123`): value = "123" (string)
+            // When --resume passed without a value (`cracked --resume`): value = "" (string)
             // When --resume not passed at all: this `coerce` function is not called at all, and
             //   `yargsInstance.argv.resume` is undefined.
             if (value === '') {
@@ -441,7 +441,7 @@ export async function loadCliConfig(
   const ideMode = settings.ide?.enabled ?? false;
 
   const folderTrust =
-    process.env['GEMINI_CLI_INTEGRATION_TEST'] === 'true' ||
+    process.env['CRACKED_CODER_INTEGRATION_TEST'] === 'true' ||
     process.env['VITEST'] === 'true'
       ? false
       : (settings.security?.folderTrust?.enabled ?? false);

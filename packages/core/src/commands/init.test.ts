@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { expect, describe, it } from 'vitest';
 import { performInit } from './init.js';
 
 describe('performInit', () => {
-  it('returns info if GEMINI.md already exists', () => {
+  it('returns info if CRACKED.md already exists', () => {
     const result = performInit(true);
 
     expect(result.type).toBe('message');
@@ -18,7 +18,7 @@ describe('performInit', () => {
     }
   });
 
-  it('returns submit_prompt if GEMINI.md does not exist', () => {
+  it('returns submit_prompt if CRACKED.md does not exist', () => {
     const result = performInit(false);
     expect(result.type).toBe('submit_prompt');
 

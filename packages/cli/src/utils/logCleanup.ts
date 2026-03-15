@@ -1,18 +1,18 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
-import { ShellExecutionService, debugLogger } from '@google/gemini-cli-core';
+import { ShellExecutionService, debugLogger } from '@cracked-coder/core';
 
 const RETENTION_PERIOD_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 /**
  * Cleans up background process log files older than 7 days.
- * Scans ~/.gemini/tmp/background-processes/ for .log files.
+ * Scans ~/.cracked/tmp/background-processes/ for .log files.
  *
  * @param debugMode Whether to log detailed debug information.
  */

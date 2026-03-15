@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -21,7 +21,7 @@ import {
   type LoadedTrustedFolders,
 } from '../../config/trustedFolders.js';
 import type { LoadedSettings } from '../../config/settings.js';
-import { coreEvents } from '@google/gemini-cli-core';
+import { coreEvents } from '@cracked-coder/core';
 
 // Hoist mocks
 const mockedCwd = vi.hoisted(() => vi.fn());

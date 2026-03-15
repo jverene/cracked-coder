@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -52,7 +52,7 @@ describe('createPolicyUpdater', () => {
     messageBus = new MessageBus(policyEngine);
     mockStorage = new Storage('/mock/project');
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(
-      '/mock/user/.gemini/policies/auto-saved.toml',
+      '/mock/user/.cracked/policies/auto-saved.toml',
     );
   });
 

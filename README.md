@@ -1,24 +1,24 @@
-# Gemini CLI
+# Cracked Coder
 
-[![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)
-[![Gemini CLI E2E (Chained)](https://github.com/google-gemini/gemini-cli/actions/workflows/chained_e2e.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/chained_e2e.yml)
-[![Version](https://img.shields.io/npm/v/@google/gemini-cli)](https://www.npmjs.com/package/@google/gemini-cli)
-[![License](https://img.shields.io/github/license/google-gemini/gemini-cli)](https://github.com/google-gemini/gemini-cli/blob/main/LICENSE)
-[![View Code Wiki](https://assets.codewiki.google/readme-badge/static.svg)](https://codewiki.google/github.com/google-gemini/gemini-cli?utm_source=badge&utm_medium=github&utm_campaign=github.com/google-gemini/gemini-cli)
+[![Cracked Coder CI](https://github.com/cracked-coder/cracked-coder/actions/workflows/ci.yml/badge.svg)](https://github.com/cracked-coder/cracked-coder/actions/workflows/ci.yml)
+[![Cracked Coder E2E (Chained)](https://github.com/cracked-coder/cracked-coder/actions/workflows/chained_e2e.yml/badge.svg)](https://github.com/cracked-coder/cracked-coder/actions/workflows/chained_e2e.yml)
+[![Version](https://img.shields.io/npm/v/@google/cracked-coder)](https://www.npmjs.com/package/@google/cracked-coder)
+[![License](https://img.shields.io/github/license/cracked-coder/cracked-coder)](https://github.com/cracked-coder/cracked-coder/blob/main/LICENSE)
+[![View Code Wiki](https://assets.codewiki.google/readme-badge/static.svg)](https://codewiki.google/github.com/cracked-coder/cracked-coder?utm_source=badge&utm_medium=github&utm_campaign=github.com/cracked-coder/cracked-coder)
 
-![Gemini CLI Screenshot](/docs/assets/gemini-screenshot.png)
+![Cracked Coder Screenshot](/docs/assets/gemini-screenshot.png)
 
-Gemini CLI is an open-source AI agent that brings the power of Gemini directly
+Cracked Coder is an open-source AI agent that brings the power of Gemini directly
 into your terminal. It provides lightweight access to Gemini, giving you the
 most direct path from your prompt to our model.
 
-Learn all about Gemini CLI in our [documentation](https://geminicli.com/docs/).
+Learn all about Cracked Coder in our [documentation](https://geminicli.com/docs/).
 
-## 🚀 Why Gemini CLI?
+## 🚀 Why Cracked Coder?
 
 - **🎯 Free tier**: 60 requests/min and 1,000 requests/day with personal Google
   account.
-- **🧠 Powerful Gemini 3 models**: Access to improved reasoning and 1M token
+- **🧠 Powerful Cracked 3 models**: Access to improved reasoning and 1M token
   context window.
 - **🔧 Built-in tools**: Google Search grounding, file operations, shell
   commands, web fetching.
@@ -30,7 +30,7 @@ Learn all about Gemini CLI in our [documentation](https://geminicli.com/docs/).
 ## 📦 Installation
 
 See
-[Gemini CLI installation, execution, and releases](./docs/get-started/installation.md)
+[Cracked Coder installation, execution, and releases](./docs/get-started/installation.md)
 for recommended system specifications and a detailed installation guide.
 
 ### Quick Install
@@ -39,36 +39,36 @@ for recommended system specifications and a detailed installation guide.
 
 ```bash
 # Using npx (no installation required)
-npx @google/gemini-cli
+npx @google/cracked-coder
 ```
 
 #### Install globally with npm
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @google/cracked-coder
 ```
 
 #### Install globally with Homebrew (macOS/Linux)
 
 ```bash
-brew install gemini-cli
+brew install cracked-coder
 ```
 
 #### Install globally with MacPorts (macOS)
 
 ```bash
-sudo port install gemini-cli
+sudo port install cracked-coder
 ```
 
 #### Install with Anaconda (for restricted environments)
 
 ```bash
 # Create and activate a new environment
-conda create -y -n gemini_env -c conda-forge nodejs
-conda activate gemini_env
+conda create -y -n cracked_env -c conda-forge nodejs
+conda activate cracked_env
 
-# Install Gemini CLI globally via npm (inside the environment)
-npm install -g @google/gemini-cli
+# Install Cracked Coder globally via npm (inside the environment)
+npm install -g @google/cracked-coder
 ```
 
 ## Release Cadence and Tags
@@ -82,7 +82,7 @@ releases will not have been fully vetted and may contain regressions or other
 outstanding issues. Please help us test and install with `preview` tag.
 
 ```bash
-npm install -g @google/gemini-cli@preview
+npm install -g @google/cracked-coder@preview
 ```
 
 ### Stable
@@ -92,7 +92,7 @@ npm install -g @google/gemini-cli@preview
   and validations. Use `latest` tag.
 
 ```bash
-npm install -g @google/gemini-cli@latest
+npm install -g @google/cracked-coder@latest
 ```
 
 ### Nightly
@@ -102,7 +102,7 @@ npm install -g @google/gemini-cli@latest
   there are pending validations and issues. Use `nightly` tag.
 
 ```bash
-npm install -g @google/gemini-cli@nightly
+npm install -g @google/cracked-coder@nightly
 ```
 
 ## 📋 Key Features
@@ -127,18 +127,18 @@ npm install -g @google/gemini-cli@nightly
   [Google Search](https://ai.google.dev/gemini-api/docs/grounding) for real-time
   information
 - Conversation checkpointing to save and resume complex sessions
-- Custom context files (GEMINI.md) to tailor behavior for your projects
+- Custom context files (CRACKED.md) to tailor behavior for your projects
 
 ### GitHub Integration
 
-Integrate Gemini CLI directly into your GitHub workflows with
-[**Gemini CLI GitHub Action**](https://github.com/google-github-actions/run-gemini-cli):
+Integrate Cracked Coder directly into your GitHub workflows with
+[**Cracked Coder GitHub Action**](https://github.com/google-github-actions/run-cracked-coder):
 
 - **Pull Request Reviews**: Automated code review with contextual feedback and
   suggestions
 - **Issue Triage**: Automated labeling and prioritization of GitHub issues based
   on content analysis
-- **On-demand Assistance**: Mention `@gemini-cli` in issues and pull requests
+- **On-demand Assistance**: Mention `@cracked-coder` in issues and pull requests
   for help with debugging, explanations, or task delegation
 - **Custom Workflows**: Build automated, scheduled and on-demand workflows
   tailored to your team's needs
@@ -157,14 +157,14 @@ for details)
 **Benefits:**
 
 - **Free tier**: 60 requests/min and 1,000 requests/day
-- **Gemini 3 models** with 1M token context window
+- **Cracked 3 models** with 1M token context window
 - **No API key management** - just sign in with your Google account
 - **Automatic updates** to latest models
 
-#### Start Gemini CLI, then choose _Sign in with Google_ and follow the browser authentication flow when prompted
+#### Start Cracked Coder, then choose _Sign in with Google_ and follow the browser authentication flow when prompted
 
 ```bash
-gemini
+cracked
 ```
 
 #### If you are using a paid Code Assist License from your organization, remember to set the Google Cloud Project
@@ -181,13 +181,13 @@ gemini
 
 **Benefits:**
 
-- **Free tier**: 1000 requests/day with Gemini 3 (mix of flash and pro)
+- **Free tier**: 1000 requests/day with Cracked 3 (mix of flash and pro)
 - **Model selection**: Choose specific Gemini models
 - **Usage-based billing**: Upgrade for higher limits when needed
 
 ```bash
 # Get your key from https://aistudio.google.com/apikey
-export GEMINI_API_KEY="YOUR_API_KEY"
+export CRACKED_API_KEY="YOUR_API_KEY"
 gemini
 ```
 
@@ -218,19 +218,19 @@ For Google Workspace accounts and other authentication methods, see the
 #### Start in current directory
 
 ```bash
-gemini
+cracked
 ```
 
 #### Include multiple directories
 
 ```bash
-gemini --include-directories ../lib,../docs
+cracked --include-directories ../lib,../docs
 ```
 
 #### Use specific model
 
 ```bash
-gemini -m gemini-2.5-flash
+cracked -m gemini-2.5-flash
 ```
 
 #### Non-interactive mode for scripts
@@ -238,21 +238,21 @@ gemini -m gemini-2.5-flash
 Get a simple text response:
 
 ```bash
-gemini -p "Explain the architecture of this codebase"
+cracked -p "Explain the architecture of this codebase"
 ```
 
 For more advanced scripting, including how to parse JSON and handle errors, use
 the `--output-format json` flag to get structured output:
 
 ```bash
-gemini -p "Explain the architecture of this codebase" --output-format json
+cracked -p "Explain the architecture of this codebase" --output-format json
 ```
 
 For real-time event streaming (useful for monitoring long-running operations),
 use `--output-format stream-json` to get newline-delimited JSON events:
 
 ```bash
-gemini -p "Run tests and deploy" --output-format stream-json
+cracked -p "Run tests and deploy" --output-format stream-json
 ```
 
 ### Quick Examples
@@ -268,8 +268,8 @@ gemini
 #### Analyze existing code
 
 ```bash
-git clone https://github.com/google-gemini/gemini-cli
-cd gemini-cli
+git clone https://github.com/cracked-coder/cracked-coder
+cd cracked-coder
 gemini
 > Give me a summary of all of the changes that went in yesterday
 ```
@@ -293,8 +293,8 @@ gemini
   (`/help`, `/chat`, etc).
 - [**Custom Commands**](./docs/cli/custom-commands.md) - Create your own
   reusable commands.
-- [**Context Files (GEMINI.md)**](./docs/cli/gemini-md.md) - Provide persistent
-  context to Gemini CLI.
+- [**Context Files (CRACKED.md)**](./docs/cli/gemini-md.md) - Provide persistent
+  context to Cracked Coder.
 - [**Checkpointing**](./docs/cli/checkpointing.md) - Save and resume
   conversations.
 - [**Token Caching**](./docs/cli/token-caching.md) - Optimize token usage.
@@ -312,9 +312,9 @@ gemini
 
 ### Advanced Topics
 
-- [**Headless Mode (Scripting)**](./docs/cli/headless.md) - Use Gemini CLI in
+- [**Headless Mode (Scripting)**](./docs/cli/headless.md) - Use Cracked Coder in
   automated workflows.
-- [**Architecture Overview**](./docs/architecture.md) - How Gemini CLI works.
+- [**Architecture Overview**](./docs/architecture.md) - How Cracked Coder works.
 - [**IDE Integration**](./docs/ide-integration/index.md) - VS Code companion.
 - [**Sandboxing & Security**](./docs/cli/sandbox.md) - Safe execution
   environments.
@@ -336,7 +336,7 @@ gemini
 
 ### Using MCP Servers
 
-Configure MCP servers in `~/.gemini/settings.json` to extend Gemini CLI with
+Configure MCP servers in `~/.cracked/settings.json` to extend Cracked Coder with
 custom tools:
 
 ```text
@@ -350,7 +350,7 @@ instructions.
 
 ## 🤝 Contributing
 
-We welcome contributions! Gemini CLI is fully open source (Apache 2.0), and we
+We welcome contributions! Cracked Coder is fully open source (Apache 2.0), and we
 encourage the community to:
 
 - Report bugs and suggest features.
@@ -361,18 +361,18 @@ encourage the community to:
 See our [Contributing Guide](./CONTRIBUTING.md) for development setup, coding
 standards, and how to submit pull requests.
 
-Check our [Official Roadmap](https://github.com/orgs/google-gemini/projects/11)
+Check our [Official Roadmap](https://github.com/orgs/cracked-coder/projects/11)
 for planned features and priorities.
 
 ## 📖 Resources
 
 - **[Official Roadmap](./ROADMAP.md)** - See what's coming next.
 - **[Changelog](./docs/changelogs/index.md)** - See recent notable updates.
-- **[NPM Package](https://www.npmjs.com/package/@google/gemini-cli)** - Package
+- **[NPM Package](https://www.npmjs.com/package/@google/cracked-coder)** - Package
   registry.
-- **[GitHub Issues](https://github.com/google-gemini/gemini-cli/issues)** -
+- **[GitHub Issues](https://github.com/cracked-coder/cracked-coder/issues)** -
   Report bugs or request features.
-- **[Security Advisories](https://github.com/google-gemini/gemini-cli/security/advisories)** -
+- **[Security Advisories](https://github.com/cracked-coder/cracked-coder/security/advisories)** -
   Security updates.
 
 ### Uninstall

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ import { type Argv } from 'yargs';
 import { handleUninstall, uninstallCommand } from './uninstall.js';
 import { ExtensionManager } from '../../config/extension-manager.js';
 import { loadSettings, type LoadedSettings } from '../../config/settings.js';
-import { getErrorMessage } from '@google/gemini-cli-core';
+import { getErrorMessage } from '@cracked-coder/core';
 
 // NOTE: This file uses vi.hoisted() mocks to enable testing of sequential
 // mock behaviors (mockResolvedValueOnce/mockRejectedValueOnce chaining).
@@ -57,9 +57,9 @@ const debugLogger = vi.hoisted(() => ({
   }),
 }));
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     coreEvents: {

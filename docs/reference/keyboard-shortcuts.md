@@ -1,6 +1,6 @@
-# Gemini CLI keyboard shortcuts
+# Cracked Coder keyboard shortcuts
 
-Gemini CLI ships with a set of default keyboard shortcuts for editing input,
+Cracked Coder ships with a set of default keyboard shortcuts for editing input,
 navigating history, and controlling the UI. Use this reference to learn the
 available combinations.
 
@@ -132,7 +132,7 @@ available combinations.
 
 You can add alternative keybindings or remove default keybindings by creating a
 `keybindings.json` file in your home gemini directory (typically
-`~/.gemini/keybindings.json`).
+`~/.cracked/keybindings.json`).
 
 ### Configuration Format
 
@@ -240,7 +240,7 @@ a `key` combination.
 - On [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal):
   - `shift+enter` is only supported in version 1.25 and higher.
   - `shift+tab`
-    [is not supported](https://github.com/google-gemini/gemini-cli/issues/20314)
+    [is not supported](https://github.com/cracked-coder/cracked-coder/issues/20314)
     on Node 20 and earlier versions of Node 22.
 - On macOS's [Terminal](<https://en.wikipedia.org/wiki/Terminal_(macOS)>):
   - `shift+enter` is not supported.

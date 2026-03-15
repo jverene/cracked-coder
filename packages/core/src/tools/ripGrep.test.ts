@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -693,13 +693,13 @@ describe('RipGrepTool', () => {
     }, 10000);
 
     it('should filter out files based on FileDiscoveryService even if ripgrep returns them', async () => {
-      // Create .geminiignore to ignore 'ignored.txt'
+      // Create .crackedignore to ignore 'ignored.txt'
       await fs.writeFile(
         path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME),
         'ignored.txt',
       );
 
-      // Re-initialize tool so FileDiscoveryService loads the new .geminiignore
+      // Re-initialize tool so FileDiscoveryService loads the new .crackedignore
       const toolWithIgnore = new RipGrepTool(
         mockConfig,
         createMockMessageBus(),
@@ -1565,7 +1565,7 @@ describe('RipGrepTool', () => {
       );
     });
 
-    it('should add .geminiignore when enabled and patterns exist', async () => {
+    it('should add .crackedignore when enabled and patterns exist', async () => {
       const geminiIgnorePath = path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME);
       await fs.writeFile(geminiIgnorePath, 'ignored.log');
       const configWithGeminiIgnore = {
@@ -1631,7 +1631,7 @@ describe('RipGrepTool', () => {
       );
     });
 
-    it('should skip .geminiignore when disabled', async () => {
+    it('should skip .crackedignore when disabled', async () => {
       const geminiIgnorePath = path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME);
       await fs.writeFile(geminiIgnorePath, 'ignored.log');
       const configWithoutGeminiIgnore = {
@@ -1998,7 +1998,7 @@ describe('RipGrepTool', () => {
               data: {
                 path: { text: 'fileA.txt' },
                 line_number: 1,
-                lines: { text: 'Copyright 2025 Google LLC\n' },
+                lines: { text: 'Copyright 2025 Cracked Coder LLC\n' },
               },
             }) +
             '\n' +
@@ -2007,7 +2007,7 @@ describe('RipGrepTool', () => {
               data: {
                 path: { text: 'fileB.txt' },
                 line_number: 1,
-                lines: { text: 'Copyright 2026 Google LLC\n' },
+                lines: { text: 'Copyright 2026 Cracked Coder LLC\n' },
               },
             }) +
             '\n',
@@ -2016,7 +2016,7 @@ describe('RipGrepTool', () => {
       );
 
       const params: RipGrepToolParams = {
-        pattern: 'Copyright .* Google LLC',
+        pattern: 'Copyright .* Cracked Coder LLC',
         exclude_pattern: '2026',
         context: 0,
       };
@@ -2026,7 +2026,7 @@ describe('RipGrepTool', () => {
       expect(result.llmContent).toContain('Found 1 match');
       expect(result.llmContent).toContain('fileA.txt');
       expect(result.llmContent).not.toContain('fileB.txt');
-      expect(result.llmContent).toContain('Copyright 2025 Google LLC');
+      expect(result.llmContent).toContain('Copyright 2025 Cracked Coder LLC');
     });
 
     it('should truncate excessively long lines', async () => {

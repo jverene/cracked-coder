@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -41,11 +41,11 @@ vi.mock('node:os');
 describe('ide-connection-utils', () => {
   beforeEach(() => {
     // Mock environment variables
-    vi.stubEnv('GEMINI_CLI_IDE_WORKSPACE_PATH', '/test/workspace');
-    vi.stubEnv('GEMINI_CLI_IDE_SERVER_PORT', '');
-    vi.stubEnv('GEMINI_CLI_IDE_SERVER_STDIO_COMMAND', '');
-    vi.stubEnv('GEMINI_CLI_IDE_SERVER_STDIO_ARGS', '');
-    vi.stubEnv('GEMINI_CLI_IDE_AUTH_TOKEN', '');
+    vi.stubEnv('CRACKED_CODER_IDE_WORKSPACE_PATH', '/test/workspace');
+    vi.stubEnv('CRACKED_CODER_IDE_SERVER_PORT', '');
+    vi.stubEnv('CRACKED_CODER_IDE_SERVER_STDIO_COMMAND', '');
+    vi.stubEnv('CRACKED_CODER_IDE_SERVER_STDIO_ARGS', '');
+    vi.stubEnv('CRACKED_CODER_IDE_AUTH_TOKEN', '');
 
     vi.spyOn(process, 'cwd').mockReturnValue('/test/workspace/sub-dir');
     vi.mocked(os.tmpdir).mockReturnValue('/tmp');
@@ -312,7 +312,7 @@ describe('ide-connection-utils', () => {
     });
 
     it('should prioritize the config matching the port from the environment variable', async () => {
-      vi.stubEnv('GEMINI_CLI_IDE_SERVER_PORT', '2222');
+      vi.stubEnv('CRACKED_CODER_IDE_SERVER_PORT', '2222');
       const config1 = { port: '1111', workspacePath: '/test/workspace' };
       const config2 = { port: '2222', workspacePath: '/test/workspace' };
       vi.mocked(fs.promises.readFile).mockRejectedValueOnce(
@@ -402,7 +402,7 @@ describe('ide-connection-utils', () => {
     });
 
     it('should match env port string to a number port in the config', async () => {
-      vi.stubEnv('GEMINI_CLI_IDE_SERVER_PORT', '3333');
+      vi.stubEnv('CRACKED_CODER_IDE_SERVER_PORT', '3333');
       const config1 = { port: 1111, workspacePath: '/test/workspace' };
       const config2 = { port: 3333, workspacePath: '/test/workspace' };
       vi.mocked(fs.promises.readFile).mockRejectedValueOnce(

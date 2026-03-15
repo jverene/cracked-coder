@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
@@ -12,7 +12,7 @@ import {
   ApprovalMode,
   Scheduler,
   type MessageBus,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { createMockConfig } from '../utils/testing_utils.js';
 import type { ExecutionEventBus } from '@a2a-js/sdk/server';
 

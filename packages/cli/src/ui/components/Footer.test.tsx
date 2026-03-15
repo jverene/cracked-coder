@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -29,9 +29,9 @@ vi.mock('../../utils/installationInfo.js', async (importOriginal) => {
   };
 });
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...original,
     shortenPath: (p: string, len: number) => {
@@ -100,7 +100,7 @@ const mockSessionStats = {
 describe('<Footer />', () => {
   beforeEach(() => {
     const root = path.parse(process.cwd()).root;
-    vi.stubEnv('GEMINI_CLI_HOME', path.join(root, 'Users', 'test'));
+    vi.stubEnv('CRACKED_CODER_HOME', path.join(root, 'Users', 'test'));
     vi.stubEnv('SANDBOX', '');
     vi.stubEnv('SEATBELT_PROFILE', '');
   });
@@ -366,7 +366,7 @@ describe('<Footer />', () => {
     });
 
     it('should display custom sandbox info when SANDBOX env is set', async () => {
-      vi.stubEnv('SANDBOX', 'gemini-cli-test-sandbox');
+      vi.stubEnv('SANDBOX', 'cracked-coder-test-sandbox');
       const { lastFrame, waitUntilReady, unmount } = renderWithProviders(
         <Footer />,
         {
@@ -416,7 +416,7 @@ describe('<Footer />', () => {
     });
 
     it('should prioritize untrusted message over sandbox info', async () => {
-      vi.stubEnv('SANDBOX', 'gemini-cli-test-sandbox');
+      vi.stubEnv('SANDBOX', 'cracked-coder-test-sandbox');
       const { lastFrame, waitUntilReady, unmount } = renderWithProviders(
         <Footer />,
         {

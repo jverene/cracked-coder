@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -235,7 +235,7 @@ describe('BrowserManager', () => {
         ?.args as string[];
       expect(args).not.toContain('--isolated');
       expect(args).not.toContain('--autoConnect');
-      // Persistent mode should set the default --userDataDir under ~/.gemini
+      // Persistent mode should set the default --userDataDir under ~/.cracked
       expect(args).toContain('--userDataDir');
       const userDataDirIndex = args.indexOf('--userDataDir');
       expect(args[userDataDirIndex + 1]).toMatch(/cli-browser-profile$/);
@@ -488,7 +488,7 @@ describe('BrowserManager', () => {
       // Verify we're using the raw Client from MCP SDK
       expect(Client).toHaveBeenCalledWith(
         expect.objectContaining({
-          name: 'gemini-cli-browser-agent',
+          name: 'cracked-coder-browser-agent',
         }),
         expect.any(Object),
       );

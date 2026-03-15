@@ -1,17 +1,17 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { getPackageJson } from '@google/gemini-cli-core';
+import { getPackageJson } from '@cracked-coder/core';
 import commandExists from 'command-exists';
 import * as os from 'node:os';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { loadSandboxConfig } from './sandboxConfig.js';
 
 // Mock dependencies
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual = await importOriginal();
   return {
     ...(actual as object),

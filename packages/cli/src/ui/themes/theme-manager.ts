@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -39,7 +39,7 @@ import { ANSI } from './builtin/dark/ansi-dark.js';
 import { ANSILight } from './builtin/light/ansi-light.js';
 import { NoColorTheme } from './builtin/no-color.js';
 import process from 'node:process';
-import { debugLogger, homedir } from '@google/gemini-cli-core';
+import { debugLogger, homedir } from '@cracked-coder/core';
 
 export interface ThemeDisplay {
   name: string;

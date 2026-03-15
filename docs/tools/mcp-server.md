@@ -1,7 +1,7 @@
-# MCP servers with the Gemini CLI
+# MCP servers with the Cracked Coder
 
 This document provides a guide to configuring and using Model Context Protocol
-(MCP) servers with the Gemini CLI.
+(MCP) servers with the Cracked Coder.
 
 ## What is an MCP server?
 
@@ -10,7 +10,7 @@ CLI through the Model Context Protocol, allowing it to interact with external
 systems and data sources. MCP servers act as a bridge between the Gemini model
 and your local environment or other services like APIs.
 
-An MCP server enables the Gemini CLI to:
+An MCP server enables the Cracked Coder to:
 
 - **Discover tools:** List available tools, their descriptions, and parameters
   through standardized schema definitions.
@@ -19,13 +19,13 @@ An MCP server enables the Gemini CLI to:
 - **Access resources:** Read data from specific resources that the server
   exposes (files, API payloads, reports, etc.).
 
-With an MCP server, you can extend the Gemini CLI's capabilities to perform
+With an MCP server, you can extend the Cracked Coder's capabilities to perform
 actions beyond its built-in features, such as interacting with databases, APIs,
 custom scripts, or specialized workflows.
 
 ## Core integration architecture
 
-The Gemini CLI integrates with MCP servers through a sophisticated discovery and
+The Cracked Coder integrates with MCP servers through a sophisticated discovery and
 execution system built into the core package (`packages/core/src/tools/`):
 
 ### Discovery Layer (`mcp-client.ts`)
@@ -54,7 +54,7 @@ Each discovered MCP tool is wrapped in a `DiscoveredMCPTool` instance that:
 
 ### Transport mechanisms
 
-The Gemini CLI supports three MCP transport types:
+The Cracked Coder supports three MCP transport types:
 
 - **Stdio Transport:** Spawns a subprocess and communicates via stdin/stdout
 - **SSE Transport:** Connects to Server-Sent Events endpoints
@@ -63,7 +63,7 @@ The Gemini CLI supports three MCP transport types:
 ## Working with MCP resources
 
 Some MCP servers expose contextual “resources” in addition to the tools and
-prompts. Gemini CLI discovers these automatically and gives you the possibility
+prompts. Cracked Coder discovers these automatically and gives you the possibility
 to reference them in the chat.
 
 ### Discovery and listing
@@ -88,7 +88,7 @@ in the conversation.
 
 ## How to set up your MCP server
 
-The Gemini CLI uses the `mcpServers` configuration in your `settings.json` file
+The Cracked Coder uses the `mcpServers` configuration in your `settings.json` file
 to locate and connect to MCP servers. This configuration supports multiple
 servers with different transport mechanisms.
 
@@ -187,7 +187,7 @@ Each server configuration supports the following properties:
 
 ### Environment variable expansion
 
-Gemini CLI automatically expands environment variables in the `env` block of
+Cracked Coder automatically expands environment variables in the `env` block of
 your MCP server configuration. This allows you to securely reference variables
 defined in your shell or environment without hardcoding sensitive information
 directly in your `settings.json` file.
@@ -213,7 +213,7 @@ string.
 
 ### Security and environment sanitization
 
-To protect your credentials, Gemini CLI performs environment sanitization when
+To protect your credentials, Cracked Coder performs environment sanitization when
 spawning MCP server processes.
 
 #### Automatic redaction
@@ -244,7 +244,7 @@ specific data with that server.
 
 ### OAuth support for remote MCP servers
 
-The Gemini CLI supports OAuth 2.0 authentication for remote MCP servers using
+The Cracked Coder supports OAuth 2.0 authentication for remote MCP servers using
 SSE or HTTP transports. This enables secure access to MCP servers that require
 authentication.
 
@@ -328,7 +328,7 @@ Use the `/mcp auth` command to manage OAuth authentication:
 
 OAuth tokens are automatically:
 
-- **Stored securely** in `~/.gemini/mcp-oauth-tokens.json`
+- **Stored securely** in `~/.cracked/mcp-oauth-tokens.json`
 - **Refreshed** when expired (if refresh tokens are available)
 - **Validated** before each connection attempt
 - **Cleaned up** when invalid or expired
@@ -528,7 +528,7 @@ then be used to authenticate with the MCP server.
 
 ## Discovery process deep dive
 
-When the Gemini CLI starts, it performs MCP server discovery through the
+When the Cracked Coder starts, it performs MCP server discovery through the
 following detailed process:
 
 ### 1. Server iteration and connection
@@ -811,7 +811,7 @@ The MCP integration tracks several states:
 - **Access tokens:** Be security-aware when configuring environment variables
   containing API keys or tokens. See
   [Security and environment sanitization](#security-and-environment-sanitization)
-  for details on how Gemini CLI protects your credentials.
+  for details on how Cracked Coder protects your credentials.
 - **Sandbox compatibility:** When using sandboxing, ensure MCP servers are
   available within the sandbox environment
 - **Private data:** Using broadly scoped personal access tokens can lead to
@@ -838,7 +838,7 @@ The MCP integration tracks several states:
   through automatic prefixing
 
 This comprehensive integration makes MCP servers a powerful way to extend the
-Gemini CLI's capabilities while maintaining security, reliability, and ease of
+Cracked Coder's capabilities while maintaining security, reliability, and ease of
 use.
 
 ## Returning rich content from tools
@@ -858,7 +858,7 @@ To return rich content, your tool's response must adhere to the MCP
 specification for a
 [`CallToolResult`](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#tool-result).
 The `content` field of the result should be an array of `ContentBlock` objects.
-The Gemini CLI will correctly process this array, separating text from binary
+The Cracked Coder will correctly process this array, separating text from binary
 data and packaging it for the model.
 
 You can mix and match different content block types in the `content` array. The
@@ -895,7 +895,7 @@ text description and an image:
 }
 ```
 
-When the Gemini CLI receives this response, it will:
+When the Cracked Coder receives this response, it will:
 
 1.  Extract all the text and combine it into a single `functionResponse` part
     for the model.
@@ -909,7 +909,7 @@ context to the Gemini model.
 ## MCP prompts as slash commands
 
 In addition to tools, MCP servers can expose predefined prompts that can be
-executed as slash commands within the Gemini CLI. This allows you to create
+executed as slash commands within the Cracked Coder. This allows you to create
 shortcuts for common or complex queries that can be easily invoked by name.
 
 ### Defining prompts on the server
@@ -969,16 +969,16 @@ Once a prompt is discovered, you can invoke it using its name as a slash
 command. The CLI will automatically handle parsing arguments.
 
 ```bash
-/poem-writer --title="Gemini CLI" --mood="reverent"
+/poem-writer --title="Cracked Coder" --mood="reverent"
 ```
 
 or, using positional arguments:
 
 ```bash
-/poem-writer "Gemini CLI" reverent
+/poem-writer "Cracked Coder" reverent
 ```
 
-When you run this command, the Gemini CLI executes the `prompts/get` method on
+When you run this command, the Cracked Coder executes the `prompts/get` method on
 the MCP server with the provided arguments. The server is responsible for
 substituting the arguments into the prompt template and returning the final
 prompt text. The CLI then sends this prompt to the model for execution. This
@@ -987,7 +987,7 @@ provides a convenient way to automate and share common workflows.
 ## Managing MCP servers with `gemini mcp`
 
 While you can always configure MCP servers by manually editing your
-`settings.json` file, the Gemini CLI provides a convenient set of commands to
+`settings.json` file, the Cracked Coder provides a convenient set of commands to
 manage your server configurations programmatically. These commands streamline
 the process of adding, listing, and removing MCP servers without needing to
 directly edit JSON files.
@@ -996,12 +996,12 @@ directly edit JSON files.
 
 The `add` command configures a new MCP server in your `settings.json`. Based on
 the scope (`-s, --scope`), it will be added to either the user config
-`~/.gemini/settings.json` or the project config `.gemini/settings.json` file.
+`~/.cracked/settings.json` or the project config `.cracked/settings.json` file.
 
 **Command:**
 
 ```bash
-gemini mcp add [options] <name> <commandOrUrl> [args...]
+cracked mcp add [options] <name> <commandOrUrl> [args...]
 ```
 
 - `<name>`: A unique name for the server.
@@ -1076,7 +1076,7 @@ command has no flags.
 **Command:**
 
 ```bash
-gemini mcp list
+cracked mcp list
 ```
 
 > **Note on Trust:** For security, `stdio` MCP servers (those using the
@@ -1117,7 +1117,7 @@ server's name.
 **Command:**
 
 ```bash
-gemini mcp remove <name>
+cracked mcp remove <name>
 ```
 
 **Options (flags):**
@@ -1127,7 +1127,7 @@ gemini mcp remove <name>
 **Example:**
 
 ```bash
-gemini mcp remove my-server
+cracked mcp remove my-server
 ```
 
 This will find and delete the "my-server" entry from the `mcpServers` object in
@@ -1141,7 +1141,7 @@ re-enable a previously disabled server.
 **Commands:**
 
 ```bash
-gemini mcp enable <name> [--session]
+cracked mcp enable <name> [--session]
 gemini mcp disable <name> [--session]
 ```
 
@@ -1151,13 +1151,13 @@ gemini mcp disable <name> [--session]
 
 Disabled servers appear in `/mcp` status as "Disabled" but won't connect or
 provide tools. Enablement state is stored in
-`~/.gemini/mcp-server-enablement.json`.
+`~/.cracked/mcp-server-enablement.json`.
 
 The same commands are available as slash commands during an active session:
 `/mcp enable <name>` and `/mcp disable <name>`.
 
 ## Instructions
 
-Gemini CLI supports
+Cracked Coder supports
 [MCP server instructions](https://modelcontextprotocol.io/specification/2025-06-18/schema#initializeresult),
 which will be appended to the system instructions.

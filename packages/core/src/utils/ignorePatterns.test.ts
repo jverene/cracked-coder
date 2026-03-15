@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@ import type { Config } from '../config/config.js';
 
 // Mock the memoryTool module
 vi.mock('../tools/memoryTool.js', () => ({
-  getCurrentGeminiMdFilename: vi.fn(() => 'GEMINI.md'),
+  getCurrentGeminiMdFilename: vi.fn(() => 'CRACKED.md'),
 }));
 
 describe('FileExclusions', () => {
@@ -55,7 +55,7 @@ describe('FileExclusions', () => {
       expect(patterns).toContain('**/.env');
 
       // Should include dynamic patterns
-      expect(patterns).toContain('**/GEMINI.md');
+      expect(patterns).toContain('**/CRACKED.md');
     });
 
     it('should respect includeDefaults option', () => {
@@ -67,7 +67,7 @@ describe('FileExclusions', () => {
 
       expect(patterns).not.toContain('**/node_modules/**');
       expect(patterns).not.toContain('**/.git/**');
-      expect(patterns).not.toContain('**/GEMINI.md');
+      expect(patterns).not.toContain('**/CRACKED.md');
       expect(patterns).toHaveLength(0);
     });
 
@@ -100,8 +100,8 @@ describe('FileExclusions', () => {
         includeDynamicPatterns: false,
       });
 
-      expect(patternsWithDynamic).toContain('**/GEMINI.md');
-      expect(patternsWithoutDynamic).not.toContain('**/GEMINI.md');
+      expect(patternsWithDynamic).toContain('**/CRACKED.md');
+      expect(patternsWithoutDynamic).not.toContain('**/CRACKED.md');
     });
   });
 
@@ -113,7 +113,7 @@ describe('FileExclusions', () => {
       // Should include all default patterns
       expect(patterns).toContain('**/node_modules/**');
       expect(patterns).toContain('**/.git/**');
-      expect(patterns).toContain('**/GEMINI.md');
+      expect(patterns).toContain('**/CRACKED.md');
 
       // Should include additional excludes
       expect(patterns).toContain('**/*.log');

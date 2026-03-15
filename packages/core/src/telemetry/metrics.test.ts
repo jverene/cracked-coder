@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -1445,7 +1445,7 @@ describe('Telemetry Metrics', () => {
         recordHookCallMetricsModule(
           mockConfig,
           'BeforeTool',
-          '/path/to/.gemini/hooks/check-secrets.sh --api-key=abc123',
+          '/path/to/.cracked/hooks/check-secrets.sh --api-key=abc123',
           150,
           true,
         );

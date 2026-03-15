@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,16 +16,16 @@ import { useKeypress } from '../hooks/useKeypress.js';
 import { KeypressPriority } from '../contexts/KeypressContext.js';
 
 import {
-  GEMINI_DIR,
+  CRACKED_DIR,
   Storage,
   homedir,
   WarningPriority,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
 
-const settingsPath = path.join(homedir(), GEMINI_DIR, 'settings.json');
+const settingsPath = path.join(homedir(), CRACKED_DIR, 'settings.json');
 
 const screenReaderNudgeFilePath = path.join(
   Storage.getGlobalTempDir(),

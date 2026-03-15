@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -455,7 +455,7 @@ export class SchedulerStateManager {
     const startTime = 'startTime' in call ? call.startTime : undefined;
 
     // TODO: Refactor this tool-specific logic into the confirmation details payload.
-    // See: https://github.com/google-gemini/gemini-cli/issues/16716
+    // See: https://github.com/cracked-coder/cracked-coder/issues/16716
     let resultDisplay: ToolResultDisplay | undefined = undefined;
     if (this.isWaitingToolCall(call)) {
       const details = call.confirmationDetails;

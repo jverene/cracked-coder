@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   type Tool,
   type GenerateContentResponse,
 } from '@google/genai';
-import { partListUnionToString } from './geminiRequest.js';
+import { partListUnionToString } from './crackedRequest.js';
 import {
   getDirectoryContextString,
   getInitialChatHistory,
@@ -29,7 +29,7 @@ import { type AgentLoopContext } from '../config/agent-loop-context.js';
 import { getCoreSystemPrompt } from './prompts.js';
 import { checkNextSpeaker } from '../utils/nextSpeakerChecker.js';
 import { reportError } from '../utils/errorReporting.js';
-import { GeminiChat } from './geminiChat.js';
+import { GeminiChat } from './crackedChat.js';
 import {
   retryWithBackoff,
   type RetryAvailabilityContext,

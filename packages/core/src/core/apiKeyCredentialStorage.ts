@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import type { OAuthCredentials } from '../mcp/token-storage/types.js';
 import { debugLogger } from '../utils/debugLogger.js';
 import { createCache } from '../utils/cache.js';
 
-const KEYCHAIN_SERVICE_NAME = 'gemini-cli-api-key';
+const KEYCHAIN_SERVICE_NAME = 'cracked-coder-api-key';
 const DEFAULT_API_KEY_ENTRY = 'default-api-key';
 
 const storage = new HybridTokenStorage(KEYCHAIN_SERVICE_NAME);

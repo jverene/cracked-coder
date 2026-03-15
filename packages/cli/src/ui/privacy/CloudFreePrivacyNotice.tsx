@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { Box, Newline, Text } from 'ink';
 import { RadioButtonSelect } from '../components/shared/RadioButtonSelect.js';
 import { usePrivacySettings } from '../hooks/usePrivacySettings.js';
 
-import type { Config } from '@google/gemini-cli-core';
+import type { Config } from '@cracked-coder/core';
 import { theme } from '../semantic-colors.js';
 import { useKeypress } from '../hooks/useKeypress.js';
 
@@ -87,7 +87,7 @@ export const CloudFreePrivacyNotice = ({
       </Text>
       <Newline />
       <Text color={theme.text.primary}>
-        When you use Gemini Code Assist for individuals with Gemini CLI, Google
+        When you use Gemini Code Assist for individuals with Cracked Coder, Google
         collects your prompts, related code, generated output, code edits,
         related feature usage information, and your feedback to provide,
         improve, and develop Google products and services and machine learning

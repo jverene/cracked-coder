@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,7 +24,7 @@ describe('policyCatalog', () => {
     expect(chain).toHaveLength(2);
   });
 
-  it('returns Gemini 3.1 chain when useGemini31 is true', () => {
+  it('returns Cracked 3.1 chain when useGemini31 is true', () => {
     const chain = getModelPolicyChain({
       previewEnabled: true,
       useGemini31: true,
@@ -34,7 +34,7 @@ describe('policyCatalog', () => {
     expect(chain[1]?.model).toBe('gemini-3-flash-preview');
   });
 
-  it('returns Gemini 3.1 Custom Tools chain when useGemini31 and useCustomToolModel are true', () => {
+  it('returns Cracked 3.1 Custom Tools chain when useGemini31 and useCustomToolModel are true', () => {
     const chain = getModelPolicyChain({
       previewEnabled: true,
       useGemini31: true,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ describe('AboutBox', () => {
     );
     await waitUntilReady();
     const output = lastFrame();
-    expect(output).toContain('About Gemini CLI');
+    expect(output).toContain('About Cracked Coder');
     expect(output).toContain('1.0.0');
     expect(output).toContain('mock-commit-hash');
     expect(output).toContain('gemini-pro');

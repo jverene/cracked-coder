@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -82,11 +82,11 @@ export function listMemoryFiles(config: Config): MessageActionReturn {
   let content: string;
 
   if (fileCount > 0) {
-    content = `There are ${fileCount} GEMINI.md file(s) in use:\n\n${filePaths.join(
+    content = `There are ${fileCount} CRACKED.md file(s) in use:\n\n${filePaths.join(
       '\n',
     )}`;
   } else {
-    content = 'No GEMINI.md files in use.';
+    content = 'No CRACKED.md files in use.';
   }
 
   return {

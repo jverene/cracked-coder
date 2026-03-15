@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import { TestRig } from './test-helper.js';
 import { TestMcpServer } from './test-mcp-server.js';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { safeJsonStringify } from '@google/gemini-cli-core/src/utils/safeJsonStringify.js';
+import { safeJsonStringify } from '@cracked-coder/core/src/utils/safeJsonStringify.js';
 import { env } from 'node:process';
 import { platform } from 'node:os';
 

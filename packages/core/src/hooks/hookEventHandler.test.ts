@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -68,7 +68,7 @@ describe('HookEventHandler', () => {
       getChatRecordingService: vi.fn().mockReturnValue({
         getConversationFilePath: vi
           .fn()
-          .mockReturnValue('/test/project/.gemini/tmp/chats/session.json'),
+          .mockReturnValue('/test/project/.cracked/tmp/chats/session.json'),
       }),
     };
 
@@ -881,7 +881,7 @@ describe('HookEventHandler', () => {
         HookEventName.BeforeTool,
         expect.objectContaining({
           session_id: 'test-session',
-          transcript_path: '/test/project/.gemini/tmp/chats/session.json',
+          transcript_path: '/test/project/.cracked/tmp/chats/session.json',
           cwd: '/test/project',
           hook_event_name: 'BeforeTool',
           timestamp: expect.any(String),

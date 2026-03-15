@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { Box, Text } from 'ink';
 import { theme } from '../semantic-colors.js';
-import { type Config } from '@google/gemini-cli-core';
+import { type Config } from '@cracked-coder/core';
 
 interface TipsProps {
   config: Config;
@@ -21,7 +21,7 @@ export const Tips: React.FC<TipsProps> = ({ config }) => {
       <Text color={theme.text.primary}>Tips for getting started:</Text>
       {geminiMdFileCount === 0 && (
         <Text color={theme.text.primary}>
-          1. Create <Text bold>GEMINI.md</Text> files to customize your
+          1. Create <Text bold>CRACKED.md</Text> files to customize your
           interactions
         </Text>
       )}

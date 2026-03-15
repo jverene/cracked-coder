@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { useMemo } from 'react';
 import { Box, Text } from 'ink';
-import type { ThoughtSummary } from '@google/gemini-cli-core';
+import type { ThoughtSummary } from '@cracked-coder/core';
 import { theme } from '../../semantic-colors.js';
 import { normalizeEscapedNewlines } from '../../utils/textUtils.js';
 

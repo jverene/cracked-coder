@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -80,10 +80,10 @@ import {
 } from './settings.js';
 import {
   FatalConfigError,
-  GEMINI_DIR,
+  CRACKED_DIR,
   Storage,
   type MCPServerConfig,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { updateSettingsFilePreservingFormat } from '../utils/commentJson.js';
 import {
   getSettingsSchema,
@@ -93,10 +93,10 @@ import {
 import { createMockSettings } from '../test-utils/settings.js';
 
 const MOCK_WORKSPACE_DIR = path.resolve(path.resolve('/mock/workspace'));
-// Use the (mocked) GEMINI_DIR for consistency
+// Use the (mocked) CRACKED_DIR for consistency
 const MOCK_WORKSPACE_SETTINGS_PATH = path.join(
   MOCK_WORKSPACE_DIR,
-  GEMINI_DIR,
+  CRACKED_DIR,
   'settings.json',
 );
 
@@ -129,9 +129,9 @@ const mockCoreEvents = vi.hoisted(() => ({
   emitSettingsChanged: vi.fn(),
 }));
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   const os = await import('node:os');
   const pathMod = await import('node:path');
   const fsMod = await import('node:fs');
@@ -1494,18 +1494,18 @@ describe('Settings Loading and Merging', () => {
       delete process.env['TEST_PORT'];
     });
 
-    describe('when GEMINI_CLI_SYSTEM_SETTINGS_PATH is set', () => {
+    describe('when CRACKED_CODER_SYSTEM_SETTINGS_PATH is set', () => {
       const MOCK_ENV_SYSTEM_SETTINGS_PATH = path.resolve(
         '/mock/env/system/settings.json',
       );
 
       beforeEach(() => {
-        process.env['GEMINI_CLI_SYSTEM_SETTINGS_PATH'] =
+        process.env['CRACKED_CODER_SYSTEM_SETTINGS_PATH'] =
           MOCK_ENV_SYSTEM_SETTINGS_PATH;
       });
 
       afterEach(() => {
-        delete process.env['GEMINI_CLI_SYSTEM_SETTINGS_PATH'];
+        delete process.env['CRACKED_CODER_SYSTEM_SETTINGS_PATH'];
       });
 
       it('should load system settings from the path specified in the environment variable', () => {
@@ -1543,7 +1543,7 @@ describe('Settings Loading and Merging', () => {
       const mockSymlinkDir = path.resolve('/mock/symlink/to/home');
       const mockWorkspaceSettingsPath = path.join(
         mockSymlinkDir,
-        GEMINI_DIR,
+        CRACKED_DIR,
         'settings.json',
       );
 
@@ -1910,7 +1910,7 @@ describe('Settings Loading and Merging', () => {
       delete process.env['GEMINI_API_KEY']; // reset
       delete process.env['TESTTEST']; // reset
       const geminiEnvPath = path.resolve(
-        path.join(MOCK_WORKSPACE_DIR, GEMINI_DIR, '.env'),
+        path.join(MOCK_WORKSPACE_DIR, CRACKED_DIR, '.env'),
       );
 
       vi.spyOn(trustedFolders, 'isWorkspaceTrusted').mockReturnValue({

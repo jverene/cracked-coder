@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -147,7 +147,7 @@ function fetchHistoricalData() {
 function generateMarkdown(currentStatsByModel, history) {
   console.log('### Evals Nightly Summary\n');
   console.log(
-    'See [evals/README.md](https://github.com/google-gemini/gemini-cli/tree/main/evals) for more details.\n',
+    'See [evals/README.md](https://github.com/cracked-coder/cracked-coder/tree/main/evals) for more details.\n',
   );
 
   // Reverse history to show oldest first
@@ -208,7 +208,7 @@ function generateMarkdown(currentStatsByModel, history) {
     }
 
     for (const name of Array.from(allTestNames).sort()) {
-      const searchUrl = `https://github.com/search?q=repo%3Agoogle-gemini%2Fgemini-cli%20%22${encodeURIComponent(name)}%22&type=code`;
+      const searchUrl = `https://github.com/search?q=repo%3Acracked-coder%2Fcracked-coder%20%22${encodeURIComponent(name)}%22&type=code`;
       let row = `| [${name}](${searchUrl}) |`;
 
       // History

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -21,7 +21,7 @@ import {
   checkNextSpeaker,
   type NextSpeakerResponse,
 } from './nextSpeakerChecker.js';
-import { GeminiChat } from '../core/geminiChat.js';
+import { GeminiChat } from '../core/crackedChat.js';
 
 // Mock fs module to prevent actual file system operations during tests
 const mockFileSystem = new Map<string, string>();

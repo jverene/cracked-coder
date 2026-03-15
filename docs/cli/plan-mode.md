@@ -16,23 +16,23 @@ Plan Mode is enabled by default. You can manage this setting using the
 Plan Mode integrates seamlessly into your workflow, letting you switch between
 planning and execution as needed.
 
-You can either configure Gemini CLI to start in Plan Mode by default or enter
+You can either configure Cracked Coder to start in Plan Mode by default or enter
 Plan Mode manually during a session.
 
 ### Launch in Plan Mode
 
-To start Gemini CLI directly in Plan Mode by default:
+To start Cracked Coder directly in Plan Mode by default:
 
 1.  Use the `/settings` command.
 2.  Set **Default Approval Mode** to `Plan`.
 
-To launch Gemini CLI in Plan Mode once:
+To launch Cracked Coder in Plan Mode once:
 
-1. Use `gemini --approval-mode=plan` when launching Gemini CLI.
+1. Use `cracked --approval-mode=plan` when launching Cracked Coder.
 
 ### Enter Plan Mode manually
 
-To start Plan Mode while using Gemini CLI:
+To start Plan Mode while using Cracked Coder:
 
 - **Keyboard shortcut:** Press `Shift+Tab` to cycle through approval modes
   (`Default` -> `Auto-Edit` -> `Plan`).
@@ -42,32 +42,32 @@ To start Plan Mode while using Gemini CLI:
 
 - **Command:** Type `/plan` in the input box.
 
-- **Natural Language:** Ask Gemini CLI to "start a plan for...". Gemini CLI
+- **Natural Language:** Ask Cracked Coder to "start a plan for...". Cracked Coder
   calls the
   [`enter_plan_mode`](../tools/planning.md#1-enter_plan_mode-enterplanmode) tool
   to switch modes.
-  > **Note:** This tool is not available when Gemini CLI is in
+  > **Note:** This tool is not available when Cracked Coder is in
   > [YOLO mode](../reference/configuration.md#command-line-arguments).
 
 ## How to use Plan Mode
 
-Plan Mode lets you collaborate with Gemini CLI to design a solution before
-Gemini CLI takes action.
+Plan Mode lets you collaborate with Cracked Coder to design a solution before
+Cracked Coder takes action.
 
-1.  **Provide a goal:** Start by describing what you want to achieve. Gemini CLI
+1.  **Provide a goal:** Start by describing what you want to achieve. Cracked Coder
     will then enter Plan Mode (if it's not already) to research the task.
-2.  **Review research and provide input:** As Gemini CLI analyzes your codebase,
+2.  **Review research and provide input:** As Cracked Coder analyzes your codebase,
     it may ask you questions or present different implementation options using
     [`ask_user`](../tools/ask-user.md). Provide your preferences to help guide
     the design.
-3.  **Review the plan:** Once Gemini CLI has a proposed strategy, it creates a
+3.  **Review the plan:** Once Cracked Coder has a proposed strategy, it creates a
     detailed implementation plan as a Markdown file in your plans directory.
     - **View:** You can open and read this file to understand the proposed
       changes.
     - **Edit:** Press `Ctrl+X` to open the plan directly in your configured
       external editor.
 
-4.  **Approve or iterate:** Gemini CLI will present the finalized plan for your
+4.  **Approve or iterate:** Cracked Coder will present the finalized plan for your
     approval.
     - **Approve:** If you're satisfied with the plan, approve it to start the
       implementation immediately: **Yes, automatically accept edits** or **Yes,
@@ -82,11 +82,11 @@ For more complex or specialized planning tasks, you can
 
 ### Collaborative plan editing
 
-You can collaborate with Gemini CLI by making direct changes or leaving comments
+You can collaborate with Cracked Coder by making direct changes or leaving comments
 in the implementation plan. This is often faster and more precise than
 describing complex changes in natural language.
 
-1.  **Open the plan:** Press `Ctrl+X` when Gemini CLI presents a plan for
+1.  **Open the plan:** Press `Ctrl+X` when Cracked Coder presents a plan for
     review.
 2.  **Edit or comment:** The plan opens in your configured external editor (for
     example, VS Code or Vim). You can:
@@ -95,7 +95,7 @@ describing complex changes in natural language.
     - **Leave comments:** Add inline questions or feedback (for example, "Wait,
       shouldn't we use the existing `Logger` class here?").
 3.  **Save and close:** Save your changes and close the editor.
-4.  **Review and refine:** Gemini CLI automatically detects the changes, reviews
+4.  **Review and refine:** Cracked Coder automatically detects the changes, reviews
     your comments, and adjusts the implementation strategy. It then presents the
     refined plan for your final approval.
 
@@ -104,10 +104,10 @@ describing complex changes in natural language.
 You can exit Plan Mode at any time, whether you have finalized a plan or want to
 switch back to another mode.
 
-- **Approve a plan:** When Gemini CLI presents a finalized plan, approving it
+- **Approve a plan:** When Cracked Coder presents a finalized plan, approving it
   automatically exits Plan Mode and starts the implementation.
 - **Keyboard shortcut:** Press `Shift+Tab` to cycle to the desired mode.
-- **Natural language:** Ask Gemini CLI to "exit plan mode" or "stop planning."
+- **Natural language:** Ask Cracked Coder to "exit plan mode" or "stop planning."
 
 ## Tool Restrictions
 
@@ -130,7 +130,7 @@ These are the only allowed tools:
 - **Planning (Write):**
   [`write_file`](../tools/file-system.md#3-write_file-writefile) and
   [`replace`](../tools/file-system.md#6-replace-edit) only allowed for `.md`
-  files in the `~/.gemini/tmp/<project>/<session-id>/plans/` directory or your
+  files in the `~/.cracked/tmp/<project>/<session-id>/plans/` directory or your
   [custom plans directory](#custom-plan-directory-and-policies).
 - **Memory:** [`save_memory`](../tools/memory.md)
 - **Skills:** [`activate_skill`](../cli/skills.md) (allows loading specialized
@@ -139,12 +139,12 @@ These are the only allowed tools:
 ## Customization and best practices
 
 Plan Mode is secure by default, but you can adapt it to fit your specific
-workflows. You can customize how Gemini CLI plans by using skills, adjusting
+workflows. You can customize how Cracked Coder plans by using skills, adjusting
 safety policies, changing where plans are stored, or adding hooks.
 
 ### Custom planning with skills
 
-You can use [Agent Skills](../cli/skills.md) to customize how Gemini CLI
+You can use [Agent Skills](../cli/skills.md) to customize how Cracked Coder
 approaches planning for specific types of tasks. When a skill is activated
 during Plan Mode, its specialized instructions and procedural workflows will
 guide the research, design, and planning phases.
@@ -153,13 +153,13 @@ For example:
 
 - A **"Database Migration"** skill could ensure the plan includes data safety
   checks and rollback strategies.
-- A **"Security Audit"** skill could prompt Gemini CLI to look for specific
+- A **"Security Audit"** skill could prompt Cracked Coder to look for specific
   vulnerabilities during codebase exploration.
-- A **"Frontend Design"** skill could guide Gemini CLI to use specific UI
+- A **"Frontend Design"** skill could guide Cracked Coder to use specific UI
   components and accessibility standards in its proposal.
 
-To use a skill in Plan Mode, you can explicitly ask Gemini CLI to "use the
-`<skill-name>` skill to plan..." or Gemini CLI may autonomously activate it
+To use a skill in Plan Mode, you can explicitly ask Cracked Coder to "use the
+`<skill-name>` skill to plan..." or Cracked Coder may autonomously activate it
 based on the task description.
 
 ### Custom policies
@@ -168,7 +168,7 @@ Plan Mode's default tool restrictions are managed by the
 [policy engine](../reference/policy-engine.md) and defined in the built-in
 [`plan.toml`] file. The built-in policy (Tier 1) enforces the read-only state,
 but you can customize these rules by creating your own policies in your
-`~/.gemini/policies/` directory (Tier 2).
+`~/.cracked/policies/` directory (Tier 2).
 
 #### Global vs. mode-specific rules
 
@@ -197,7 +197,7 @@ By default, read-only MCP tools require user confirmation in Plan Mode. You can
 use `toolAnnotations` and the `mcpName` wildcard to customize this behavior for
 your specific environment.
 
-`~/.gemini/policies/mcp-read-only.toml`
+`~/.cracked/policies/mcp-read-only.toml`
 
 ```toml
 [[rule]]
@@ -216,7 +216,7 @@ For more information on how the policy engine works, see the
 This rule lets you check the repository status and see changes while in Plan
 Mode.
 
-`~/.gemini/policies/git-research.toml`
+`~/.cracked/policies/git-research.toml`
 
 ```toml
 [[rule]]
@@ -236,7 +236,7 @@ Mode. You can enable additional
 [custom subagents](../core/subagents.md#creating-custom-subagents) by adding a
 rule to your policy.
 
-`~/.gemini/policies/research-subagents.toml`
+`~/.cracked/policies/research-subagents.toml`
 
 ```toml
 [[rule]]
@@ -246,22 +246,22 @@ priority = 100
 modes = ["plan"]
 ```
 
-Tell Gemini CLI it can use these tools in your prompt, for example: _"You can
+Tell Cracked Coder it can use these tools in your prompt, for example: _"You can
 check ongoing changes in git."_
 
 ### Custom plan directory and policies
 
 By default, planning artifacts are stored in a managed temporary directory
-outside your project: `~/.gemini/tmp/<project>/<session-id>/plans/`.
+outside your project: `~/.cracked/tmp/<project>/<session-id>/plans/`.
 
 You can configure a custom directory for plans in your `settings.json`. For
-example, to store plans in a `.gemini/plans` directory within your project:
+example, to store plans in a `.cracked/plans` directory within your project:
 
 ```json
 {
   "general": {
     "plan": {
-      "directory": ".gemini/plans"
+      "directory": ".cracked/plans"
     }
   }
 }
@@ -276,8 +276,8 @@ within the project boundary.
 Using a custom directory requires updating your
 [policy engine](../reference/policy-engine.md) configurations to allow
 `write_file` and `replace` in that specific location. For example, to allow
-writing to the `.gemini/plans` directory within your project, create a policy
-file at `~/.gemini/policies/plan-custom-directory.toml`:
+writing to the `.cracked/plans` directory within your project, create a policy
+file at `~/.cracked/policies/plan-custom-directory.toml`:
 
 ```toml
 [[rule]]
@@ -286,14 +286,14 @@ decision = "allow"
 priority = 100
 modes = ["plan"]
 # Adjust the pattern to match your custom directory.
-# This example matches any .md file in a .gemini/plans directory within the project.
-argsPattern = "\"file_path\":\"[^\"]+[\\\\/]+\\.gemini[\\\\/]+plans[\\\\/]+[\\w-]+\\.md\""
+# This example matches any .md file in a .cracked/plans directory within the project.
+argsPattern = "\"file_path\":\"[^\"]+[\\\\/]+\\.cracked[\\\\/]+plans[\\\\/]+[\\w-]+\\.md\""
 ```
 
 ### Using hooks with Plan Mode
 
 You can use the [hook system](../hooks/writing-hooks.md) to automate parts of
-the planning workflow or enforce additional checks when Gemini CLI transitions
+the planning workflow or enforce additional checks when Cracked Coder transitions
 into or out of Plan Mode.
 
 Hooks such as `BeforeTool` or `AfterTool` can be configured to intercept the
@@ -309,9 +309,9 @@ Hooks such as `BeforeTool` or `AfterTool` can be configured to intercept the
 
 If your organizational policy requires a record of all execution plans, you can
 use an `AfterTool` hook to securely copy the plan artifact to Google Cloud
-Storage whenever Gemini CLI exits Plan Mode to start the implementation.
+Storage whenever Cracked Coder exits Plan Mode to start the implementation.
 
-**`.gemini/hooks/archive-plan.sh`:**
+**`.cracked/hooks/archive-plan.sh`:**
 
 ```bash
 #!/usr/bin/env bash
@@ -342,7 +342,7 @@ To register this `AfterTool` hook, add it to your `settings.json`:
           {
             "name": "archive-plan",
             "type": "command",
-            "command": "./.gemini/hooks/archive-plan.sh"
+            "command": "./.cracked/hooks/archive-plan.sh"
           }
         ]
       }
@@ -393,7 +393,7 @@ directory:
 Since Plan Mode is built on modular building blocks, you can develop your own
 custom planning workflow as an [extensions](../extensions/index.md). By
 leveraging core tools and [custom policies](#custom-policies), you can define
-how Gemini CLI researches and stores plans for your specific domain.
+how Cracked Coder researches and stores plans for your specific domain.
 
 To build a custom planning workflow, you can use:
 
@@ -415,7 +415,7 @@ high-reasoning model routing.
 
 ## Automatic Model Routing
 
-When using an [auto model](../reference/configuration.md#model), Gemini CLI
+When using an [auto model](../reference/configuration.md#model), Cracked Coder
 automatically optimizes [model routing](../cli/telemetry.md#model-routing) based
 on the current phase of your task:
 
@@ -442,7 +442,7 @@ performance. You can disable this automatic switching in your settings:
 
 ## Cleanup
 
-By default, Gemini CLI automatically cleans up old session data, including all
+By default, Cracked Coder automatically cleans up old session data, including all
 associated plan files and task trackers.
 
 - **Default behavior:** Sessions (and their plans) are retained for **30 days**.
@@ -453,13 +453,13 @@ associated plan files and task trackers.
 
 Manual deletion also removes all associated artifacts:
 
-- **Command Line:** Use `gemini --delete-session <index|id>`.
+- **Command Line:** Use `cracked --delete-session <index|id>`.
 - **Session Browser:** Press `/resume`, navigate to a session, and press `x`.
 
 If you use a [custom plans directory](#custom-plan-directory-and-policies),
 those files are not automatically deleted and must be managed manually.
 
 [`plan.toml`]:
-  https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/policy/policies/plan.toml
-[Conductor]: https://github.com/gemini-cli-extensions/conductor
-[open an issue]: https://github.com/google-gemini/gemini-cli/issues
+  https://github.com/cracked-coder/cracked-coder/blob/main/packages/core/src/policy/policies/plan.toml
+[Conductor]: https://github.com/cracked-coder-extensions/conductor
+[open an issue]: https://github.com/cracked-coder/cracked-coder/issues

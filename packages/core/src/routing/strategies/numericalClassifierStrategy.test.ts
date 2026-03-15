@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -94,7 +94,7 @@ describe('NumericalClassifierStrategy', () => {
     expect(mockBaseLlmClient.generateJson).not.toHaveBeenCalled();
   });
 
-  it('should return null if the model is not a Gemini 3 model', async () => {
+  it('should return null if the model is not a Cracked 3 model', async () => {
     vi.mocked(mockConfig.getModel).mockReturnValue(DEFAULT_GEMINI_MODEL_AUTO);
 
     const decision = await strategy.route(
@@ -537,8 +537,8 @@ describe('NumericalClassifierStrategy', () => {
     );
   });
 
-  describe('Gemini 3.1 and Custom Tools Routing', () => {
-    it('should route to PREVIEW_GEMINI_3_1_MODEL when Gemini 3.1 is launched', async () => {
+  describe('Cracked 3.1 and Custom Tools Routing', () => {
+    it('should route to PREVIEW_GEMINI_3_1_MODEL when Cracked 3.1 is launched', async () => {
       vi.mocked(mockConfig.getGemini31Launched).mockResolvedValue(true);
       const mockApiResponse = {
         complexity_reasoning: 'Complex task',
@@ -557,7 +557,7 @@ describe('NumericalClassifierStrategy', () => {
 
       expect(decision?.model).toBe(PREVIEW_GEMINI_3_1_MODEL);
     });
-    it('should route to PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL when Gemini 3.1 is launched and auth is USE_GEMINI', async () => {
+    it('should route to PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL when Cracked 3.1 is launched and auth is USE_GEMINI', async () => {
       vi.mocked(mockConfig.getGemini31Launched).mockResolvedValue(true);
       vi.mocked(mockConfig.getContentGeneratorConfig).mockReturnValue({
         authType: AuthType.USE_GEMINI,

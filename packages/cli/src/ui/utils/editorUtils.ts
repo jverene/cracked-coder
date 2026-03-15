@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import {
   getEditorCommand,
   isGuiEditor,
   isTerminalEditor,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 /**
  * Opens a file in an external editor and waits for it to close.

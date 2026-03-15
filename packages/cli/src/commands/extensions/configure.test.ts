@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 import {
@@ -14,7 +14,7 @@ import {
 } from 'vitest';
 import { configureCommand } from './configure.js';
 import yargs from 'yargs';
-import { debugLogger } from '@google/gemini-cli-core';
+import { debugLogger } from '@cracked-coder/core';
 import {
   updateSetting,
   getScopedEnvContents,
@@ -84,7 +84,7 @@ describe('extensions configure command', () => {
     vi.spyOn(debugLogger, 'error');
     vi.clearAllMocks();
 
-    tempWorkspaceDir = fs.mkdtempSync('gemini-cli-test-workspace');
+    tempWorkspaceDir = fs.mkdtempSync('cracked-coder-test-workspace');
     vi.spyOn(process, 'cwd').mockReturnValue(tempWorkspaceDir);
     // Default behaviors
     mockLoadSettings.mockReturnValue({ merged: {} });

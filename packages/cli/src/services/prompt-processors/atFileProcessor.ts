@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import {
   debugLogger,
   flatMapTextParts,
   readPathFromWorkspace,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { CommandContext } from '../../ui/commands/types.js';
 import { MessageType } from '../../ui/types.js';
 import {
@@ -57,7 +57,7 @@ export class AtFileProcessor implements IPromptProcessor {
         try {
           const fileContentParts = await readPathFromWorkspace(pathStr, config);
           if (fileContentParts.length === 0) {
-            const uiMessage = `File '@{${pathStr}}' was ignored by .gitignore or .geminiignore and was not included in the prompt.`;
+            const uiMessage = `File '@{${pathStr}}' was ignored by .gitignore or .crackedignore and was not included in the prompt.`;
             context.ui.addItem(
               { type: MessageType.INFO, text: uiMessage },
               Date.now(),

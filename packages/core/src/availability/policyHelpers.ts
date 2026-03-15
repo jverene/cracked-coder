@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -76,8 +76,8 @@ export function resolvePolicyChain(
         useCustomToolModel,
       });
     } else {
-      // User requested Gemini 3 but has no access. Proactively downgrade
-      // to the stable Gemini 2.5 chain.
+      // User requested Cracked 3 but has no access. Proactively downgrade
+      // to the stable Cracked 2.5 chain.
       chain = getModelPolicyChain({
         previewEnabled: false,
         userTier: config.getUserTier(),

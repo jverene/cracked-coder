@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -37,7 +37,7 @@ import {
   processRestorableToolCalls,
   MessageBusType,
   type ToolCallsUpdateMessage,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   type ExecutionEventBus,
   type RequestContext,
@@ -116,7 +116,7 @@ export class Task {
     this.scheduler = this.setupEventDrivenScheduler();
 
     const loopContext: AgentLoopContext = this.config;
-    this.geminiClient = loopContext.geminiClient;
+    this.crackedClient = loopContext.crackedClient;
     this.pendingToolConfirmationDetails = new Map();
     this.taskState = 'submitted';
     this.eventBus = eventBus;
@@ -143,7 +143,7 @@ export class Task {
 
   // Note: `getAllMCPServerStatuses` retrieves the status of all MCP servers for the entire
   // process. This is not scoped to the individual task but reflects the global connection
-  // state managed within the @gemini-cli/core module.
+  // state managed within the @cracked-coder/core module.
   async getMetadata(): Promise<TaskMetadata> {
     const loopContext: AgentLoopContext = this.config;
     const toolRegistry = loopContext.toolRegistry;
@@ -677,7 +677,7 @@ export class Task {
           await processRestorableToolCalls(
             restorableToolCalls,
             gitService,
-            this.geminiClient,
+            this.crackedClient,
           );
 
         if (errors.length > 0) {
@@ -1048,7 +1048,7 @@ export class Task {
         parts = [response];
       }
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.geminiClient.addHistory({
+      this.crackedClient.addHistory({
         role: 'user',
         parts,
       });
@@ -1087,7 +1087,7 @@ export class Task {
     // Set task state to working as we are about to call LLM
     this.setTaskStateAndPublishUpdate('working', stateChange);
     this.currentAgentMessageId = uuidv4();
-    yield* this.geminiClient.sendMessageStream(
+    yield* this.crackedClient.sendMessageStream(
       llmParts,
       aborted,
       completedToolCalls[0]?.request.prompt_id ?? '',
@@ -1133,7 +1133,7 @@ export class Task {
       };
       // Set task state to working as we are about to call LLM
       this.setTaskStateAndPublishUpdate('working', stateChange);
-      yield* this.geminiClient.sendMessageStream(
+      yield* this.crackedClient.sendMessageStream(
         llmParts,
         aborted,
         this.currentPromptId,

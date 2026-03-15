@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,16 +9,16 @@ import { renderWithProviders } from '../../test-utils/render.js';
 import { AppHeader } from './AppHeader.js';
 
 // We mock the entire module to control the isAppleTerminal export
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     isAppleTerminal: vi.fn(),
   };
 });
 
-import { isAppleTerminal } from '@google/gemini-cli-core';
+import { isAppleTerminal } from '@cracked-coder/core';
 
 describe('AppHeader Icon Rendering', () => {
   beforeEach(() => {

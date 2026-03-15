@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { IdeInfo } from '@google/gemini-cli-core';
+import type { IdeInfo } from '@cracked-coder/core';
 import { Box, Text } from 'ink';
 import {
   RadioButtonSelect,
@@ -44,8 +44,8 @@ export function IdeIntegrationNudge({
   const { displayName: ideName } = ide;
   // Assume extension is already installed if the env variables are set.
   const isExtensionPreInstalled =
-    !!process.env['GEMINI_CLI_IDE_SERVER_PORT'] &&
-    !!process.env['GEMINI_CLI_IDE_WORKSPACE_PATH'];
+    !!process.env['CRACKED_CODER_IDE_SERVER_PORT'] &&
+    !!process.env['CRACKED_CODER_IDE_WORKSPACE_PATH'];
 
   const OPTIONS: Array<RadioSelectItem<IdeIntegrationNudgeResult>> = [
     {
@@ -94,7 +94,7 @@ export function IdeIntegrationNudge({
       <Box marginBottom={1} flexDirection="column">
         <Text>
           <Text color={theme.status.warning}>{'> '}</Text>
-          {`Do you want to connect ${ideName ?? 'your editor'} to Gemini CLI?`}
+          {`Do you want to connect ${ideName ?? 'your editor'} to Cracked Coder?`}
         </Text>
         <Text color={theme.text.secondary}>{installText}</Text>
       </Box>

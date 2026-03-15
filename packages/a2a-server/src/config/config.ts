@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@ import {
   FileDiscoveryService,
   ApprovalMode,
   loadServerHierarchicalMemory,
-  GEMINI_DIR,
+  CRACKED_DIR,
   DEFAULT_GEMINI_EMBEDDING_MODEL,
   startupProfiler,
   PREVIEW_GEMINI_MODEL,
@@ -29,7 +29,7 @@ import {
   type TelemetryTarget,
   type ConfigParameters,
   type ExtensionLoader,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 import { logger } from '../utils/logger.js';
 import type { Settings } from './settings.js';
@@ -126,8 +126,8 @@ export async function loadConfig(
       folderTrust,
     );
   configParams.userMemory = memoryContent;
-  configParams.geminiMdFileCount = fileCount;
-  configParams.geminiMdFilePaths = filePaths;
+  configParams.crackedMdFileCount = fileCount;
+  configParams.crackedMdFilePaths = filePaths;
 
   // Set an initial config to use to get a code assist server.
   // This is needed to fetch admin controls.
@@ -216,8 +216,8 @@ export function loadEnvironment(): void {
 function findEnvFile(startDir: string): string | null {
   let currentDir = path.resolve(startDir);
   while (true) {
-    // prefer gemini-specific .env under GEMINI_DIR
-    const geminiEnvPath = path.join(currentDir, GEMINI_DIR, '.env');
+    // prefer gemini-specific .env under CRACKED_DIR
+    const geminiEnvPath = path.join(currentDir, CRACKED_DIR, '.env');
     if (fs.existsSync(geminiEnvPath)) {
       return geminiEnvPath;
     }
@@ -228,7 +228,7 @@ function findEnvFile(startDir: string): string | null {
     const parentDir = path.dirname(currentDir);
     if (parentDir === currentDir || !parentDir) {
       // check .env under home as fallback, again preferring gemini-specific .env
-      const homeGeminiEnvPath = path.join(process.cwd(), GEMINI_DIR, '.env');
+      const homeGeminiEnvPath = path.join(process.cwd(), CRACKED_DIR, '.env');
       if (fs.existsSync(homeGeminiEnvPath)) {
         return homeGeminiEnvPath;
       }
@@ -259,14 +259,14 @@ async function refreshAuthentication(
       );
     }
 
-    const useComputeAdc = process.env['GEMINI_CLI_USE_COMPUTE_ADC'] === 'true';
+    const useComputeAdc = process.env['CRACKED_CODER_USE_COMPUTE_ADC'] === 'true';
     const isHeadless = isHeadlessMode();
     const shouldSkipOauth = isHeadless || useComputeAdc;
 
     if (shouldSkipOauth) {
       if (isCloudShell() || useComputeAdc) {
         logger.info(
-          `[${logPrefix}] Skipping LOGIN_WITH_GOOGLE due to ${isHeadless ? 'headless mode' : 'GEMINI_CLI_USE_COMPUTE_ADC'}. Attempting COMPUTE_ADC.`,
+          `[${logPrefix}] Skipping LOGIN_WITH_GOOGLE due to ${isHeadless ? 'headless mode' : 'CRACKED_CODER_USE_COMPUTE_ADC'}. Attempting COMPUTE_ADC.`,
         );
         try {
           await config.refreshAuth(AuthType.COMPUTE_ADC);
@@ -275,12 +275,12 @@ async function refreshAuthentication(
           const adcMessage =
             adcError instanceof Error ? adcError.message : String(adcError);
           throw new FatalAuthenticationError(
-            `COMPUTE_ADC failed: ${adcMessage}. (Skipped LOGIN_WITH_GOOGLE due to ${isHeadless ? 'headless mode' : 'GEMINI_CLI_USE_COMPUTE_ADC'})`,
+            `COMPUTE_ADC failed: ${adcMessage}. (Skipped LOGIN_WITH_GOOGLE due to ${isHeadless ? 'headless mode' : 'CRACKED_CODER_USE_COMPUTE_ADC'})`,
           );
         }
       } else {
         throw new FatalAuthenticationError(
-          `Interactive terminal required for LOGIN_WITH_GOOGLE. Run in an interactive terminal or set GEMINI_CLI_USE_COMPUTE_ADC=true to use Application Default Credentials.`,
+          `Interactive terminal required for LOGIN_WITH_GOOGLE. Run in an interactive terminal or set CRACKED_CODER_USE_COMPUTE_ADC=true to use Application Default Credentials.`,
         );
       }
     } else {

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -461,7 +461,7 @@ export async function loadPoliciesFromToml(
                   // to support underscores in server aliases natively. Leaving
                   // mcpName and toolName separate here and relying on metadata
                   // during policy evaluation will avoid underscore splitting bugs.
-                  // See: https://github.com/google-gemini/gemini-cli/issues/21727
+                  // See: https://github.com/cracked-coder/cracked-coder/issues/21727
                   effectiveToolName = formatMcpToolName(
                     mcpName,
                     effectiveToolName,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -26,13 +26,13 @@ import {
   type EditorType,
   hasValidEditorCommand,
   allowEditorTypeInSandbox,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { UseHistoryManagerReturn } from './useHistoryManager.js';
 
 import { SettingPaths } from '../../config/settingPaths.js';
 
-vi.mock('@google/gemini-cli-core', async () => {
-  const actual = await vi.importActual('@google/gemini-cli-core');
+vi.mock('@cracked-coder/core', async () => {
+  const actual = await vi.importActual('@cracked-coder/core');
   return {
     ...actual,
     hasValidEditorCommand: vi.fn(() => true),

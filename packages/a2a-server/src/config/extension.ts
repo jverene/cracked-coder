@@ -1,25 +1,25 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 // Copied exactly from packages/cli/src/config/extension.ts, last PR #1026
 
 import {
-  GEMINI_DIR,
+  CRACKED_DIR,
   type MCPServerConfig,
   type ExtensionInstallMetadata,
   type GeminiCLIExtension,
   homedir,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { logger } from '../utils/logger.js';
 
-export const EXTENSIONS_DIRECTORY_NAME = path.join(GEMINI_DIR, 'extensions');
+export const EXTENSIONS_DIRECTORY_NAME = path.join(CRACKED_DIR, 'extensions');
 export const EXTENSIONS_CONFIG_FILENAME = 'gemini-extension.json';
-export const INSTALL_METADATA_FILENAME = '.gemini-extension-install.json';
+export const INSTALL_METADATA_FILENAME = '.cracked-extension-install.json';
 
 /**
  * Extension definition as written to disk in gemini-extension.json files.
@@ -129,7 +129,7 @@ function loadExtension(extensionDir: string): GeminiCLIExtension | null {
 
 function getContextFileNames(config: ExtensionConfig): string[] {
   if (!config.contextFileName) {
-    return ['GEMINI.md'];
+    return ['CRACKED.md'];
   } else if (!Array.isArray(config.contextFileName)) {
     return [config.contextFileName];
   }

@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect } from 'vitest';
 import { z } from 'zod';
 import { SdkTool, tool, ModelVisibleError } from './tool.js';
-import type { MessageBus } from '@google/gemini-cli-core';
+import type { MessageBus } from '@cracked-coder/core';
 
 // Mock MessageBus
 const mockMessageBus = {} as unknown as MessageBus;

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ export const SURFACE_NOT_SET = 'terminal';
  * Determines the surface/distribution channel the CLI is running in.
  *
  * Priority:
- * 1. `GEMINI_CLI_SURFACE` env var (first-class override for enterprise customers)
+ * 1. `CRACKED_CODER_SURFACE` env var (first-class override for enterprise customers)
  * 2. `SURFACE` env var (legacy override, kept for backward compatibility)
  * 3. Auto-detection via environment variables (Cloud Shell, GitHub Actions, IDE, etc.)
  *
@@ -22,7 +22,7 @@ export const SURFACE_NOT_SET = 'terminal';
 export function determineSurface(): string {
   // Priority 1 & 2: Explicit overrides from environment variables.
   const customSurface =
-    process.env['GEMINI_CLI_SURFACE'] || process.env['SURFACE'];
+    process.env['CRACKED_CODER_SURFACE'] || process.env['SURFACE'];
   if (customSurface) {
     return customSurface;
   }

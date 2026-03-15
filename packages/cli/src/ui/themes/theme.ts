@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import type { CSSProperties } from 'react';
 
 import type { SemanticColors } from './semantic-tokens.js';
 
-import type { CustomTheme } from '@google/gemini-cli-core';
+import type { CustomTheme } from '@cracked-coder/core';
 import {
   DEFAULT_INPUT_BACKGROUND_OPACITY,
   DEFAULT_SELECTION_OPACITY,

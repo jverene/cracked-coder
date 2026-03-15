@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import { updateEventEmitter } from './updateEventEmitter.js';
 import { MessageType, type HistoryItem } from '../ui/types.js';
 import { spawnWrapper } from './spawnWrapper.js';
 import type { spawn } from 'node:child_process';
-import { debugLogger } from '@google/gemini-cli-core';
+import { debugLogger } from '@cracked-coder/core';
 
 let _updateInProgress = false;
 
@@ -35,7 +35,7 @@ export async function waitForUpdateCompletion(
   }
 
   debugLogger.log(
-    '\nGemini CLI is waiting for a background update to complete before restarting...',
+    '\nCracked Coder is waiting for a background update to complete before restarting...',
   );
 
   return new Promise((resolve) => {

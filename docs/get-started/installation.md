@@ -1,6 +1,6 @@
-# Gemini CLI installation, execution, and releases
+# Cracked Coder installation, execution, and releases
 
-This document provides an overview of Gemini CLI's system requirements,
+This document provides an overview of Cracked Coder's system requirements,
 installation methods, and release types.
 
 ## Recommended system specifications
@@ -18,9 +18,9 @@ installation methods, and release types.
   [Gemini Code Assist supported locations](https://developers.google.com/gemini-code-assist/resources/available-locations#americas)
 - **Internet connection required**
 
-## Install Gemini CLI
+## Install Cracked Coder
 
-We recommend most users install Gemini CLI using one of the following
+We recommend most users install Cracked Coder using one of the following
 installation methods:
 
 - npm
@@ -28,53 +28,53 @@ installation methods:
 - MacPorts
 - Anaconda
 
-Note that Gemini CLI comes pre-installed on
+Note that Cracked Coder comes pre-installed on
 [**Cloud Shell**](https://docs.cloud.google.com/shell/docs) and
 [**Cloud Workstations**](https://cloud.google.com/workstations).
 
 ### Install globally with npm
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @google/cracked-coder
 ```
 
 ### Install globally with Homebrew (macOS/Linux)
 
 ```bash
-brew install gemini-cli
+brew install cracked-coder
 ```
 
 ### Install globally with MacPorts (macOS)
 
 ```bash
-sudo port install gemini-cli
+sudo port install cracked-coder
 ```
 
 ### Install with Anaconda (for restricted environments)
 
 ```bash
 # Create and activate a new environment
-conda create -y -n gemini_env -c conda-forge nodejs
-conda activate gemini_env
+conda create -y -n cracked_env -c conda-forge nodejs
+conda activate cracked_env
 
-# Install Gemini CLI globally via npm (inside the environment)
-npm install -g @google/gemini-cli
+# Install Cracked Coder globally via npm (inside the environment)
+npm install -g @google/cracked-coder
 ```
 
-## Run Gemini CLI
+## Run Cracked Coder
 
-For most users, we recommend running Gemini CLI with the `gemini` command:
+For most users, we recommend running Cracked Coder with the `gemini` command:
 
 ```bash
-gemini
+cracked
 ```
 
 For a list of options and additional commands, see the
 [CLI cheatsheet](../cli/cli-reference.md).
 
-You can also run Gemini CLI using one of the following advanced methods:
+You can also run Cracked Coder using one of the following advanced methods:
 
-- Run instantly with npx. You can run Gemini CLI without permanent installation.
+- Run instantly with npx. You can run Cracked Coder without permanent installation.
 - In a sandbox. This method offers increased security and isolation.
 - From the source. This is recommended for contributors to the project.
 
@@ -82,19 +82,19 @@ You can also run Gemini CLI using one of the following advanced methods:
 
 ```bash
 # Using npx (no installation required)
-npx @google/gemini-cli
+npx @google/cracked-coder
 ```
 
 You can also execute the CLI directly from the main branch on GitHub, which is
 helpful for testing features still in development:
 
 ```bash
-npx https://github.com/google-gemini/gemini-cli
+npx https://github.com/cracked-coder/cracked-coder
 ```
 
 ### Run in a sandbox (Docker/Podman)
 
-For security and isolation, Gemini CLI can be run inside a container. This is
+For security and isolation, Cracked Coder can be run inside a container. This is
 the default way that the CLI executes tools that might have side effects.
 
 - **Directly from the registry:** You can run the published sandbox image
@@ -102,16 +102,16 @@ the default way that the CLI executes tools that might have side effects.
   to run the CLI.
   ```bash
   # Run the published sandbox image
-  docker run --rm -it us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.1.1
+  docker run --rm -it us-docker.pkg.dev/gemini-code-dev/cracked-coder/sandbox:0.1.1
   ```
-- **Using the `--sandbox` flag:** If you have Gemini CLI installed locally
+- **Using the `--sandbox` flag:** If you have Cracked Coder installed locally
   (using the standard installation described above), you can instruct it to run
   inside the sandbox container.
   ```bash
-  gemini --sandbox -y -p "your prompt here"
+  cracked --sandbox -y -p "your prompt here"
   ```
 
-### Run from source (recommended for Gemini CLI contributors)
+### Run from source (recommended for Cracked Coder contributors)
 
 Contributors to the project will want to run the CLI directly from the source
 code.
@@ -136,7 +136,7 @@ code.
 
 ## Releases
 
-Gemini CLI has three release channels: nightly, preview, and stable. For most
+Cracked Coder has three release channels: nightly, preview, and stable. For most
 users, we recommend the stable release, which is the default installation.
 
 ### Stable
@@ -148,8 +148,8 @@ by default:
 
 ```bash
 # Both commands install the latest stable release.
-npm install -g @google/gemini-cli
-npm install -g @google/gemini-cli@latest
+npm install -g @google/cracked-coder
+npm install -g @google/cracked-coder@latest
 ```
 
 ### Preview
@@ -159,7 +159,7 @@ vetted and may contain regressions or other outstanding issues. Try out the
 preview release by using the `preview` tag:
 
 ```bash
-npm install -g @google/gemini-cli@preview
+npm install -g @google/cracked-coder@preview
 ```
 
 ### Nightly
@@ -170,5 +170,5 @@ pending validations and issues. You can help test the latest changes by
 installing with the `nightly` tag:
 
 ```bash
-npm install -g @google/gemini-cli@nightly
+npm install -g @google/cracked-coder@nightly
 ```

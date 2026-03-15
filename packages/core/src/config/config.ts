@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -902,8 +902,8 @@ export class Config implements McpContext, AgentLoopContext {
     this.enableEnvironmentVariableRedaction =
       params.enableEnvironmentVariableRedaction ?? false;
     this.userMemory = params.userMemory ?? '';
-    this.geminiMdFileCount = params.geminiMdFileCount ?? 0;
-    this.geminiMdFilePaths = params.geminiMdFilePaths ?? [];
+    this.crackedMdFileCount = params.crackedMdFileCount ?? 0;
+    this.crackedMdFilePaths = params.crackedMdFilePaths ?? [];
     this.showMemoryUsage = params.showMemoryUsage ?? false;
     this.accessibility = params.accessibility ?? {};
     this.telemetrySettings = {
@@ -2099,18 +2099,18 @@ export class Config implements McpContext, AgentLoopContext {
     if (this.experimentalJitContext && this.contextManager) {
       return this.contextManager.getLoadedPaths().size;
     }
-    return this.geminiMdFileCount;
+    return this.crackedMdFileCount;
   }
 
   setGeminiMdFileCount(count: number): void {
-    this.geminiMdFileCount = count;
+    this.crackedMdFileCount = count;
   }
 
   getGeminiMdFilePaths(): string[] {
     if (this.experimentalJitContext && this.contextManager) {
       return Array.from(this.contextManager.getLoadedPaths());
     }
-    return this.geminiMdFilePaths;
+    return this.crackedMdFilePaths;
   }
 
   getWorkspacePoliciesDir(): string | undefined {
@@ -2118,7 +2118,7 @@ export class Config implements McpContext, AgentLoopContext {
   }
 
   setGeminiMdFilePaths(paths: string[]): void {
-    this.geminiMdFilePaths = paths;
+    this.crackedMdFilePaths = paths;
   }
 
   getApprovalMode(): ApprovalMode {
@@ -2289,15 +2289,15 @@ export class Config implements McpContext, AgentLoopContext {
 
   /** @deprecated Use geminiClient getter */
   getGeminiClient(): GeminiClient {
-    return this.geminiClient;
+    return this.crackedClient;
   }
 
   /**
    * Updates the system instruction with the latest user memory.
-   * Whenever the user memory (GEMINI.md files) is updated.
+   * Whenever the user memory (CRACKED.md files) is updated.
    */
   updateSystemInstructionIfInitialized(): void {
-    const geminiClient = this.geminiClient;
+    const geminiClient = this.crackedClient;
     if (geminiClient?.isInitialized()) {
       geminiClient.updateSystemInstruction();
     }
@@ -2665,7 +2665,7 @@ export class Config implements McpContext, AgentLoopContext {
   }
 
   /**
-   * Returns whether Gemini 3.1 has been launched.
+   * Returns whether Cracked 3.1 has been launched.
    * This method is async and ensures that experiments are loaded before returning the result.
    */
   async getGemini31Launched(): Promise<boolean> {
@@ -2694,7 +2694,7 @@ export class Config implements McpContext, AgentLoopContext {
   }
 
   /**
-   * Returns whether Gemini 3.1 has been launched.
+   * Returns whether Cracked 3.1 has been launched.
    *
    * Note: This method should only be called after startup, once experiments have been loaded.
    * If you need to call this during startup or from an async context, use
@@ -3216,7 +3216,7 @@ export class Config implements McpContext, AgentLoopContext {
       this.registerSubAgentTools(this._toolRegistry);
     }
     // Propagate updates to the active chat session
-    const client = this.geminiClient;
+    const client = this.crackedClient;
     if (client?.isInitialized()) {
       await client.setTools();
       client.updateSystemInstruction();

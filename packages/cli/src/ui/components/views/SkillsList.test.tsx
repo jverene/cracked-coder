@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { render } from '../../../test-utils/render.js';
 import { describe, it, expect } from 'vitest';
 import { SkillsList } from './SkillsList.js';
-import { type SkillDefinition } from '@google/gemini-cli-core';
+import { type SkillDefinition } from '@cracked-coder/core';
 
 describe('SkillsList Component', () => {
   const mockSkills: SkillDefinition[] = [

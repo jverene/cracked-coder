@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import { act } from 'react';
 import { AgentConfigDialog } from './AgentConfigDialog.js';
 import { LoadedSettings, SettingScope } from '../../config/settings.js';
 import { KeypressProvider } from '../contexts/KeypressContext.js';
-import type { AgentDefinition } from '@google/gemini-cli-core';
+import type { AgentDefinition } from '@cracked-coder/core';
 
 vi.mock('../contexts/UIStateContext.js', () => ({
   useUIState: () => ({

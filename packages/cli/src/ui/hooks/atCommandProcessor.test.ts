@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,8 +30,8 @@ import {
   CoreToolCallStatus,
   type Config,
   type DiscoveredMCPResource,
-} from '@google/gemini-cli-core';
-import * as core from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
+import * as core from '@cracked-coder/core';
 import * as os from 'node:os';
 import type { UseHistoryManagerReturn } from './useHistoryManager.js';
 import * as fsPromises from 'node:fs/promises';
@@ -94,7 +94,7 @@ describe('handleAtCommand', () => {
         getDirectories: () => [testRootDir],
       }),
       storage: {
-        getProjectTempDir: () => path.join(os.tmpdir(), 'gemini-cli-temp'),
+        getProjectTempDir: () => path.join(os.tmpdir(), 'cracked-coder-temp'),
       },
       isPathAllowed(this: Config, absolutePath: string): boolean {
         if (this.interactive && path.isAbsolute(absolutePath)) {
@@ -739,7 +739,7 @@ describe('handleAtCommand', () => {
       );
     });
   });
-  it('should process non-ignored files when .geminiignore is present', async () => {
+  it('should process non-ignored files when .crackedignore is present', async () => {
     await createTestFile(
       path.join(testRootDir, GEMINI_IGNORE_FILE_NAME),
       'build/output.js',

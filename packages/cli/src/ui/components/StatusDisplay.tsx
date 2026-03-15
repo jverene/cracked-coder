@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -39,7 +39,7 @@ export const StatusDisplay: React.FC<StatusDisplayProps> = ({
     return (
       <ContextSummaryDisplay
         ideContext={uiState.ideContextState}
-        geminiMdFileCount={uiState.geminiMdFileCount}
+        geminiMdFileCount={uiState.crackedMdFileCount}
         contextFileNames={uiState.contextFileNames}
         mcpServers={config.getMcpClientManager()?.getMcpServers() ?? {}}
         blockedMcpServers={

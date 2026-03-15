@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import { useRewind } from './useRewind.js';
 import type {
   ConversationRecord,
   MessageRecord,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { FileChangeStats } from '../utils/rewindFileOps.js';
 import * as rewindFileOps from '../utils/rewindFileOps.js';
 

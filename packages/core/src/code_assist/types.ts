@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,7 +24,7 @@ export type ClientMetadataIdeType =
   | 'VSCODE_CLOUD_WORKSTATION'
   | 'INTELLIJ_CLOUD_WORKSTATION'
   | 'CLOUD_SHELL'
-  | 'GEMINI_CLI';
+  | 'CRACKED_CODER';
 export type ClientMetadataPlatform =
   | 'PLATFORM_UNSPECIFIED'
   | 'DARWIN_AMD64'

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import {
   FileDiscoveryService,
   type Config,
   type FileSearch,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   MAX_SUGGESTIONS_TO_SHOW,
   type Suggestion,

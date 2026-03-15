@@ -32,7 +32,7 @@ The tool returns a JSON object containing:
 ## Configuration
 
 You can configure the behavior of the `run_shell_command` tool by modifying your
-`settings.json` file or by using the `/settings` command in the Gemini CLI.
+`settings.json` file or by using the `/settings` command in the Cracked Coder.
 
 ### Enabling interactive commands
 
@@ -114,9 +114,9 @@ including complex TUIs, will be rendered correctly.
 
 ## Environment variables
 
-When `run_shell_command` executes a command, it sets the `GEMINI_CLI=1`
+When `run_shell_command` executes a command, it sets the `CRACKED_CODER=1`
 environment variable in the subprocess's environment. This allows scripts or
-tools to detect if they are being run from within the Gemini CLI.
+tools to detect if they are being run from within the Cracked Coder.
 
 ## Command restrictions
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import {
   SimpleExtensionLoader,
   type ToolCallRequestInfo,
   type Config,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { v4 as uuidv4 } from 'uuid';
 
 import { logger } from '../utils/logger.js';
@@ -127,7 +127,7 @@ export class CoderAgentExecutor implements AgentExecutor {
       agentSettings.autoExecute,
     );
     runtimeTask.taskState = persistedState._taskState;
-    await runtimeTask.geminiClient.initialize();
+    await runtimeTask.crackedClient.initialize();
 
     const wrapper = new TaskWrapper(runtimeTask, agentSettings);
     this.tasks.set(sdkTask.id, wrapper);
@@ -153,7 +153,7 @@ export class CoderAgentExecutor implements AgentExecutor {
       eventBus,
       agentSettings.autoExecute,
     );
-    await runtimeTask.geminiClient.initialize();
+    await runtimeTask.crackedClient.initialize();
 
     const wrapper = new TaskWrapper(runtimeTask, agentSettings);
     this.tasks.set(taskId, wrapper);

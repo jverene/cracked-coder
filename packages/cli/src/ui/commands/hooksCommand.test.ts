@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   HookEventName,
   ConfigSource,
   type HookRegistryEntry,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { CommandContext } from './types.js';
 import { SettingScope } from '../../config/settings.js';
 

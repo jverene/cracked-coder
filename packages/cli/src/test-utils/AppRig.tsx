@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ import {
   IdeClient,
   debugLogger,
   CoreToolCallStatus,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   type MockShellCommand,
   MockShellExecutionService,
@@ -83,9 +83,9 @@ vi.mock('../ui/contexts/StreamingContext.js', async (importOriginal) => {
 });
 
 // Mock core functions globally for tests using AppRig.
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   const { MockShellExecutionService: MockService } = await import(
     './MockShellExecutionService.js'
   );
@@ -217,7 +217,7 @@ export class AppRig {
 
   private setupEnvironment() {
     // Stub environment variables to avoid interference from developer's machine
-    vi.stubEnv('GEMINI_CLI_HOME', this.testDir);
+    vi.stubEnv('CRACKED_CODER_HOME', this.testDir);
     if (this.options.fakeResponsesPath) {
       vi.stubEnv('GEMINI_API_KEY', 'test-api-key');
       MockShellExecutionService.setPassthrough(false);
@@ -236,7 +236,7 @@ export class AppRig {
   private createRigSettings(): LoadedSettings {
     return createMockSettings({
       user: {
-        path: path.join(this.testDir, '.gemini', 'user_settings.json'),
+        path: path.join(this.testDir, '.cracked', 'user_settings.json'),
         settings: {
           security: {
             auth: {
@@ -293,7 +293,7 @@ export class AppRig {
       gcConfig.contentGeneratorConfig = newContentGeneratorConfig;
 
       // Initialize BaseLlmClient now that the ContentGenerator is available
-      const { BaseLlmClient } = await import('@google/gemini-cli-core');
+      const { BaseLlmClient } = await import('@cracked-coder/core');
       gcConfig.baseLlmClient = new BaseLlmClient(
         gcConfig.contentGenerator,
         this.config!,

@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -76,8 +76,8 @@ async function main() {
   }
 
   const repo = {
-    owner: process.env.GITHUB_REPOSITORY_OWNER || 'google-gemini',
-    repo: process.env.GITHUB_REPOSITORY_NAME || 'gemini-cli',
+    owner: process.env.GITHUB_REPOSITORY_OWNER || 'cracked-coder',
+    repo: process.env.GITHUB_REPOSITORY_NAME || 'cracked-coder',
   };
 
   // Get inputs from CLI args or environment
@@ -140,7 +140,7 @@ async function main() {
 
 **📝 What's Available:**
 - **GitHub Release**: [View release ${releaseTag}](https://github.com/${repo.owner}/${repo.repo}/releases/tag/${releaseTag})
-- **NPM Package**: \`npm install @google/gemini-cli@${npmTag}\`
+- **NPM Package**: \`npm install @google/cracked-coder@${npmTag}\`
 
 **🔗 Links:**
 - [GitHub Release](https://github.com/${repo.owner}/${repo.repo}/releases/tag/${releaseTag})

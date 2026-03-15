@@ -1,6 +1,6 @@
-# Gemini CLI: Quotas and pricing
+# Cracked Coder: Quotas and pricing
 
-Gemini CLI offers a generous free tier that covers many individual developers'
+Cracked Coder offers a generous free tier that covers many individual developers'
 use cases. For enterprise or professional usage, or if you need increased quota,
 several options are available depending on your authentication account type.
 
@@ -9,7 +9,7 @@ quota for your needs, see the [Plans page](https://geminicli.com/plans/).
 
 ## Overview
 
-This article outlines the specific quotas and pricing applicable to Gemini CLI
+This article outlines the specific quotas and pricing applicable to Cracked Coder
 when using different authentication methods.
 
 Generally, there are three categories to choose from:
@@ -22,7 +22,7 @@ Generally, there are three categories to choose from:
 
 ## Free usage
 
-Access to Gemini CLI begins with a generous free tier, perfect for
+Access to Cracked Coder begins with a generous free tier, perfect for
 experimentation and light use.
 
 Your free usage is governed by the following limits, which depend on your
@@ -36,10 +36,10 @@ Assist for individuals. This includes:
 - 1000 model requests / user / day
 - 60 model requests / user / minute
 - Model requests will be made across the Gemini model family as determined by
-  Gemini CLI.
+  Cracked Coder.
 
 Learn more at
-[Gemini Code Assist for Individuals Limits](https://developers.google.com/gemini-code-assist/resources/quotas#quotas-for-agent-mode-gemini-cli).
+[Gemini Code Assist for Individuals Limits](https://developers.google.com/gemini-code-assist/resources/quotas#quotas-for-agent-mode-cracked-coder).
 
 ### Log in with Gemini API Key (unpaid)
 
@@ -67,7 +67,7 @@ Learn more at
 ## Paid tier: Higher limits for a fixed cost
 
 If you use up your initial number of requests, you can continue to benefit from
-Gemini CLI by upgrading to one of the following subscriptions:
+Cracked Coder by upgrading to one of the following subscriptions:
 
 ### Individuals
 
@@ -118,9 +118,9 @@ Standard/Plus and AI Expanded, are not supported._
     - 2000 model requests / user / day
     - 120 model requests / user / minute
   - Model requests will be made across the Gemini model family as determined by
-    Gemini CLI.
+    Cracked Coder.
 
-  [Learn more about Gemini Code Assist license limits](https://developers.google.com/gemini-code-assist/resources/quotas#quotas-for-agent-mode-gemini-cli).
+  [Learn more about Gemini Code Assist license limits](https://developers.google.com/gemini-code-assist/resources/quotas#quotas-for-agent-mode-cracked-coder).
 
 ## Pay as you go
 
@@ -167,7 +167,7 @@ quota.
 These plans currently apply only to the use of Gemini web-based products
 provided by Google-based experiences (for example, the Gemini web app or the
 Flow video editor). These plans do not apply to the API usage which powers the
-Gemini CLI. Supporting these plans is under active consideration for future
+Cracked Coder. Supporting these plans is under active consideration for future
 support.
 
 ## Check usage and limits

@@ -1,6 +1,6 @@
-# Gemini CLI examples
+# Cracked Coder examples
 
-Gemini CLI helps you automate common engineering tasks by combining AI reasoning
+Cracked Coder helps you automate common engineering tasks by combining AI reasoning
 with local system tools. This document provides examples of how to use the CLI
 for file management, code analysis, and data transformation.
 
@@ -9,8 +9,8 @@ for file management, code analysis, and data transformation.
 
 ## Rename your photographs based on content
 
-You can use Gemini CLI to automate file management tasks that require visual
-analysis. In this example, Gemini CLI renames images based on their actual
+You can use Cracked Coder to automate file management tasks that require visual
+analysis. In this example, Cracked Coder renames images based on their actual
 subject matter.
 
 Scenario: You have a folder containing the following files:
@@ -39,13 +39,13 @@ photos/green_android_robot.png
 
 ## Explain a repository by reading its code
 
-Gemini CLI is effective for rapid codebase exploration. The following example
-shows how to ask Gemini CLI to fetch, analyze, and summarize a remote project.
+Cracked Coder is effective for rapid codebase exploration. The following example
+shows how to ask Cracked Coder to fetch, analyze, and summarize a remote project.
 
 Scenario: You want to understand how a popular open-source utility works by
 inspecting its code, not just its README.
 
-Give Gemini CLI the following prompt:
+Give Cracked Coder the following prompt:
 
 ```cli
 Clone the 'chalk' repository from https://github.com/chalk/chalk, read its key source files, and explain how it works.
@@ -58,7 +58,7 @@ Result: Gemini performs a sequence of actions to answer your request.
     them.
 3.  Finally, after analyzing the code, it provides a summary.
 
-Gemini CLI returns an explanation based on the actual source code:
+Cracked Coder returns an explanation based on the actual source code:
 
 ```markdown
 The `chalk` library is a popular npm package for styling terminal output with
@@ -81,20 +81,20 @@ colors. After analyzing the source code, here's how it works:
 
 ## Combine two spreadsheets into one spreadsheet
 
-Gemini CLI can process and transform data across multiple files. Use this
+Cracked Coder can process and transform data across multiple files. Use this
 capability to merge reports or reformat data sets without manual copying.
 
 Scenario: You have two .csv files: `Revenue - 2023.csv` and
 `Revenue - 2024.csv`. Each file contains monthly revenue figures.
 
-Give Gemini CLI the following prompt:
+Give Cracked Coder the following prompt:
 
 ```cli
 Combine the two .csv files into a single .csv file, with each year a different column.
 ```
 
-Result: Gemini CLI reads each file and then asks for permission to write a new
-file. Provide your permission and Gemini CLI provides the combined data:
+Result: Cracked Coder reads each file and then asks for permission to write a new
+file. Provide your permission and Cracked Coder provides the combined data:
 
 ```csv
 Month,2023,2024
@@ -114,20 +114,20 @@ December,2100,9000
 
 ## Run unit tests
 
-Gemini CLI can generate boilerplate code and tests based on your existing
+Cracked Coder can generate boilerplate code and tests based on your existing
 implementation. This example demonstrates how to request code coverage for a
 JavaScript component.
 
 Scenario: You've written a simple login page. You wish to write unit tests to
 ensure that your login page has code coverage.
 
-Give Gemini CLI the following prompt:
+Give Cracked Coder the following prompt:
 
 ```cli
 Write unit tests for Login.js.
 ```
 
-Result: Gemini CLI asks for permission to write a new file and creates a test
+Result: Cracked Coder asks for permission to write a new file and creates a test
 for your login page.
 
 ## Next steps

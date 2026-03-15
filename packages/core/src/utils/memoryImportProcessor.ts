@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -164,7 +164,7 @@ function findCodeRegions(content: string): Array<[number, number]> {
 }
 
 /**
- * Processes import statements in GEMINI.md content
+ * Processes import statements in CRACKED.md content
  * Supports @path/to/file syntax for importing content from other files
  * @param content - The content to process for imports
  * @param basePath - The directory path where the current file is located

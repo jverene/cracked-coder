@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, expect } from 'vitest';
 import { evalTest } from './test-helper.js';
-import { READ_FILE_TOOL_NAME, EDIT_TOOL_NAME } from '@google/gemini-cli-core';
+import { READ_FILE_TOOL_NAME, EDIT_TOOL_NAME } from '@cracked-coder/core';
 
 describe('Frugal reads eval', () => {
   /**

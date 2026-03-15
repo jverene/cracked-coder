@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import {
   RELAUNCH_EXIT_CODE,
   _resetRelaunchStateForTesting,
 } from '../../utils/processUtils.js';
-import { type Config } from '@google/gemini-cli-core';
+import { type Config } from '@cracked-coder/core';
 
 // Mocks
 vi.mock('../hooks/useKeypress.js', () => ({

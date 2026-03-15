@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,13 +9,13 @@ import {
   listMemoryFiles,
   refreshMemory,
   showMemory,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type {
   Command,
   CommandContext,
   CommandExecutionResponse,
 } from './types.js';
-import type { AgentLoopContext } from '@google/gemini-cli-core';
+import type { AgentLoopContext } from '@cracked-coder/core';
 
 const DEFAULT_SANITIZATION_CONFIG = {
   allowedEnvironmentVariables: [],
@@ -71,7 +71,7 @@ export class RefreshMemoryCommand implements Command {
 
 export class ListMemoryCommand implements Command {
   readonly name = 'memory list';
-  readonly description = 'Lists the paths of the GEMINI.md files in use.';
+  readonly description = 'Lists the paths of the CRACKED.md files in use.';
 
   async execute(
     context: CommandContext,

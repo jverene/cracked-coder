@@ -1,15 +1,15 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { execSync } from 'node:child_process';
 
 const PROJECT_ID = 36;
-const ORG = 'google-gemini';
-const REPO = 'google-gemini/gemini-cli';
-const MAINTAINERS_REPO = 'google-gemini/maintainers-gemini-cli';
+const ORG = 'cracked-coder';
+const REPO = 'cracked-coder/cracked-coder';
+const MAINTAINERS_REPO = 'cracked-coder/maintainers-cracked-coder';
 
 // Parent issues to recursively traverse
 const PARENT_ISSUES = [15374, 15456, 15324];
@@ -190,7 +190,7 @@ Total Open Gemini Issues: ${issues.length}`);
     // Protect Maintainers Repo
     if (
       item.content.repository === MAINTAINERS_REPO ||
-      (item.content.url && item.content.url.includes('maintainers-gemini-cli'))
+      (item.content.url && item.content.url.includes('maintainers-cracked-coder'))
     ) {
       continue;
     }

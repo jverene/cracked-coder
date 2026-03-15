@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import {
   IdeDiffAcceptedNotificationSchema,
   IdeDiffRejectedNotificationSchema,
-} from '@google/gemini-cli-core/src/ide/types.js';
+} from '@cracked-coder/core/src/ide/types.js';
 import { type JSONRPCNotification } from '@modelcontextprotocol/sdk/types.js';
 import * as path from 'node:path';
 import * as vscode from 'vscode';

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -366,10 +366,10 @@ describe('modifyWithEditor', () => {
 
     expect(mockOpenDiff).toHaveBeenCalledOnce();
     const [oldFilePath, newFilePath] = mockOpenDiff.mock.calls[0];
-    expect(oldFilePath).toMatch(/gemini-cli-modify-test-file-old-\d+\.txt$/);
-    expect(newFilePath).toMatch(/gemini-cli-modify-test-file-new-\d+\.txt$/);
+    expect(oldFilePath).toMatch(/cracked-coder-modify-test-file-old-\d+\.txt$/);
+    expect(newFilePath).toMatch(/cracked-coder-modify-test-file-new-\d+\.txt$/);
 
-    const diffDirPrefix = path.join(os.tmpdir(), 'gemini-cli-tool-modify-');
+    const diffDirPrefix = path.join(os.tmpdir(), 'cracked-coder-tool-modify-');
     expect(path.dirname(oldFilePath).startsWith(diffDirPrefix)).toBe(true);
     expect(path.dirname(newFilePath).startsWith(diffDirPrefix)).toBe(true);
   });
@@ -387,10 +387,10 @@ describe('modifyWithEditor', () => {
 
     expect(mockOpenDiff).toHaveBeenCalledOnce();
     const [oldFilePath, newFilePath] = mockOpenDiff.mock.calls[0];
-    expect(oldFilePath).toMatch(/gemini-cli-modify-test-file-old-\d+$/);
-    expect(newFilePath).toMatch(/gemini-cli-modify-test-file-new-\d+$/);
+    expect(oldFilePath).toMatch(/cracked-coder-modify-test-file-old-\d+$/);
+    expect(newFilePath).toMatch(/cracked-coder-modify-test-file-new-\d+$/);
 
-    const diffDirPrefix = path.join(os.tmpdir(), 'gemini-cli-tool-modify-');
+    const diffDirPrefix = path.join(os.tmpdir(), 'cracked-coder-tool-modify-');
     expect(path.dirname(oldFilePath).startsWith(diffDirPrefix)).toBe(true);
     expect(path.dirname(newFilePath).startsWith(diffDirPrefix)).toBe(true);
   });

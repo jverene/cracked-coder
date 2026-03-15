@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ describe('experiments', () => {
 
     // Mock the dependencies that `getExperiments` relies on
     vi.mocked(getClientMetadata).mockResolvedValue({
-      ideName: 'GEMINI_CLI',
+      ideName: 'CRACKED_CODER',
       ideVersion: '1.0.0',
       platform: 'LINUX_AMD64',
       updateChannel: 'stable',

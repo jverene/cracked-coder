@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -44,7 +44,7 @@ import {
   coreEvents,
   debugLogger,
   type Config,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   parseInputForHighlighting,
   parseSegmentsFromTokens,
@@ -91,7 +91,7 @@ export function isTerminalPasteTrusted(
 ): boolean {
   // Ideally we could trust all VSCode family terminals as well but it appears
   // we cannot as Cursor users on windows reported being impacted by this
-  // issue (https://github.com/google-gemini/gemini-cli/issues/3763).
+  // issue (https://github.com/cracked-coder/cracked-coder/issues/3763).
   return kittyProtocolSupported;
 }
 

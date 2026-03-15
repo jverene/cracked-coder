@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -247,7 +247,7 @@ for (const jsFile of jsFiles) {
   const hash = sha256(content);
 
   // Node SEA requires the main entry point to be explicitly mapped
-  if (jsFile === 'gemini.js') {
+  if (jsFile === 'cracked.js') {
     assets['gemini.mjs'] = fsPath;
     manifest.mainHash = hash;
   } else {

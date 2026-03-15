@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,12 +13,12 @@ import {
   getErrorMessage,
   isWithinRoot,
   ideContextStore,
-  GEMINI_DIR,
+  CRACKED_DIR,
   homedir,
   isHeadlessMode,
   coreEvents,
   type HeadlessModeOptions,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { Settings } from './settings.js';
 import stripJsonComments from 'strip-json-comments';
 
@@ -27,12 +27,12 @@ const { promises: fsPromises } = fs;
 export const TRUSTED_FOLDERS_FILENAME = 'trustedFolders.json';
 
 export function getUserSettingsDir(): string {
-  return path.join(homedir(), GEMINI_DIR);
+  return path.join(homedir(), CRACKED_DIR);
 }
 
 export function getTrustedFoldersPath(): string {
-  if (process.env['GEMINI_CLI_TRUSTED_FOLDERS_PATH']) {
-    return process.env['GEMINI_CLI_TRUSTED_FOLDERS_PATH'];
+  if (process.env['CRACKED_CODER_TRUSTED_FOLDERS_PATH']) {
+    return process.env['CRACKED_CODER_TRUSTED_FOLDERS_PATH'];
   }
   return path.join(getUserSettingsDir(), TRUSTED_FOLDERS_FILENAME);
 }

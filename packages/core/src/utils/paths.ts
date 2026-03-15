@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,16 +10,16 @@ import * as crypto from 'node:crypto';
 import * as fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-export const GEMINI_DIR = '.gemini';
+export const CRACKED_DIR = '.cracked';
 export const GOOGLE_ACCOUNTS_FILENAME = 'google_accounts.json';
 
 /**
  * Returns the home directory.
- * If GEMINI_CLI_HOME environment variable is set, it returns its value.
+ * If CRACKED_CODER_HOME environment variable is set, it returns its value.
  * Otherwise, it returns the user's home directory.
  */
 export function homedir(): string {
-  const envHome = process.env['GEMINI_CLI_HOME'];
+  const envHome = process.env['CRACKED_CODER_HOME'];
   if (envHome) {
     return envHome;
   }

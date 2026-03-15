@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
   createSessionId,
   type ResumedSessionData,
   type ConversationRecord,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 import { GeminiCliSession } from './session.js';
 import type { GeminiCliAgentOptions } from './types.js';

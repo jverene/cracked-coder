@@ -1,5 +1,5 @@
 name: 'Publish Release'
-description: 'Builds, prepares, and publishes the gemini-cli packages to npm and creates a GitHub release.'
+description: 'Builds, prepares, and publishes the cracked-coder packages to npm and creates a GitHub release.'
 
 inputs:
   release-version:
@@ -85,8 +85,8 @@ runs:
       working-directory: '${{ inputs.working-directory }}'
       shell: 'bash'
       run: |
-        git config user.name "gemini-cli-robot"
-        git config user.email "gemini-cli-robot@google.com"
+        git config user.name "cracked-coder-robot"
+        git config user.email "cracked-coder-robot@google.com"
 
     - name: '🌿 Create and switch to a release branch'
       working-directory: '${{ inputs.working-directory }}'
@@ -255,7 +255,7 @@ runs:
         npm-package: '${{ inputs.cli-package-name }}@${{ inputs.release-version }}'
         expected-version: '${{ inputs.release-version }}'
         working-directory: '${{ inputs.working-directory }}'
-        gemini_api_key: '${{ inputs.gemini_api_key }}'
+        gemini_api_key: '${{ inputs.cracked_api_key }}'
         github-token: '${{ inputs.github-token }}'
         npm-registry-url: '${{ inputs.npm-registry-url }}'
         npm-registry-scope: '${{ inputs.npm-registry-scope }}'
@@ -286,7 +286,7 @@ runs:
       shell: 'bash'
       run: |
         gh release create "${INPUTS_RELEASE_TAG}" \
-          bundle/gemini.js \
+          bundle/cracked.js \
           --target "${STEPS_RELEASE_BRANCH_OUTPUTS_BRANCH_NAME}" \
           --title "Release ${INPUTS_RELEASE_TAG}" \
           --notes-start-tag "${INPUTS_PREVIOUS_TAG}" \

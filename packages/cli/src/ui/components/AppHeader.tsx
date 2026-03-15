@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import { theme } from '../semantic-colors.js';
 import { ThemedGradient } from './ThemedGradient.js';
 import { CliSpinner } from './CliSpinner.js';
 
-import { isAppleTerminal } from '@google/gemini-cli-core';
+import { isAppleTerminal } from '@cracked-coder/core';
 
 interface AppHeaderProps {
   version: string;
@@ -71,7 +71,7 @@ export const AppHeader = ({ version, showDetails = true }: AppHeaderProps) => {
             <Box marginLeft={2} flexDirection="column">
               <Box>
                 <Text bold color={theme.text.primary}>
-                  Gemini CLI
+                  Cracked Coder
                 </Text>
                 <Text color={theme.text.secondary}> v{version}</Text>
               </Box>
@@ -90,10 +90,10 @@ export const AppHeader = ({ version, showDetails = true }: AppHeaderProps) => {
             <ThemedGradient>{ICON}</ThemedGradient>
           </Box>
           <Box marginLeft={2} flexDirection="column">
-            {/* Line 1: Gemini CLI vVersion [Updating] */}
+            {/* Line 1: Cracked Coder vVersion [Updating] */}
             <Box>
               <Text bold color={theme.text.primary}>
-                Gemini CLI
+                Cracked Coder
               </Text>
               <Text color={theme.text.secondary}> v{version}</Text>
               {updateInfo && (

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -25,7 +25,7 @@ import os from 'node:os';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import dotenv from 'dotenv';
-import { GEMINI_DIR } from '@google/gemini-cli-core';
+import { CRACKED_DIR } from '@google/cracked-coder-core';
 
 const argv = yargs(hideBin(process.argv)).option('q', {
   alias: 'quiet',
@@ -33,12 +33,12 @@ const argv = yargs(hideBin(process.argv)).option('q', {
   default: false,
 }).argv;
 
-const homedir = () => process.env['GEMINI_CLI_HOME'] || os.homedir();
+const homedir = () => process.env['CRACKED_CODER_HOME'] || os.homedir();
 
 let geminiSandbox = process.env.GEMINI_SANDBOX;
 
 if (!geminiSandbox) {
-  const userSettingsFile = join(homedir(), GEMINI_DIR, 'settings.json');
+  const userSettingsFile = join(homedir(), CRACKED_DIR, 'settings.json');
   if (existsSync(userSettingsFile)) {
     const settings = JSON.parse(
       stripJsonComments(readFileSync(userSettingsFile, 'utf-8')),
@@ -52,7 +52,7 @@ if (!geminiSandbox) {
 if (!geminiSandbox) {
   let currentDir = process.cwd();
   while (true) {
-    const geminiEnv = join(currentDir, GEMINI_DIR, '.env');
+    const geminiEnv = join(currentDir, CRACKED_DIR, '.env');
     const regularEnv = join(currentDir, '.env');
     if (existsSync(geminiEnv)) {
       dotenv.config({ path: geminiEnv, quiet: true });

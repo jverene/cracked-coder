@@ -1,6 +1,6 @@
-# Gemini CLI cheatsheet
+# Cracked Coder cheatsheet
 
-This page provides a reference for commonly used Gemini CLI commands, options,
+This page provides a reference for commonly used Cracked Coder commands, options,
 and parameters.
 
 ## CLI commands
@@ -8,7 +8,7 @@ and parameters.
 | Command                            | Description                        | Example                                                      |
 | ---------------------------------- | ---------------------------------- | ------------------------------------------------------------ |
 | `gemini`                           | Start interactive REPL             | `gemini`                                                     |
-| `gemini -p "query"`                | Query non-interactively            | `gemini -p "summarize README.md"`                            |
+| `cracked -p "query"`                | Query non-interactively            | `cracked -p "summarize README.md"`                            |
 | `gemini "query"`                   | Query and continue interactively   | `gemini "explain this project"`                              |
 | `cat file \| gemini`               | Process piped content              | `cat logs.txt \| gemini`<br>`Get-Content logs.txt \| gemini` |
 | `gemini -i "query"`                | Execute and continue interactively | `gemini -i "What is the purpose of this project?"`           |
@@ -34,7 +34,7 @@ These commands are available within the interactive REPL.
 | `/skills reload`     | Reload discovered skills from disk       |
 | `/agents reload`     | Reload the agent registry                |
 | `/commands reload`   | Reload custom slash commands             |
-| `/memory reload`     | Reload context files (e.g., `GEMINI.md`) |
+| `/memory reload`     | Reload context files (e.g., `CRACKED.md`) |
 | `/mcp reload`        | Restart and reload MCP servers           |
 | `/extensions reload` | Reload all active extensions             |
 | `/help`              | Show help for all commands               |

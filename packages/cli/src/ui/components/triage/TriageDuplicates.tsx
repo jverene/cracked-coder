@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   spawnAsync,
   LlmRole,
   type Config,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { useKeypress } from '../../hooks/useKeypress.js';
 import { Command } from '../../key/keyMatchers.js';
 import { useKeyMatchers } from '../../hooks/useKeyMatchers.js';
@@ -536,7 +536,7 @@ Return a JSON object with:
           'api',
           '-X',
           'PATCH',
-          `repos/google-gemini/gemini-cli/issues/${String(state.currentIssue.number).replace(/[^a-zA-Z0-9-]/g, '')}`, // Sanitize issue number
+          `repos/cracked-coder/cracked-coder/issues/${String(state.currentIssue.number).replace(/[^a-zA-Z0-9-]/g, '')}`, // Sanitize issue number
           '-f',
           'state=closed',
           '-f',

@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -32,9 +32,9 @@ async function main() {
     })
     .option('cli-package-name', {
       description:
-        'fully qualified package name with scope (e.g @google/gemini-cli)',
+        'fully qualified package name with scope (e.g @google/cracked-coder)',
       string: true,
-      default: '@google/gemini-cli',
+      default: '@google/cracked-coder',
     })
     .option('dry-run', {
       description: 'Whether to run in dry-run mode.',
@@ -136,8 +136,8 @@ async function main() {
 
   // Ensure git user is configured properly for commits
   console.log('Configuring git user for cherry-pick commits...');
-  run('git config user.name "gemini-cli-robot"', dryRun);
-  run('git config user.email "gemini-cli-robot@google.com"', dryRun);
+  run('git config user.name "cracked-coder-robot"', dryRun);
+  run('git config user.email "cracked-coder-robot@google.com"', dryRun);
 
   // Cherry-pick the commit.
   console.log(`Cherry-picking commit ${commit} into ${hotfixBranch}...`);

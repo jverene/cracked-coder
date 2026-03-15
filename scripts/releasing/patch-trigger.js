@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -102,8 +102,8 @@ async function main() {
   const context = {
     eventName: process.env.GITHUB_EVENT_NAME || 'pull_request',
     repo: {
-      owner: process.env.GITHUB_REPOSITORY_OWNER || 'google-gemini',
-      repo: process.env.GITHUB_REPOSITORY_NAME || 'gemini-cli',
+      owner: process.env.GITHUB_REPOSITORY_OWNER || 'cracked-coder',
+      repo: process.env.GITHUB_REPOSITORY_NAME || 'cracked-coder',
     },
     payload: JSON.parse(process.env.GITHUB_EVENT_PAYLOAD || '{}'),
   };

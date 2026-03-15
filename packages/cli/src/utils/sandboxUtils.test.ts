@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,12 +19,12 @@ import {
 vi.mock('node:os');
 vi.mock('node:fs');
 vi.mock('node:fs/promises');
-vi.mock('@google/gemini-cli-core', () => ({
+vi.mock('@cracked-coder/core', () => ({
   debugLogger: {
     log: vi.fn(),
     warn: vi.fn(),
   },
-  GEMINI_DIR: '.gemini',
+  CRACKED_DIR: '.cracked',
 }));
 
 describe('sandboxUtils', () => {
@@ -109,7 +109,7 @@ describe('sandboxUtils', () => {
     it('should source sandbox.bashrc if exists', () => {
       vi.mocked(fs.existsSync).mockReturnValue(true);
       const args = entrypoint('/work', ['node', 'gemini', 'arg1']);
-      expect(args[2]).toContain('source .gemini/sandbox.bashrc');
+      expect(args[2]).toContain('source .cracked/sandbox.bashrc');
     });
 
     it('should include socat commands for ports', () => {

@@ -134,7 +134,7 @@ describe('my_feature', () => {
 
 ## Running Evaluations
 
-First, build the bundled Gemini CLI. You must do this after every code change.
+First, build the bundled Cracked Coder. You must do this after every code change.
 
 ```bash
 npm run build
@@ -163,7 +163,7 @@ This command sets the `RUN_EVALS` environment variable to `1`, which enables the
 ## Ensuring Eval is Stable Prior to Check-in
 
 The
-[Evals: Nightly](https://github.com/google-gemini/gemini-cli/actions/workflows/evals-nightly.yml)
+[Evals: Nightly](https://github.com/cracked-coder/cracked-coder/actions/workflows/evals-nightly.yml)
 run is considered to be the source of truth for the quality of an eval test.
 Each run of it executes a test 3 times in a row, for each supported model. The
 result is then scored 0%, 33%, 66%, or 100% respectively, to indicate how many
@@ -172,8 +172,8 @@ of the individual executions passed.
 Googlers can schedule a manual run against their branch by clicking the link
 above.
 
-Tests should score at least 66% with key models including Gemini 3.1 pro, Gemini
-3.0 pro, and Gemini 3 flash prior to check in and they must pass 100% of the
+Tests should score at least 66% with key models including Cracked 3.1 pro, Gemini
+3.0 pro, and Cracked 3 flash prior to check in and they must pass 100% of the
 time before they are promoted.
 
 ## Test promotion process
@@ -198,10 +198,10 @@ evaluations into the CI.
 Results for evaluations are available on GitHub Actions:
 
 - **CI Evals**: Included in the
-  [E2E (Chained)](https://github.com/google-gemini/gemini-cli/actions/workflows/chained_e2e.yml)
+  [E2E (Chained)](https://github.com/cracked-coder/cracked-coder/actions/workflows/chained_e2e.yml)
   workflow. These must pass 100% for every PR.
 - **Nightly Evals**: Run daily via the
-  [Evals: Nightly](https://github.com/google-gemini/gemini-cli/actions/workflows/evals-nightly.yml)
+  [Evals: Nightly](https://github.com/cracked-coder/cracked-coder/actions/workflows/evals-nightly.yml)
   workflow. These track the long-term health and stability of model steering.
 
 ### Nightly Report Format
@@ -226,7 +226,7 @@ tool definition has made the model's behavior less reliable.
 ## Fixing Evaluations
 
 If an evaluation is failing or has a regressed pass rate, you can use the
-`/fix-behavioral-eval` command within Gemini CLI to help investigate and fix the
+`/fix-behavioral-eval` command within Cracked Coder to help investigate and fix the
 issue.
 
 ### `/fix-behavioral-eval`
@@ -242,7 +242,7 @@ failing evaluations. It will:
     modules that contribute to the prompt. It generally tries to avoid changing
     the test itself.
 3.  **Verify**: Re-run the test 3 times across multiple models (e.g., Gemini
-    3.0, Gemini 3 Flash, Gemini 2.5 Pro) to ensure stability and calculate a
+    3.0, Cracked 3 Flash, Cracked 2.5 Pro) to ensure stability and calculate a
     success rate.
 4.  **Report**: Provide a summary of the success rate for each model and details
     on the applied fixes.
@@ -250,14 +250,14 @@ failing evaluations. It will:
 To use it, run:
 
 ```bash
-gemini /fix-behavioral-eval
+cracked /fix-behavioral-eval
 ```
 
 You can also provide a link to a specific GitHub Action run or the name of a
 specific test to focus the investigation:
 
 ```bash
-gemini /fix-behavioral-eval https://github.com/google-gemini/gemini-cli/actions/runs/123456789
+cracked /fix-behavioral-eval https://github.com/cracked-coder/cracked-coder/actions/runs/123456789
 ```
 
 When investigating failures manually, you can also enable verbose agent logs by
@@ -293,5 +293,5 @@ This command automates the promotion of stable tests by:
 To run it:
 
 ```bash
-gemini /promote-behavioral-eval
+cracked /promote-behavioral-eval
 ```

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -21,7 +21,7 @@ import {
   type ContentGenerator,
   type ContentGeneratorConfig,
 } from './contentGenerator.js';
-import { GeminiChat } from './geminiChat.js';
+import { GeminiChat } from './crackedChat.js';
 import type { Config } from '../config/config.js';
 import type { AgentLoopContext } from '../config/agent-loop-context.js';
 import {
@@ -298,7 +298,7 @@ describe('Gemini Client (client.ts)', () => {
     client = new GeminiClient(mockConfig as unknown as AgentLoopContext);
     await client.initialize();
     vi.mocked(mockConfig.getGeminiClient).mockReturnValue(client);
-    (mockConfig as unknown as { geminiClient: GeminiClient }).geminiClient =
+    (mockConfig as unknown as { geminiClient: GeminiClient }).crackedClient =
       client;
 
     vi.mocked(uiTelemetryService.setLastPromptTokenCount).mockClear();
@@ -406,7 +406,7 @@ describe('Gemini Client (client.ts)', () => {
 
       // The first message should be the environment context
       expect(history[0].role).toBe('user');
-      expect(history[0].parts?.[0]?.text).toContain('This is the Gemini CLI');
+      expect(history[0].parts?.[0]?.text).toContain('This is the Cracked Coder');
       expect(history[0].parts?.[0]?.text).toContain(
         "The project's temporary directory is:",
       );

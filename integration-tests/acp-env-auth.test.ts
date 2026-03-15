@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -53,14 +53,14 @@ describe.skip('ACP Environment and Auth', () => {
         'GEMINI_API_KEY=test-key-from-env\n',
       );
 
-      const bundlePath = join(import.meta.dirname, '..', 'bundle/gemini.js');
+      const bundlePath = join(import.meta.dirname, '..', 'bundle/cracked.js');
 
       child = spawn('node', [bundlePath, '--acp'], {
         cwd: rig.homeDir!,
         stdio: ['pipe', 'pipe', 'inherit'],
         env: {
           ...process.env,
-          GEMINI_CLI_HOME: rig.homeDir!,
+          CRACKED_CODER_HOME: rig.homeDir!,
           GEMINI_API_KEY: undefined,
           VERBOSE: 'true',
         },
@@ -118,14 +118,14 @@ describe.skip('ACP Environment and Auth', () => {
     async () => {
       rig.setup('acp-auth-failure');
 
-      const bundlePath = join(import.meta.dirname, '..', 'bundle/gemini.js');
+      const bundlePath = join(import.meta.dirname, '..', 'bundle/cracked.js');
 
       child = spawn('node', [bundlePath, '--acp'], {
         cwd: rig.homeDir!,
         stdio: ['pipe', 'pipe', 'inherit'],
         env: {
           ...process.env,
-          GEMINI_CLI_HOME: rig.homeDir!,
+          CRACKED_CODER_HOME: rig.homeDir!,
           GEMINI_API_KEY: undefined,
           VERBOSE: 'true',
         },

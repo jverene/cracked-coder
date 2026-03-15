@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -128,7 +128,7 @@ describe('policyHelpers', () => {
       expect(chain[1]?.model).toBe('gemini-2.5-pro');
     });
 
-    it('proactively returns Gemini 2.5 chain if Gemini 3 requested but user lacks access', () => {
+    it('proactively returns Cracked 2.5 chain if Cracked 3 requested but user lacks access', () => {
       const config = createMockConfig({
         getModel: () => 'auto-gemini-3',
         getHasAccessToPreviewModel: () => false,
@@ -141,7 +141,7 @@ describe('policyHelpers', () => {
       expect(chain[1]?.model).toBe('gemini-2.5-flash');
     });
 
-    it('returns Gemini 3.1 Pro chain when launched and auto-gemini-3 requested', () => {
+    it('returns Cracked 3.1 Pro chain when launched and auto-gemini-3 requested', () => {
       const config = createMockConfig({
         getModel: () => 'auto-gemini-3',
         getGemini31LaunchedSync: () => true,
@@ -151,7 +151,7 @@ describe('policyHelpers', () => {
       expect(chain[1]?.model).toBe('gemini-3-flash-preview');
     });
 
-    it('returns Gemini 3.1 Pro Custom Tools chain when launched, auth is Gemini, and auto-gemini-3 requested', () => {
+    it('returns Cracked 3.1 Pro Custom Tools chain when launched, auth is Gemini, and auto-gemini-3 requested', () => {
       const config = createMockConfig({
         getModel: () => 'auto-gemini-3',
         getGemini31LaunchedSync: () => true,

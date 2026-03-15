@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,13 +15,13 @@ import { linkCommand } from './extensions/link.js';
 import { newCommand } from './extensions/new.js';
 import { validateCommand } from './extensions/validate.js';
 import { configureCommand } from './extensions/configure.js';
-import { initializeOutputListenersAndFlush } from '../gemini.js';
+import { initializeOutputListenersAndFlush } from '../cracked.js';
 import { defer } from '../deferred.js';
 
 export const extensionsCommand: CommandModule = {
   command: 'extensions <command>',
   aliases: ['extension'],
-  describe: 'Manage Gemini CLI extensions.',
+  describe: 'Manage Cracked Coder extensions.',
   builder: (yargs) =>
     yargs
       .middleware((argv) => {

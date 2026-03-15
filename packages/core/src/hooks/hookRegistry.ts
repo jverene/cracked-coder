@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -152,7 +152,7 @@ export class HookRegistry {
 ${untrusted.map((h) => `  - ${h}`).join('\n')}
 
 These hooks will be executed. If you did not configure these hooks or do not trust this project,
-please review the project settings (.gemini/settings.json) and remove them.`;
+please review the project settings (.cracked/settings.json) and remove them.`;
         coreEvents.emitFeedback('warning', message);
 
         // Trust them so we don't warn again

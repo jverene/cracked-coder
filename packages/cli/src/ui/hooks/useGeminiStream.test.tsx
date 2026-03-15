@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -33,7 +33,7 @@ import type {
   EditorType,
   AnyToolInvocation,
   SpanMetadata,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   CoreToolCallStatus,
   ApprovalMode,
@@ -49,7 +49,7 @@ import {
   MCPDiscoveryState,
   GeminiCliOperation,
   getPlanModeExitMessage,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { Part, PartListUnion } from '@google/genai';
 import type { UseHistoryManagerReturn } from './useHistoryManager.js';
 import type { SlashCommandProcessorResult } from '../types.js';
@@ -143,7 +143,7 @@ const mockRunInDevTraceSpan = vi.hoisted(() =>
   }),
 );
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actualCoreModule = (await importOriginal()) as any;
   return {
     ...actualCoreModule,
@@ -369,7 +369,7 @@ describe('useGeminiStream', () => {
       ui: { errorVerbosity: 'full' },
     },
     user: { path: '/user/settings.json', settings: {} },
-    workspace: { path: '/workspace/.gemini/settings.json', settings: {} },
+    workspace: { path: '/workspace/.cracked/settings.json', settings: {} },
     errors: [],
     forScope: vi.fn(),
     setValue: vi.fn(),

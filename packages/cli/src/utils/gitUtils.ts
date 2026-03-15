@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { debugLogger } from '@google/gemini-cli-core';
+import { debugLogger } from '@cracked-coder/core';
 import { execSync } from 'node:child_process';
 import { ProxyAgent } from 'undici';
 
@@ -59,7 +59,7 @@ export const getLatestGitHubRelease = async (
   try {
     const controller = new AbortController();
 
-    const endpoint = `https://api.github.com/repos/google-github-actions/run-gemini-cli/releases/latest`;
+    const endpoint = `https://api.github.com/repos/google-github-actions/run-cracked-coder/releases/latest`;
 
     const response = await fetch(endpoint, {
       method: 'GET',
@@ -87,11 +87,11 @@ export const getLatestGitHubRelease = async (
     return releaseTag;
   } catch (_error) {
     debugLogger.debug(
-      `Failed to determine latest run-gemini-cli release:`,
+      `Failed to determine latest run-cracked-coder release:`,
       _error,
     );
     throw new Error(
-      `Unable to determine the latest run-gemini-cli release on GitHub.`,
+      `Unable to determine the latest run-cracked-coder release on GitHub.`,
     );
   }
 };

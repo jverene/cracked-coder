@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,7 +13,7 @@ import {
   type Theme,
 } from './theme.js';
 import { themeManager } from './theme-manager.js';
-import type { CustomTheme } from '@google/gemini-cli-core';
+import type { CustomTheme } from '@cracked-coder/core';
 
 describe('createCustomTheme', () => {
   const baseTheme: CustomTheme = {

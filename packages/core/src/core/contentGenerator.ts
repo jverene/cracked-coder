@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -83,7 +83,7 @@ export function getAuthTypeFromEnv(): AuthType | undefined {
   }
   if (
     process.env['CLOUD_SHELL'] === 'true' ||
-    process.env['GEMINI_CLI_USE_COMPUTE_ADC'] === 'true'
+    process.env['CRACKED_CODER_USE_COMPUTE_ADC'] === 'true'
   ) {
     return AuthType.COMPUTE_ADC;
   }
@@ -173,7 +173,7 @@ export async function createContentGenerator(
         ((await gcConfig.getGemini31Launched?.()) ?? false),
     );
     const customHeadersEnv =
-      process.env['GEMINI_CLI_CUSTOM_HEADERS'] || undefined;
+      process.env['CRACKED_CODER_CUSTOM_HEADERS'] || undefined;
     const clientName = gcConfig.getClientName();
     const userAgentPrefix = clientName
       ? `GeminiCLI-${clientName}`

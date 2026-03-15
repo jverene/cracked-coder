@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ const { debugLogger, emitConsoleLog } = await vi.hoisted(async () => {
   return createMockDebugLogger({ stripAnsi: true });
 });
 
-vi.mock('@google/gemini-cli-core', () => ({
+vi.mock('@cracked-coder/core', () => ({
   debugLogger,
   getErrorMessage: vi.fn((e: unknown) =>
     e instanceof Error ? e.message : String(e),

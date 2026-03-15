@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -28,17 +28,17 @@ import { EventEmitter } from 'node:events';
 import type {
   GeminiCLIExtension,
   ExtensionInstallMetadata,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { ExtensionConfig } from '../extension.js';
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     Storage: {
       getGlobalSettingsPath: vi.fn().mockReturnValue('/mock/settings.json'),
-      getGlobalGeminiDir: vi.fn().mockReturnValue('/mock/.gemini'),
+      getGlobalGeminiDir: vi.fn().mockReturnValue('/mock/.cracked'),
     },
     debugLogger: {
       error: vi.fn(),

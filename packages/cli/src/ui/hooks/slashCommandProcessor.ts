@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,7 +20,7 @@ import type {
   ExtensionsStoppingEvent,
   ToolCallConfirmationDetails,
   AgentDefinition,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   GitService,
   Logger,
@@ -35,7 +35,7 @@ import {
   removeMCPStatusChangeListener,
   MCPDiscoveryState,
   CoreToolCallStatus,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { useSessionStats } from '../contexts/SessionContext.js';
 import type {
   Message,

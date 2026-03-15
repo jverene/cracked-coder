@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -38,15 +38,15 @@ if (fs.existsSync(sourceBundleDir)) {
 // Inherit optionalDependencies from root package.json, excluding dev-only packages.
 const rootPkg = readJson('package.json');
 const optionalDependencies = { ...(rootPkg.optionalDependencies || {}) };
-delete optionalDependencies['gemini-cli-devtools'];
+delete optionalDependencies['cracked-coder-devtools'];
 
-// Update @google/gemini-cli package.json for bundled npm release
+// Update @google/cracked-coder package.json for bundled npm release
 const cliPkgPath = 'packages/cli/package.json';
 const cliPkg = readJson(cliPkgPath);
 
 cliPkg.files = ['bundle/'];
 cliPkg.bin = {
-  gemini: 'bundle/gemini.js',
+  gemini: 'bundle/cracked.js',
 };
 
 delete cliPkg.dependencies;

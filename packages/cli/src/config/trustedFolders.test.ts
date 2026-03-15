@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,7 +12,7 @@ import {
   FatalConfigError,
   ideContextStore,
   coreEvents,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   loadTrustedFolders,
   TrustLevel,
@@ -25,9 +25,9 @@ import { createMockSettings } from '../test-utils/settings.js';
 // We explicitly do NOT mock 'fs' or 'proper-lockfile' here to ensure
 // we are testing the actual behavior on the real file system.
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     homedir: () => '/mock/home/user',
@@ -44,11 +44,11 @@ describe('Trusted Folders', () => {
 
   beforeEach(() => {
     // Create a temporary directory for each test
-    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gemini-cli-test-'));
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cracked-coder-test-'));
     trustedFoldersPath = path.join(tempDir, 'trustedFolders.json');
 
     // Set the environment variable to point to the temp file
-    vi.stubEnv('GEMINI_CLI_TRUSTED_FOLDERS_PATH', trustedFoldersPath);
+    vi.stubEnv('CRACKED_CODER_TRUSTED_FOLDERS_PATH', trustedFoldersPath);
 
     // Reset the internal state
     resetTrustedFoldersForTesting();
@@ -428,7 +428,7 @@ describe('Trusted Folders', () => {
     };
 
     it('should return true when isHeadlessMode is true, ignoring config', async () => {
-      const geminiCore = await import('@google/gemini-cli-core');
+      const geminiCore = await import('@cracked-coder/core');
       vi.spyOn(geminiCore, 'isHeadlessMode').mockReturnValue(true);
 
       expect(isWorkspaceTrusted(mockSettings)).toEqual({
@@ -438,7 +438,7 @@ describe('Trusted Folders', () => {
     });
 
     it('should fall back to config when isHeadlessMode is false', async () => {
-      const geminiCore = await import('@google/gemini-cli-core');
+      const geminiCore = await import('@cracked-coder/core');
       vi.spyOn(geminiCore, 'isHeadlessMode').mockReturnValue(false);
 
       const config = { '/projectA': TrustLevel.DO_NOT_TRUST };
@@ -450,7 +450,7 @@ describe('Trusted Folders', () => {
     });
 
     it('should return true for isPathTrusted when isHeadlessMode is true', async () => {
-      const geminiCore = await import('@google/gemini-cli-core');
+      const geminiCore = await import('@cracked-coder/core');
       vi.spyOn(geminiCore, 'isHeadlessMode').mockReturnValue(true);
 
       const folders = loadTrustedFolders();

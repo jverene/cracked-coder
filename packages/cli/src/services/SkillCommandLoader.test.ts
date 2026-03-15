@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { SkillCommandLoader } from './SkillCommandLoader.js';
 import { CommandKind } from '../ui/commands/types.js';
-import { ACTIVATE_SKILL_TOOL_NAME } from '@google/gemini-cli-core';
+import { ACTIVATE_SKILL_TOOL_NAME } from '@cracked-coder/core';
 
 describe('SkillCommandLoader', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

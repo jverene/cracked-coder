@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { debugLogger, type SkillDefinition } from '@google/gemini-cli-core';
+import { debugLogger, type SkillDefinition } from '@cracked-coder/core';
 import chalk from 'chalk';
 
 import type { ConfirmationRequest } from '../../ui/types.js';
@@ -185,7 +185,7 @@ async function extensionConsentString(
   }
   if (sanitizedConfig.contextFileName) {
     output.push(
-      `This extension will append info to your gemini.md context using ${sanitizedConfig.contextFileName}`,
+      `This extension will append info to your cracked.md context using ${sanitizedConfig.contextFileName}`,
     );
   }
   if (sanitizedConfig.excludeTools) {

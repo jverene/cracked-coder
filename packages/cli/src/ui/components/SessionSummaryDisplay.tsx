@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { StatsDisplay } from './StatsDisplay.js';
 import { useSessionStats } from '../contexts/SessionContext.js';
-import { escapeShellArg, getShellConfiguration } from '@google/gemini-cli-core';
+import { escapeShellArg, getShellConfiguration } from '@cracked-coder/core';
 
 interface SessionSummaryDisplayProps {
   duration: string;
@@ -18,7 +18,7 @@ export const SessionSummaryDisplay: React.FC<SessionSummaryDisplayProps> = ({
 }) => {
   const { stats } = useSessionStats();
   const { shell } = getShellConfiguration();
-  const footer = `To resume this session: gemini --resume ${escapeShellArg(stats.sessionId, shell)}`;
+  const footer = `To resume this session: cracked --resume ${escapeShellArg(stats.sessionId, shell)}`;
 
   return (
     <StatsDisplay

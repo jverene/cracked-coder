@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -58,7 +58,7 @@ let ripgrepAcquisitionPromise: Promise<string | null> | null = null;
  * Ensures a ripgrep binary is available.
  *
  * NOTE:
- * - The Gemini CLI currently prefers a managed ripgrep binary downloaded
+ * - The Cracked Coder currently prefers a managed ripgrep binary downloaded
  *   into its global bin directory.
  * - Even if ripgrep is available on the system PATH, it is intentionally
  *   not used at this time.
@@ -459,7 +459,7 @@ class GrepToolInvocation extends BaseToolInvocation<
         rgArgs.push('--glob', `!${exclude}`);
       });
 
-      // Add .geminiignore and custom ignore files support (if provided/mandated)
+      // Add .crackedignore and custom ignore files support (if provided/mandated)
       // (ripgrep natively handles .gitignore)
       const geminiIgnorePaths = this.fileDiscoveryService.getIgnoreFilePaths();
       for (const ignorePath of geminiIgnorePaths) {

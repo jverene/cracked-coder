@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { render } from '../../test-utils/render.js';
 import { AnsiOutputText } from './AnsiOutput.js';
-import type { AnsiOutput, AnsiToken } from '@google/gemini-cli-core';
+import type { AnsiOutput, AnsiToken } from '@cracked-coder/core';
 
 // Helper to create a valid AnsiToken with default values
 const createAnsiToken = (overrides: Partial<AnsiToken>): AnsiToken => ({

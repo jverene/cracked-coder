@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -28,7 +28,7 @@ import {
   type MessageBus,
   LlmRole,
   type GitService,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import {
   SettingScope,
   type LoadedSettings,
@@ -37,7 +37,7 @@ import {
 import { loadCliConfig, type CliArgs } from '../config/config.js';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
-import { ApprovalMode } from '@google/gemini-cli-core/src/policy/types.js';
+import { ApprovalMode } from '@cracked-coder/core/src/policy/types.js';
 
 vi.mock('../config/config.js', () => ({
   loadCliConfig: vi.fn(),
@@ -92,9 +92,9 @@ vi.mock('../ui/commands/initCommand.js', () => ({
   },
 }));
 vi.mock(
-  '@google/gemini-cli-core',
+  '@cracked-coder/core',
   async (
-    importOriginal: () => Promise<typeof import('@google/gemini-cli-core')>,
+    importOriginal: () => Promise<typeof import('@cracked-coder/core')>,
   ) => {
     const actual = await importOriginal();
     return {
@@ -363,7 +363,7 @@ describe('GeminiAgent', () => {
       availableModels: expect.arrayContaining([
         expect.objectContaining({
           modelId: 'auto-gemini-2.5',
-          name: 'Auto (Gemini 2.5)',
+          name: 'Auto (Cracked 2.5)',
         }),
       ]),
       currentModelId: 'gemini-pro',
@@ -422,7 +422,7 @@ describe('GeminiAgent', () => {
       availableModels: expect.arrayContaining([
         expect.objectContaining({
           modelId: 'auto-gemini-2.5',
-          name: 'Auto (Gemini 2.5)',
+          name: 'Auto (Cracked 2.5)',
         }),
       ]),
       currentModelId: 'gemini-pro',

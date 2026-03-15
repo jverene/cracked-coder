@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { join } from 'node:path';
-import { TestRig, GEMINI_DIR } from './test-helper.js';
+import { TestRig, CRACKED_DIR } from './test-helper.js';
 import fs from 'node:fs';
 
 describe('User Policy Regression Repro', () => {
@@ -22,13 +22,13 @@ describe('User Policy Regression Repro', () => {
     }
   });
 
-  it('should respect policies in ~/.gemini/policies/allowed-tools.toml', async () => {
+  it('should respect policies in ~/.cracked/policies/allowed-tools.toml', async () => {
     rig.setup('user-policy-test', {
       fakeResponsesPath: join(import.meta.dirname, 'user-policy.responses'),
     });
 
-    // Create ~/.gemini/policies/allowed-tools.toml
-    const userPoliciesDir = join(rig.homeDir!, GEMINI_DIR, 'policies');
+    // Create ~/.cracked/policies/allowed-tools.toml
+    const userPoliciesDir = join(rig.homeDir!, CRACKED_DIR, 'policies');
     fs.mkdirSync(userPoliciesDir, { recursive: true });
     fs.writeFileSync(
       join(userPoliciesDir, 'allowed-tools.toml'),

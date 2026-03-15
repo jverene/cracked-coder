@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,7 +16,7 @@ import {
 import {
   getCompatibilityWarnings,
   WarningPriority,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 // Mock os.homedir to control the home directory in tests
 vi.mock('os', async (importOriginal) => {
@@ -27,9 +27,9 @@ vi.mock('os', async (importOriginal) => {
   };
 });
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     homedir: () => os.homedir(),
@@ -75,7 +75,7 @@ describe('getUserStartupWarnings', () => {
         expect.objectContaining({
           id: 'home-directory',
           message: expect.stringContaining(
-            'Warning you are running Gemini CLI in your home directory',
+            'Warning you are running Cracked Coder in your home directory',
           ),
           priority: WarningPriority.Low,
         }),

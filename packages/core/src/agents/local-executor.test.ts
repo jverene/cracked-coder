@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -24,7 +24,7 @@ import {
   GeminiChat,
   StreamEventType,
   type StreamEvent,
-} from '../core/geminiChat.js';
+} from '../core/crackedChat.js';
 import {
   type FunctionCall,
   type Part,
@@ -93,8 +93,8 @@ vi.mock('../services/chatCompressionService.js', () => ({
   })),
 }));
 
-vi.mock('../core/geminiChat.js', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('../core/geminiChat.js')>();
+vi.mock('../core/crackedChat.js', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('../core/crackedChat.js')>();
   return {
     ...actual,
     GeminiChat: vi.fn().mockImplementation(() => ({

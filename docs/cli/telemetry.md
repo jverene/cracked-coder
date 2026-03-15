@@ -1,20 +1,20 @@
 # Observability with OpenTelemetry
 
 Observability is the key to turning experimental AI into reliable software.
-Gemini CLI provides built-in support for OpenTelemetry, transforming every agent
+Cracked Coder provides built-in support for OpenTelemetry, transforming every agent
 interaction into a rich stream of logs, metrics, and traces. This three-pillar
 approach gives you the high-fidelity visibility needed to understand agent
 behavior, optimize performance, and ensure reliability across your entire
 workflow.
 
 Whether you are debugging a complex tool interaction locally or monitoring
-enterprise-wide usage in the cloud, Gemini CLI's observability system provides
+enterprise-wide usage in the cloud, Cracked Coder's observability system provides
 the actionable intelligence needed to move from "black box" AI to predictable,
 high-performance systems.
 
 ## OpenTelemetry integration
 
-Gemini CLI integrates with **[OpenTelemetry]**, a vendor-neutral,
+Cracked Coder integrates with **[OpenTelemetry]**, a vendor-neutral,
 industry-standard observability framework.
 
 The observability system provides:
@@ -32,7 +32,7 @@ The observability system provides:
 
 ## Configuration
 
-You control telemetry behavior through the `.gemini/settings.json` file.
+You control telemetry behavior through the `.cracked/settings.json` file.
 Environment variables can override these settings.
 
 | Setting        | Environment Variable             | Description                                         | Values            | Default                 |
@@ -45,7 +45,7 @@ Environment variables can override these settings.
 | `logPrompts`   | `GEMINI_TELEMETRY_LOG_PROMPTS`   | Include prompts in telemetry logs                   | `true`/`false`    | `true`                  |
 | `useCollector` | `GEMINI_TELEMETRY_USE_COLLECTOR` | Use external OTLP collector (advanced)              | `true`/`false`    | `false`                 |
 | `useCliAuth`   | `GEMINI_TELEMETRY_USE_CLI_AUTH`  | Use CLI credentials for telemetry (GCP target only) | `true`/`false`    | `false`                 |
-| -              | `GEMINI_CLI_SURFACE`             | Optional custom label for traffic reporting         | string            | -                       |
+| -              | `CRACKED_CODER_SURFACE`             | Optional custom label for traffic reporting         | string            | -                       |
 
 **Note on boolean environment variables:** For boolean settings like `enabled`,
 setting the environment variable to `true` or `1` enables the feature.
@@ -112,8 +112,8 @@ You must complete several setup steps before enabling Google Cloud telemetry.
         $env:GOOGLE_APPLICATION_CREDENTIALS="C:\path\to\your\service-account.json"
         ```
     * **Method B: CLI Auth** (Direct export only): Simplest method for local
-      users. Gemini CLI uses the same OAuth credentials you used for login. To
-      enable this, set `useCliAuth: true` in your `.gemini/settings.json`:
+      users. Cracked Coder uses the same OAuth credentials you used for login. To
+      enable this, set `useCliAuth: true` in your `.cracked/settings.json`:
 
       ```json
       {
@@ -148,7 +148,7 @@ You must complete several setup steps before enabling Google Cloud telemetry.
 We recommend using direct export to send telemetry directly to Google Cloud
 services.
 
-1.  Enable telemetry in `.gemini/settings.json`:
+1.  Enable telemetry in `.cracked/settings.json`:
     ```json
     {
       "telemetry": {
@@ -157,13 +157,13 @@ services.
       }
     }
     ```
-2.  Run Gemini CLI and send prompts.
+2.  Run Cracked Coder and send prompts.
 3.  View logs, metrics, and traces in the Google Cloud Console. See
     [View Google Cloud telemetry](#view-google-cloud-telemetry) for details.
 
 ### View Google Cloud telemetry
 
-After you enable telemetry and run Gemini CLI, you can view your data in the
+After you enable telemetry and run Cracked Coder, you can view your data in the
 Google Cloud Console.
 
 - **Logs:** [Logs Explorer](https://console.cloud.google.com/logs/)
@@ -180,46 +180,46 @@ Google Cloud documentation:
 
 #### Monitoring dashboards
 
-Gemini CLI provides a pre-configured
+Cracked Coder provides a pre-configured
 [Google Cloud Monitoring](https://cloud.google.com/monitoring) dashboard to
 visualize your telemetry.
 
 Find this dashboard under **Google Cloud Monitoring Dashboard Templates** as
-"**Gemini CLI Monitoring**".
+"**Cracked Coder Monitoring**".
 
-![Gemini CLI Monitoring Dashboard Overview](/docs/assets/monitoring-dashboard-overview.png)
+![Cracked Coder Monitoring Dashboard Overview](/docs/assets/monitoring-dashboard-overview.png)
 
-![Gemini CLI Monitoring Dashboard Metrics](/docs/assets/monitoring-dashboard-metrics.png)
+![Cracked Coder Monitoring Dashboard Metrics](/docs/assets/monitoring-dashboard-metrics.png)
 
-![Gemini CLI Monitoring Dashboard Logs](/docs/assets/monitoring-dashboard-logs.png)
+![Cracked Coder Monitoring Dashboard Logs](/docs/assets/monitoring-dashboard-logs.png)
 
 To learn more, see
-[Instant insights: Gemini CLI’s pre-configured monitoring dashboards](https://cloud.google.com/blog/topics/developers-practitioners/instant-insights-gemini-clis-new-pre-configured-monitoring-dashboards/).
+[Instant insights: Cracked Coder’s pre-configured monitoring dashboards](https://cloud.google.com/blog/topics/developers-practitioners/instant-insights-cracked-coders-new-pre-configured-monitoring-dashboards/).
 
 ## Local telemetry
 
 You can capture telemetry data locally for development and debugging. We
 recommend using file-based output for local development.
 
-1.  Enable telemetry in `.gemini/settings.json`:
+1.  Enable telemetry in `.cracked/settings.json`:
     ```json
     {
       "telemetry": {
         "enabled": true,
         "target": "local",
-        "outfile": ".gemini/telemetry.log"
+        "outfile": ".cracked/telemetry.log"
       }
     }
     ```
-2.  Run Gemini CLI and send prompts.
-3.  View logs and metrics in `.gemini/telemetry.log`.
+2.  Run Cracked Coder and send prompts.
+3.  View logs and metrics in `.cracked/telemetry.log`.
 
 For advanced local telemetry setups (such as Jaeger or Genkit), see the
 [Local development guide](../local-development.md#viewing-traces).
 
 ## Client identification
 
-Gemini CLI includes identifiers in its `User-Agent` header to help you
+Cracked Coder includes identifiers in its `User-Agent` header to help you
 differentiate and report on API traffic from different environments (for
 example, identifying calls from Gemini Code Assist versus a standard terminal).
 
@@ -243,19 +243,19 @@ a "surface" tag in the parenthetical metadata.
 ### Custom identification
 
 You can provide a custom identifier for your own scripts or automation by
-setting the `GEMINI_CLI_SURFACE` environment variable. This is useful for
+setting the `CRACKED_CODER_SURFACE` environment variable. This is useful for
 tracking specific internal tools or distribution channels in your GCP logs.
 
 **macOS/Linux**
 
 ```bash
-export GEMINI_CLI_SURFACE="my-custom-tool"
+export CRACKED_CODER_SURFACE="my-custom-tool"
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
-$env:GEMINI_CLI_SURFACE="my-custom-tool"
+$env:CRACKED_CODER_SURFACE="my-custom-tool"
 ```
 
 When set, the value appears at the end of the `User-Agent` parenthetical:
@@ -264,14 +264,14 @@ When set, the value appears at the end of the `User-Agent` parenthetical:
 ## Logs, metrics, and traces
 
 This section describes the structure of logs, metrics, and traces generated by
-Gemini CLI.
+Cracked Coder.
 
-Gemini CLI includes `session.id`, `installation.id`, `active_approval_mode`, and
+Cracked Coder includes `session.id`, `installation.id`, `active_approval_mode`, and
 `user.email` (when authenticated) as common attributes on all data.
 
 ### Logs
 
-Logs provide timestamped records of specific events. Gemini CLI logs events
+Logs provide timestamped records of specific events. Cracked Coder logs events
 across several categories.
 
 #### Sessions
@@ -560,7 +560,7 @@ Logs when a JSON response cannot be parsed.
 
 #### Model routing
 
-These logs track how Gemini CLI selects and routes requests to models.
+These logs track how Cracked Coder selects and routes requests to models.
 
 ##### `gemini_cli.slash_command`
 
@@ -909,7 +909,7 @@ Metrics provide numerical measurements of behavior over time.
 
 #### Custom metrics
 
-Gemini CLI exports several custom metrics.
+Cracked Coder exports several custom metrics.
 
 ##### Sessions
 
@@ -1135,7 +1135,7 @@ Counts terminal flicker events.
 
 ##### Performance
 
-Gemini CLI provides detailed performance metrics for advanced monitoring.
+Cracked Coder provides detailed performance metrics for advanced monitoring.
 
 ##### `gemini_cli.startup.duration`
 
@@ -1212,7 +1212,7 @@ Every trace captures rich metadata via standard span attributes.
 - `gen_ai.operation.name`: High-level operation (for example, `tool_call`,
   `llm_call`, `user_prompt`, `system_prompt`, `agent_call`, or
   `schedule_tool_calls`).
-- `gen_ai.agent.name`: Set to `gemini-cli`.
+- `gen_ai.agent.name`: Set to `cracked-coder`.
 - `gen_ai.agent.description`: The service agent description.
 - `gen_ai.input.messages`: Input data or metadata.
 - `gen_ai.output.messages`: Output data or results.

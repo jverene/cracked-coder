@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -37,7 +37,7 @@ describe('telemetry_gcp.js', () => {
     vi.clearAllMocks();
     process.env.OTLP_GOOGLE_CLOUD_PROJECT = 'test-project';
     // Clear the env var before each test
-    delete process.env.GEMINI_CLI_CREDENTIALS_PATH;
+    delete process.env.CRACKED_CODER_CREDENTIALS_PATH;
   });
 
   afterEach(() => {

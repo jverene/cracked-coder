@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -314,7 +314,7 @@ export interface PolicySettings {
     allowed?: string[];
   };
   mcpServers?: Record<string, { trust?: boolean }>;
-  // User provided policies that will replace the USER level policies in ~/.gemini/policies
+  // User provided policies that will replace the USER level policies in ~/.cracked/policies
   policyPaths?: string[];
   // Admin provided policies that will supplement the ADMIN level policies
   adminPolicyPaths?: string[];

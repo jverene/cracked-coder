@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -22,7 +22,7 @@ describe('CliHelpAgent', () => {
     expect(localAgent.name).toBe('cli_help');
     expect(localAgent.kind).toBe('local');
     expect(localAgent.displayName).toBe('CLI Help Agent');
-    expect(localAgent.description).toContain('Gemini CLI');
+    expect(localAgent.description).toContain('Cracked Coder');
   });
 
   it('should have correctly configured inputs and outputs', () => {

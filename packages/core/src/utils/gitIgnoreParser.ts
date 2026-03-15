@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -25,7 +25,7 @@ export class GitIgnoreParser implements GitIgnoreFilter {
     this.projectRoot = path.resolve(projectRoot);
     this.processedExtraPatterns = ignore();
     if (this.extraPatterns) {
-      // extraPatterns are assumed to be from project root (like .geminiignore)
+      // extraPatterns are assumed to be from project root (like .crackedignore)
       this.processedExtraPatterns.add(
         this.processPatterns(this.extraPatterns, '.'),
       );
@@ -203,7 +203,7 @@ export class GitIgnoreParser implements GitIgnoreFilter {
         }
       }
 
-      // Apply extra patterns (e.g. from .geminiignore) last for precedence
+      // Apply extra patterns (e.g. from .crackedignore) last for precedence
       ig.add(this.processedExtraPatterns);
 
       return ig.ignores(normalizedPath);

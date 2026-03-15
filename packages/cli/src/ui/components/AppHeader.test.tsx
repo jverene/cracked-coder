@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
 } from '../../test-utils/render.js';
 import { AppHeader } from './AppHeader.js';
 import { describe, it, expect, vi } from 'vitest';
-import { makeFakeConfig } from '@google/gemini-cli-core';
+import { makeFakeConfig } from '@cracked-coder/core';
 import crypto from 'node:crypto';
 
 vi.mock('../utils/terminalSetup.js', () => ({

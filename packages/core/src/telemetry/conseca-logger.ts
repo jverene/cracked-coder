@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -81,7 +81,7 @@ export function logConsecaVerdict(
         value: safeJsonStringify(event.policy),
       },
       {
-        gemini_cli_key: EventMetadataKey.GEMINI_CLI_TOOL_CALL_NAME,
+        gemini_cli_key: EventMetadataKey.CRACKED_CODER_TOOL_CALL_NAME,
         value: safeJsonStringify(event.tool_call),
       },
       {

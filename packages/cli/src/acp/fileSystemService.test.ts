@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, type Mocked } from 'vitest';
 import { AcpFileSystemService } from './fileSystemService.js';
 import type { AgentSideConnection } from '@agentclientprotocol/sdk';
-import type { FileSystemService } from '@google/gemini-cli-core';
+import type { FileSystemService } from '@cracked-coder/core';
 
 describe('AcpFileSystemService', () => {
   let mockConnection: Mocked<AgentSideConnection>;

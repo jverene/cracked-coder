@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -55,10 +55,10 @@ describe('sanitizeEnvironment', () => {
     });
   });
 
-  it('should allow variables prefixed with GEMINI_CLI_', () => {
+  it('should allow variables prefixed with CRACKED_CODER_', () => {
     const env = {
-      GEMINI_CLI_FOO: 'bar',
-      GEMINI_CLI_BAZ: 'qux',
+      CRACKED_CODER_FOO: 'bar',
+      CRACKED_CODER_BAZ: 'qux',
     };
     const sanitized = sanitizeEnvironment(env, EMPTY_OPTIONS);
     expect(sanitized).toEqual(env);
@@ -209,7 +209,7 @@ describe('sanitizeEnvironment', () => {
       // Allowed
       PATH: '/usr/bin',
       HOME: '/home/user',
-      GEMINI_CLI_VERSION: '1.2.3',
+      CRACKED_CODER_VERSION: '1.2.3',
       NODE_ENV: 'production',
       // Redacted by name
       API_KEY: 'should-be-redacted',
@@ -224,7 +224,7 @@ describe('sanitizeEnvironment', () => {
     expect(sanitized).toEqual({
       PATH: '/usr/bin',
       HOME: '/home/user',
-      GEMINI_CLI_VERSION: '1.2.3',
+      CRACKED_CODER_VERSION: '1.2.3',
       NODE_ENV: 'production',
     });
   });
@@ -262,9 +262,9 @@ describe('sanitizeEnvironment', () => {
       expect(sanitized).toEqual({ OTHER: 'fine' });
     });
 
-    it('should NOT redact GEMINI_CLI_ variables even if their value looks like a secret (fully trusted)', () => {
+    it('should NOT redact CRACKED_CODER_ variables even if their value looks like a secret (fully trusted)', () => {
       const env = {
-        GEMINI_CLI_INTERNAL: 'ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        CRACKED_CODER_INTERNAL: 'ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       };
       const sanitized = sanitizeEnvironment(env, EMPTY_OPTIONS);
       expect(sanitized).toEqual(env);

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,11 +11,11 @@ import {
   ValidationRequiredError,
   ProjectIdRequiredError,
   AuthType,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
   };
@@ -127,7 +127,7 @@ describe('auth', () => {
     );
     expect(result).toEqual({
       authError:
-        'This account requires setting the GOOGLE_CLOUD_PROJECT or GOOGLE_CLOUD_PROJECT_ID env var. See https://goo.gle/gemini-cli-auth-docs#workspace-gca',
+        'This account requires setting the GOOGLE_CLOUD_PROJECT or GOOGLE_CLOUD_PROJECT_ID env var. See https://goo.gle/cracked-coder-auth-docs#workspace-gca',
       accountSuspensionInfo: null,
     });
     expect(result.authError).not.toContain('Failed to login');

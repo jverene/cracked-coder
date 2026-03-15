@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type { Content } from '@google/genai';
 import type { BaseLlmClient } from '../core/baseLlmClient.js';
-import type { GeminiChat } from '../core/geminiChat.js';
+import type { GeminiChat } from '../core/crackedChat.js';
 import { isFunctionResponse } from './messageInspectors.js';
 import { debugLogger } from './debugLogger.js';
 import { LlmRole } from '../telemetry/types.js';

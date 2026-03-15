@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import { loadTrustedFolders, TrustLevel } from '../../config/trustedFolders.js';
 import { expandHomeDir } from '../utils/directoryUtils.js';
 import * as path from 'node:path';
 import { MessageType, type HistoryItem } from '../types.js';
-import { type Config } from '@google/gemini-cli-core';
+import { type Config } from '@cracked-coder/core';
 
 export enum MultiFolderTrustChoice {
   YES,

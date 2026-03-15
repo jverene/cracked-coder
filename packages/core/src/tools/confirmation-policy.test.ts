@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -32,7 +32,7 @@ describe('Tool Confirmation Policy Updates', () => {
   let mockMessageBus: MessageBus;
   const rootDir = path.join(
     os.tmpdir(),
-    `gemini-cli-policy-test-${Date.now()}`,
+    `cracked-coder-policy-test-${Date.now()}`,
   );
 
   beforeEach(() => {
@@ -77,7 +77,7 @@ describe('Tool Confirmation Policy Updates', () => {
       }),
       getDirectWebFetch: () => false,
       storage: {
-        getProjectTempDir: () => path.join(os.tmpdir(), 'gemini-cli-temp'),
+        getProjectTempDir: () => path.join(os.tmpdir(), 'cracked-coder-temp'),
       },
       isPathAllowed(this: Config, absolutePath: string): boolean {
         const workspaceContext = this.getWorkspaceContext();

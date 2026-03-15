@@ -1,19 +1,19 @@
 # Tools reference
 
-Gemini CLI uses tools to interact with your local environment, access
+Cracked Coder uses tools to interact with your local environment, access
 information, and perform actions on your behalf. These tools extend the model's
 capabilities beyond text generation, letting it read files, execute commands,
 and search the web.
 
-## How to use Gemini CLI's tools
+## How to use Cracked Coder's tools
 
-Tools are generally invoked automatically by Gemini CLI when it needs to perform
+Tools are generally invoked automatically by Cracked Coder when it needs to perform
 an action. However, you can also trigger specific tools manually using shorthand
 syntax.
 
 ### Automatic execution and security
 
-When the model wants to use a tool, Gemini CLI evaluates the request against its
+When the model wants to use a tool, Cracked Coder evaluates the request against its
 security policies.
 
 - **User confirmation:** You must manually approve tools that modify files or
@@ -78,9 +78,9 @@ function.
 | File System | [`write_file`](../tools/file-system.md)          | `Edit`        | Creates or overwrites a file with new content. Requires manual confirmation.<br><br>**Parameters:** `file_path`, `content`                                                                                                                  |
 | Interaction | [`ask_user`](../tools/ask-user.md)               | `Communicate` | Requests clarification or missing information via an interactive dialog.<br><br>**Parameters:** `questions`                                                                                                                                 |
 | Interaction | [`write_todos`](../tools/todos.md)               | `Other`       | Maintains an internal list of subtasks. The model uses this to track its own progress and display it to you.<br><br>**Parameters:** `todos`                                                                                                 |
-| Memory      | [`activate_skill`](../tools/activate-skill.md)   | `Other`       | Loads specialized procedural expertise for specific tasks from the `.gemini/skills` directory.<br><br>**Parameters:** `name`                                                                                                                |
-| Memory      | [`get_internal_docs`](../tools/internal-docs.md) | `Think`       | Accesses Gemini CLI's own documentation to provide more accurate answers about its capabilities.<br><br>**Parameters:** `path`                                                                                                              |
-| Memory      | [`save_memory`](../tools/memory.md)              | `Think`       | Persists specific facts and project details to your `GEMINI.md` file to retain context.<br><br>**Parameters:** `fact`                                                                                                                       |
+| Memory      | [`activate_skill`](../tools/activate-skill.md)   | `Other`       | Loads specialized procedural expertise for specific tasks from the `.cracked/skills` directory.<br><br>**Parameters:** `name`                                                                                                                |
+| Memory      | [`get_internal_docs`](../tools/internal-docs.md) | `Think`       | Accesses Cracked Coder's own documentation to provide more accurate answers about its capabilities.<br><br>**Parameters:** `path`                                                                                                              |
+| Memory      | [`save_memory`](../tools/memory.md)              | `Think`       | Persists specific facts and project details to your `CRACKED.md` file to retain context.<br><br>**Parameters:** `fact`                                                                                                                       |
 | Planning    | [`enter_plan_mode`](../tools/planning.md)        | `Plan`        | Switches the CLI to a safe, read-only "Plan Mode" for researching complex changes.<br><br>**Parameters:** `reason`                                                                                                                          |
 | Planning    | [`exit_plan_mode`](../tools/planning.md)         | `Plan`        | Finalizes a plan, presents it for review, and requests approval to start implementation.<br><br>**Parameters:** `plan`                                                                                                                      |
 | System      | `complete_task`                                  | `Other`       | Finalizes a subagent's mission and returns the result to the parent agent. This tool is not available to the user.<br><br>**Parameters:** `result`                                                                                          |
@@ -92,7 +92,7 @@ function.
 For developers, the tool system is designed to be extensible and robust. The
 `ToolRegistry` class manages all available tools.
 
-You can extend Gemini CLI with custom tools by configuring
+You can extend Cracked Coder with custom tools by configuring
 `tools.discoveryCommand` in your settings or by connecting to MCP servers.
 
 > **Note:** For a deep dive into the internal Tool API and how to implement your

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ const filesToWatch = [
   path.join(cliPackageDir, 'tsconfig.json'),
 ]; // Specific files within the CLI package
 const buildDir = path.join(cliPackageDir, 'dist'); // Build output directory within the CLI package
-const warningsFilePath = path.join(os.tmpdir(), 'gemini-cli-warnings.txt'); // Temp file for warnings
+const warningsFilePath = path.join(os.tmpdir(), 'cracked-coder-warnings.txt'); // Temp file for warnings
 // ---------------------
 
 function getMtime(filePath) {

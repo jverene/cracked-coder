@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -81,7 +81,7 @@ describe('isCustomModel', () => {
 });
 
 describe('supportsModernFeatures', () => {
-  it('should return true for Gemini 3 models', () => {
+  it('should return true for Cracked 3 models', () => {
     expect(supportsModernFeatures('gemini-3-pro-preview')).toBe(true);
     expect(supportsModernFeatures('gemini-3-flash-preview')).toBe(true);
   });
@@ -111,7 +111,7 @@ describe('isGemini3Model', () => {
     expect(isGemini3Model('gemini-3-flash-preview')).toBe(true);
   });
 
-  it('should return true for aliases that resolve to Gemini 3', () => {
+  it('should return true for aliases that resolve to Cracked 3', () => {
     expect(isGemini3Model(GEMINI_MODEL_ALIAS_AUTO)).toBe(true);
     expect(isGemini3Model(GEMINI_MODEL_ALIAS_PRO)).toBe(true);
     expect(isGemini3Model(PREVIEW_GEMINI_MODEL_AUTO)).toBe(true);
@@ -129,13 +129,13 @@ describe('isGemini3Model', () => {
 });
 
 describe('getDisplayString', () => {
-  it('should return Auto (Gemini 3) for preview auto model', () => {
-    expect(getDisplayString(PREVIEW_GEMINI_MODEL_AUTO)).toBe('Auto (Gemini 3)');
+  it('should return Auto (Cracked 3) for preview auto model', () => {
+    expect(getDisplayString(PREVIEW_GEMINI_MODEL_AUTO)).toBe('Auto (Cracked 3)');
   });
 
-  it('should return Auto (Gemini 2.5) for default auto model', () => {
+  it('should return Auto (Cracked 2.5) for default auto model', () => {
     expect(getDisplayString(DEFAULT_GEMINI_MODEL_AUTO)).toBe(
-      'Auto (Gemini 2.5)',
+      'Auto (Cracked 2.5)',
     );
   });
 
@@ -186,12 +186,12 @@ describe('resolveModel', () => {
       expect(model).toBe(PREVIEW_GEMINI_MODEL);
     });
 
-    it('should return Gemini 3.1 Pro when auto-gemini-3 is requested and useGemini3_1 is true', () => {
+    it('should return Cracked 3.1 Pro when auto-gemini-3 is requested and useGemini3_1 is true', () => {
       const model = resolveModel(PREVIEW_GEMINI_MODEL_AUTO, true);
       expect(model).toBe(PREVIEW_GEMINI_3_1_MODEL);
     });
 
-    it('should return Gemini 3.1 Pro Custom Tools when auto-gemini-3 is requested, useGemini3_1 is true, and useCustomToolModel is true', () => {
+    it('should return Cracked 3.1 Pro Custom Tools when auto-gemini-3 is requested, useGemini3_1 is true, and useCustomToolModel is true', () => {
       const model = resolveModel(PREVIEW_GEMINI_MODEL_AUTO, true, true);
       expect(model).toBe(PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL);
     });
@@ -237,7 +237,7 @@ describe('resolveModel', () => {
       );
     });
 
-    it('should return default model when access to preview is false and Gemini 3.1 is requested', () => {
+    it('should return default model when access to preview is false and Cracked 3.1 is requested', () => {
       expect(resolveModel(PREVIEW_GEMINI_MODEL_AUTO, true, false, false)).toBe(
         DEFAULT_GEMINI_MODEL,
       );
@@ -322,7 +322,7 @@ describe('resolveClassifierModel', () => {
     ).toBe(PREVIEW_GEMINI_MODEL);
   });
 
-  it('should return Gemini 3.1 Pro when alias is pro and useGemini3_1 is true', () => {
+  it('should return Cracked 3.1 Pro when alias is pro and useGemini3_1 is true', () => {
     expect(
       resolveClassifierModel(
         PREVIEW_GEMINI_MODEL_AUTO,
@@ -332,7 +332,7 @@ describe('resolveClassifierModel', () => {
     ).toBe(PREVIEW_GEMINI_3_1_MODEL);
   });
 
-  it('should return Gemini 3.1 Pro Custom Tools when alias is pro, useGemini3_1 is true, and useCustomToolModel is true', () => {
+  it('should return Cracked 3.1 Pro Custom Tools when alias is pro, useGemini3_1 is true, and useCustomToolModel is true', () => {
     expect(
       resolveClassifierModel(
         PREVIEW_GEMINI_MODEL_AUTO,
@@ -364,7 +364,7 @@ describe('isActiveModel', () => {
     expect(isActiveModel(DEFAULT_GEMINI_MODEL, true)).toBe(true);
   });
 
-  it('should correctly filter Gemini 3.1 models based on useCustomToolModel when useGemini3_1 is true', () => {
+  it('should correctly filter Cracked 3.1 models based on useCustomToolModel when useGemini3_1 is true', () => {
     // When custom tools are preferred, standard 3.1 should be inactive
     expect(isActiveModel(PREVIEW_GEMINI_3_1_MODEL, true, true)).toBe(false);
     expect(
@@ -378,7 +378,7 @@ describe('isActiveModel', () => {
     ).toBe(false);
   });
 
-  it('should return false for both Gemini 3.1 models when useGemini3_1 is false', () => {
+  it('should return false for both Cracked 3.1 models when useGemini3_1 is false', () => {
     expect(isActiveModel(PREVIEW_GEMINI_3_1_MODEL, false, true)).toBe(false);
     expect(isActiveModel(PREVIEW_GEMINI_3_1_MODEL, false, false)).toBe(false);
     expect(

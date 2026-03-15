@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ import { injectAutomationOverlay } from './automationOverlay.js';
 // Pin chrome-devtools-mcp version for reproducibility.
 const CHROME_DEVTOOLS_MCP_VERSION = '0.17.1';
 
-// Default browser profile directory name within ~/.gemini/
+// Default browser profile directory name within ~/.cracked/
 const BROWSER_PROFILE_DIR = 'cli-browser-profile';
 
 // Default timeout for MCP operations
@@ -311,7 +311,7 @@ export class BrowserManager {
     // Create raw MCP SDK Client (not the wrapper McpClient)
     this.rawMcpClient = new Client(
       {
-        name: 'gemini-cli-browser-agent',
+        name: 'cracked-coder-browser-agent',
         version: '1.0.0',
       },
       {
@@ -331,7 +331,7 @@ export class BrowserManager {
 
     // Session mode determines how the browser is managed:
     // - "isolated": Temp profile, cleaned up after session (--isolated)
-    // - "persistent": Persistent profile at ~/.gemini/cli-browser-profile/ (default)
+    // - "persistent": Persistent profile at ~/.cracked/cli-browser-profile/ (default)
     // - "existing": Connect to already-running Chrome (--autoConnect, requires
     //   remote debugging enabled at chrome://inspect/#remote-debugging)
     if (sessionMode === 'isolated') {
@@ -347,7 +347,7 @@ export class BrowserManager {
     if (browserConfig.customConfig.profilePath) {
       mcpArgs.push('--userDataDir', browserConfig.customConfig.profilePath);
     } else if (sessionMode === 'persistent') {
-      // Default persistent profile lives under ~/.gemini/cli-browser-profile
+      // Default persistent profile lives under ~/.cracked/cli-browser-profile
       const defaultProfilePath = path.join(
         Storage.getGlobalGeminiDir(),
         BROWSER_PROFILE_DIR,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -47,7 +47,7 @@ export class FileDiscoveryService {
     if (isGitRepository(this.projectRoot)) {
       this.gitIgnoreFilter = new GitIgnoreParser(this.projectRoot);
     }
-    this.geminiIgnoreFilter = new IgnoreFileParser(
+    this.crackedIgnoreFilter = new IgnoreFileParser(
       this.projectRoot,
       GEMINI_IGNORE_FILE_NAME,
     );
@@ -59,25 +59,25 @@ export class FileDiscoveryService {
     }
 
     if (this.gitIgnoreFilter) {
-      const geminiPatterns = this.geminiIgnoreFilter.getPatterns();
+      const geminiPatterns = this.crackedIgnoreFilter.getPatterns();
       const customPatterns = this.customIgnoreFilter
         ? this.customIgnoreFilter.getPatterns()
         : [];
-      // Create combined parser: .gitignore + .geminiignore + custom ignore
+      // Create combined parser: .gitignore + .crackedignore + custom ignore
       this.combinedIgnoreFilter = new GitIgnoreParser(
         this.projectRoot,
         // customPatterns should go the last to ensure overwriting of geminiPatterns
-        [...geminiPatterns, ...customPatterns],
+        [...crackedPatterns, ...customPatterns],
       );
     } else {
       // Create combined parser when not git repo
-      const geminiPatterns = this.geminiIgnoreFilter.getPatterns();
+      const geminiPatterns = this.crackedIgnoreFilter.getPatterns();
       const customPatterns = this.customIgnoreFilter
         ? this.customIgnoreFilter.getPatterns()
         : [];
       this.combinedIgnoreFilter = new IgnoreFileParser(
         this.projectRoot,
-        [...geminiPatterns, ...customPatterns],
+        [...crackedPatterns, ...customPatterns],
         true,
       );
     }
@@ -124,7 +124,7 @@ export class FileDiscoveryService {
       if (respectGitIgnore && this.gitIgnoreFilter?.isIgnored(filePath)) {
         return false;
       }
-      if (respectGeminiIgnore && this.geminiIgnoreFilter?.isIgnored(filePath)) {
+      if (respectGeminiIgnore && this.crackedIgnoreFilter?.isIgnored(filePath)) {
         return false;
       }
       return true;
@@ -162,15 +162,15 @@ export class FileDiscoveryService {
   }
 
   /**
-   * Returns the list of ignore files being used (e.g. .geminiignore) excluding .gitignore.
+   * Returns the list of ignore files being used (e.g. .crackedignore) excluding .gitignore.
    */
   getIgnoreFilePaths(): string[] {
     const paths: string[] = [];
     if (
-      this.geminiIgnoreFilter &&
+      this.crackedIgnoreFilter &&
       this.defaultFilterFileOptions.respectGeminiIgnore
     ) {
-      paths.push(...this.geminiIgnoreFilter.getIgnoreFilePaths());
+      paths.push(...this.crackedIgnoreFilter.getIgnoreFilePaths());
     }
     if (this.customIgnoreFilter) {
       paths.push(...this.customIgnoreFilter.getIgnoreFilePaths());

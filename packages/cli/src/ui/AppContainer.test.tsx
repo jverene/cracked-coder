@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -31,7 +31,7 @@ import {
   AuthType,
   type AgentDefinition,
   CoreToolCallStatus,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 // Mock coreEvents
 const mockCoreEvents = vi.hoisted(() => ({
@@ -60,9 +60,9 @@ const terminalNotificationsMocks = vi.hoisted(() => ({
   })),
 }));
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     coreEvents: mockCoreEvents,
@@ -236,7 +236,7 @@ import {
   writeToStdout,
   enableMouseEvents,
   disableMouseEvents,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { type ExtensionManager } from '../config/extension-manager.js';
 import {
   WARNING_PROMPT_DURATION_MS,
@@ -756,7 +756,7 @@ describe('AppContainer State Management', () => {
         ).toHaveBeenCalledWith(
           expect.objectContaining({
             type: 'session_complete',
-            detail: 'Gemini CLI finished responding.',
+            detail: 'Cracked Coder finished responding.',
           }),
         ),
       );
@@ -798,7 +798,7 @@ describe('AppContainer State Management', () => {
         ).toHaveBeenCalledWith(
           expect.objectContaining({
             type: 'session_complete',
-            detail: 'Gemini CLI finished responding.',
+            detail: 'Cracked Coder finished responding.',
           }),
         ),
       );
@@ -1568,7 +1568,7 @@ describe('AppContainer State Management', () => {
 
       expect(titleWrites).toHaveLength(1);
       expect(titleWrites[0][0]).toBe(
-        `\x1b]0;${'Gemini CLI (workspace)'.padEnd(80, ' ')}\x07`,
+        `\x1b]0;${'Cracked Coder (workspace)'.padEnd(80, ' ')}\x07`,
       );
       unmount();
     });

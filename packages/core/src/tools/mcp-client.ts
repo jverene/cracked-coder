@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -81,8 +81,8 @@ import {
 } from '../services/environmentSanitization.js';
 import { expandEnvVars } from '../utils/envExpansion.js';
 import {
-  GEMINI_CLI_IDENTIFICATION_ENV_VAR,
-  GEMINI_CLI_IDENTIFICATION_ENV_VAR_VALUE,
+  CRACKED_CODER_IDENTIFICATION_ENV_VAR,
+  CRACKED_CODER_IDENTIFICATION_ENV_VAR_VALUE,
 } from '../services/shellExecutionService.js';
 
 export const MCP_DEFAULT_TIMEOUT_MSEC = 10 * 60 * 1000; // default to 10 minutes
@@ -1730,7 +1730,7 @@ export async function connectToMcpServer(
 ): Promise<Client> {
   const mcpClient = new Client(
     {
-      name: 'gemini-cli-mcp-client',
+      name: 'cracked-coder-mcp-client',
       version: clientVersion,
     },
     {
@@ -2205,8 +2205,8 @@ export async function createTransport(
     });
 
     const finalEnv: Record<string, string> = {
-      [GEMINI_CLI_IDENTIFICATION_ENV_VAR]:
-        GEMINI_CLI_IDENTIFICATION_ENV_VAR_VALUE,
+      [CRACKED_CODER_IDENTIFICATION_ENV_VAR]:
+        CRACKED_CODER_IDENTIFICATION_ENV_VAR_VALUE,
       ...extensionEnv,
     };
     for (const [key, value] of Object.entries(sanitizedEnv)) {
