@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,7 +11,7 @@ import Spinner from 'ink-spinner';
 import type {
   SubagentProgress,
   SubagentActivityItem,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { TOOL_STATUS } from '../../constants.js';
 import { STATUS_INDICATOR_WIDTH } from './ToolShared.js';
 

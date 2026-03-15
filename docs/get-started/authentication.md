@@ -1,6 +1,6 @@
-# Gemini CLI authentication setup
+# Cracked Coder authentication setup
 
-To use Gemini CLI, you'll need to authenticate with Google. This guide helps you
+To use Cracked Coder, you'll need to authenticate with Google. This guide helps you
 quickly find the best way to sign in based on your account type and how you're
 using the CLI.
 
@@ -8,7 +8,7 @@ using the CLI.
 > To compare features and find the right quota for your needs, see our
 > [Plans page](https://geminicli.com/plans/).
 
-For most users, we recommend starting Gemini CLI and logging in with your
+For most users, we recommend starting Cracked Coder and logging in with your
 personal Google account.
 
 ## Choose your authentication method <a id="auth-methods"></a>
@@ -38,15 +38,15 @@ Select the authentication method that matches your situation in the table below:
 
 ## (Recommended) Sign in with Google <a id="login-google"></a>
 
-If you run Gemini CLI on your local machine, the simplest authentication method
+If you run Cracked Coder on your local machine, the simplest authentication method
 is logging in with your Google account. This method requires a web browser on a
-machine that can communicate with the terminal running Gemini CLI (e.g., your
+machine that can communicate with the terminal running Cracked Coder (e.g., your
 local machine).
 
 > **Important:** If you are a **Google AI Pro** or **Google AI Ultra**
 > subscriber, use the Google account associated with your subscription.
 
-To authenticate and use Gemini CLI:
+To authenticate and use Cracked Coder:
 
 1. Start the CLI:
 
@@ -54,7 +54,7 @@ To authenticate and use Gemini CLI:
    gemini
    ```
 
-2. Select **Sign in with Google**. Gemini CLI opens a sign in prompt using your
+2. Select **Sign in with Google**. Cracked Coder opens a sign in prompt using your
    web browser. Follow the on-screen instructions. Your credentials will be
    cached locally for future sessions.
 
@@ -75,7 +75,7 @@ For instructions, see [Set your Google Cloud Project](#set-gcp).
 If you don't want to authenticate using your Google account, you can use an API
 key from Google AI Studio.
 
-To authenticate and use Gemini CLI with a Gemini API key:
+To authenticate and use Cracked Coder with a Gemini API key:
 
 1. Obtain your API key from
    [Google AI Studio](https://aistudio.google.com/app/apikey).
@@ -86,7 +86,7 @@ To authenticate and use Gemini CLI with a Gemini API key:
 
    ```bash
    # Replace YOUR_GEMINI_API_KEY with the key from AI Studio
-   export GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+   export CRACKED_API_KEY="YOUR_GEMINI_API_KEY"
    ```
 
    **Windows (PowerShell)**
@@ -113,7 +113,7 @@ To authenticate and use Gemini CLI with a Gemini API key:
 
 ## Use Vertex AI <a id="vertex-ai"></a>
 
-To use Gemini CLI with Google Cloud's Vertex AI platform, choose from the
+To use Cracked Coder with Google Cloud's Vertex AI platform, choose from the
 following authentication options:
 
 - A. Application Default Credentials (ADC) using `gcloud`.
@@ -278,14 +278,14 @@ pipelines, or if your organization restricts user-based ADC or API key creation.
 > Google Cloud project for authentication.
 
 When you sign in using your Google account, you may need to configure a Google
-Cloud project for Gemini CLI to use. This applies when you meet at least one of
+Cloud project for Cracked Coder to use. This applies when you meet at least one of
 the following conditions:
 
 - You are using a Company, School, or Google Workspace account.
 - You are using a Gemini Code Assist license from the Google Developer Program.
 - You are using a license from a Gemini Code Assist subscription.
 
-To configure Gemini CLI to use a Google Cloud project, do the following:
+To configure Cracked Coder to use a Google Cloud project, do the following:
 
 1.  [Find your Google Cloud Project ID](https://support.google.com/googleapi/answer/7014113).
 
@@ -295,7 +295,7 @@ To configure Gemini CLI to use a Google Cloud project, do the following:
 
 4.  Configure your environment variables. Set either the `GOOGLE_CLOUD_PROJECT`
     or `GOOGLE_CLOUD_PROJECT_ID` variable to the project ID to use with Gemini
-    CLI. Gemini CLI checks for `GOOGLE_CLOUD_PROJECT` first, then falls back to
+    CLI. Cracked Coder checks for `GOOGLE_CLOUD_PROJECT` first, then falls back to
     `GOOGLE_CLOUD_PROJECT_ID`.
 
     For example, to set the `GOOGLE_CLOUD_PROJECT_ID` variable:
@@ -343,19 +343,19 @@ persist them with the following methods:
     > paths in your shell configuration file, any process launched from that
     > shell can read them.
 
-2.  **Use a `.env` file:** Create a `.gemini/.env` file in your project
-    directory or home directory. Gemini CLI automatically loads variables from
+2.  **Use a `.env` file:** Create a `.cracked/.env` file in your project
+    directory or home directory. Cracked Coder automatically loads variables from
     the first `.env` file it finds, searching up from the current directory,
-    then in your home directory's `.gemini/.env` (e.g., `~/.gemini/.env` or
-    `%USERPROFILE%\.gemini\.env`).
+    then in your home directory's `.cracked/.env` (e.g., `~/.cracked/.env` or
+    `%USERPROFILE%\.cracked\.env`).
 
     Example for user-wide settings:
 
     **macOS/Linux**
 
     ```bash
-    mkdir -p ~/.gemini
-    cat >> ~/.gemini/.env <<'EOF'
+    mkdir -p ~/.cracked
+    cat >> ~/.cracked/.env <<'EOF'
     GOOGLE_CLOUD_PROJECT="your-project-id"
     # Add other variables like GEMINI_API_KEY as needed
     EOF
@@ -364,23 +364,23 @@ persist them with the following methods:
     **Windows (PowerShell)**
 
     ```powershell
-    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini"
+    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cracked"
     @"
     GOOGLE_CLOUD_PROJECT="your-project-id"
     # Add other variables like GEMINI_API_KEY as needed
-    "@ | Out-File -FilePath "$env:USERPROFILE\.gemini\.env" -Encoding utf8 -Append
+    "@ | Out-File -FilePath "$env:USERPROFILE\.cracked\.env" -Encoding utf8 -Append
     ```
 
 Variables are loaded from the first file found, not merged.
 
 ## Running in Google Cloud environments <a id="cloud-env"></a>
 
-When running Gemini CLI within certain Google Cloud environments, authentication
+When running Cracked Coder within certain Google Cloud environments, authentication
 is automatic.
 
-In a Google Cloud Shell environment, Gemini CLI typically authenticates
+In a Google Cloud Shell environment, Cracked Coder typically authenticates
 automatically using your Cloud Shell credentials. In Compute Engine
-environments, Gemini CLI automatically uses Application Default Credentials
+environments, Cracked Coder automatically uses Application Default Credentials
 (ADC) from the environment's metadata server.
 
 If automatic authentication fails, use one of the interactive methods described
@@ -402,5 +402,5 @@ configure authentication using environment variables:
 Your authentication method affects your quotas, pricing, Terms of Service, and
 privacy notices. Review the following pages to learn more:
 
-- [Gemini CLI: Quotas and Pricing](../resources/quota-and-pricing.md).
-- [Gemini CLI: Terms of Service and Privacy Notice](../resources/tos-privacy.md).
+- [Cracked Coder: Quotas and Pricing](../resources/quota-and-pricing.md).
+- [Cracked Coder: Terms of Service and Privacy Notice](../resources/tos-privacy.md).

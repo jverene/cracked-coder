@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -150,7 +150,7 @@ function shouldRedactEnvironmentVariable(
   key = key.toUpperCase();
   value = value?.toUpperCase();
 
-  if (key.startsWith('GEMINI_CLI_')) {
+  if (key.startsWith('CRACKED_CODER_')) {
     return false;
   }
 

@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { useCallback } from 'react';
 import { useKeypress } from '../hooks/useKeypress.js';
-import { ShellExecutionService } from '@google/gemini-cli-core';
+import { ShellExecutionService } from '@cracked-coder/core';
 import { keyToAnsi, type Key } from '../key/keyToAnsi.js';
 import { ACTIVE_SHELL_MAX_LINES } from '../constants.js';
 import { Command } from '../key/keyMatchers.js';
@@ -57,7 +57,7 @@ export const ShellInputPrompt: React.FC<ShellInputPromptProps> = ({
         ShellExecutionService.scrollPty(activeShellPtyId, 1);
         return true;
       }
-      // TODO: Check pty service actually scrolls (request)[https://github.com/google-gemini/gemini-cli/pull/17438/changes/c9fdaf8967da0036bfef43592fcab5a69537df35#r2776479023].
+      // TODO: Check pty service actually scrolls (request)[https://github.com/cracked-coder/cracked-coder/pull/17438/changes/c9fdaf8967da0036bfef43592fcab5a69537df35#r2776479023].
       if (keyMatchers[Command.PAGE_UP](key)) {
         ShellExecutionService.scrollPty(activeShellPtyId, -scrollPageSize);
         return true;

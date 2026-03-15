@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -39,7 +39,7 @@ describe('computeTerminalTitle', () => {
         showThoughts: true,
         useDynamicTitle: false,
       } as TerminalTitleOptions,
-      expected: 'Gemini CLI (my-project)'.padEnd(80, ' '),
+      expected: 'Cracked Coder (my-project)'.padEnd(80, ' '),
       exact: true,
     },
     {
@@ -234,7 +234,7 @@ describe('computeTerminalTitle', () => {
     });
 
     expect(title.length).toBe(80);
-    expect(title).toContain('Gemini CLI (CCCCC');
+    expect(title).toContain('Cracked Coder (CCCCC');
     expect(title).toContain('…)');
   });
 });

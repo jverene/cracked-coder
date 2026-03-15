@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,7 @@ import { evalTest } from './test-helper.js';
 
 describe('Edits location eval', () => {
   /**
-   * Ensure that Gemini CLI always updates existing test files, if present,
+   * Ensure that Cracked Coder always updates existing test files, if present,
    * instead of creating a new one.
    */
   evalTest('USUALLY_PASSES', {

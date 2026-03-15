@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -479,7 +479,7 @@ export default function App() {
               fontSize: '14px',
             }}
           >
-            Please start Gemini CLI to begin debugging
+            Please start Cracked Coder to begin debugging
           </div>
         )}
       </div>

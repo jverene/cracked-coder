@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -205,7 +205,7 @@ Sources:
           {
             content: {
               role: 'model',
-              parts: [{ text: 'こんにちは! Gemini CLI✨️' }],
+              parts: [{ text: 'こんにちは! Cracked Coder✨️' }],
             },
             groundingMetadata: {
               groundingChunks: [
@@ -217,14 +217,14 @@ Sources:
                 },
                 {
                   web: {
-                    title: 'google-gemini/gemini-cli',
-                    uri: 'https://github.com/google-gemini/gemini-cli',
+                    title: 'cracked-coder/cracked-coder',
+                    uri: 'https://github.com/cracked-coder/cracked-coder',
                   },
                 },
                 {
                   web: {
-                    title: 'Gemini CLI: your open-source AI agent',
-                    uri: 'https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/',
+                    title: 'Cracked Coder: your open-source AI agent',
+                    uri: 'https://blog.google/technology/developers/introducing-cracked-coder-open-source-ai-agent/',
                   },
                 },
               ],
@@ -239,7 +239,7 @@ Sources:
                 },
                 {
                   segment: {
-                    // Byte range of "Gemini CLI✨️" (utf-8 encoded)
+                    // Byte range of "Cracked Coder✨️" (utf-8 encoded)
                     startIndex: 17,
                     endIndex: 33,
                   },
@@ -256,12 +256,12 @@ Sources:
 
       const expectedLlmContent = `Web search results for "multibyte query":
 
-こんにちは![1] Gemini CLI✨️[2][3]
+こんにちは![1] Cracked Coder✨️[2][3]
 
 Sources:
 [1] Japanese Greeting (https://example.test/japanese-greeting)
-[2] google-gemini/gemini-cli (https://github.com/google-gemini/gemini-cli)
-[3] Gemini CLI: your open-source AI agent (https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)`;
+[2] cracked-coder/cracked-coder (https://github.com/cracked-coder/cracked-coder)
+[3] Cracked Coder: your open-source AI agent (https://blog.google/technology/developers/introducing-cracked-coder-open-source-ai-agent/)`;
 
       expect(result.llmContent).toBe(expectedLlmContent);
       expect(result.returnDisplay).toBe(

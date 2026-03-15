@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ export function getToolFamily(modelId?: string): ToolFamily {
     return 'default-legacy';
   }
 
-  // Explicit mapping for Gemini 3 family
+  // Explicit mapping for Cracked 3 family
   if (isGemini3Model(modelId)) {
     return 'gemini-3';
   }

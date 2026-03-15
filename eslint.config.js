@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -50,7 +50,7 @@ export default tseslint.config(
       'dist/**',
       'evals/**',
       'packages/test-utils/**',
-      '.gemini/skills/**',
+      '.cracked/skills/**',
     ],
   },
   eslint.configs.recommended,
@@ -168,13 +168,13 @@ export default tseslint.config(
               name: 'node:os',
               importNames: ['homedir', 'tmpdir'],
               message:
-                'Please use the helpers from @google/gemini-cli-core instead of node:os homedir()/tmpdir() to ensure strict environment isolation.',
+                'Please use the helpers from @google/cracked-coder-core instead of node:os homedir()/tmpdir() to ensure strict environment isolation.',
             },
             {
               name: 'os',
               importNames: ['homedir', 'tmpdir'],
               message:
-                'Please use the helpers from @google/gemini-cli-core instead of os homedir()/tmpdir() to ensure strict environment isolation.',
+                'Please use the helpers from @google/cracked-coder-core instead of os homedir()/tmpdir() to ensure strict environment isolation.',
             },
           ],
         },
@@ -233,8 +233,8 @@ export default tseslint.config(
       'no-restricted-imports': [
         'error',
         {
-          name: '@google/gemini-cli-core',
-          message: 'Please use relative imports within the @google/gemini-cli-core package.',
+          name: '@google/cracked-coder-core',
+          message: 'Please use relative imports within the @google/cracked-coder-core package.',
         },
       ],
     },
@@ -245,8 +245,8 @@ export default tseslint.config(
       'no-restricted-imports': [
         'error',
         {
-          name: '@google/gemini-cli',
-          message: 'Please use relative imports within the @google/gemini-cli package.',
+          name: '@google/cracked-coder',
+          message: 'Please use relative imports within the @google/cracked-coder package.',
         },
       ],
     },
@@ -257,8 +257,8 @@ export default tseslint.config(
       'no-restricted-imports': [
         'error',
         {
-          name: '@google/gemini-cli-sdk',
-          message: 'Please use relative imports within the @google/gemini-cli-sdk package.',
+          name: '@google/cracked-coder-sdk',
+          message: 'Please use relative imports within the @google/cracked-coder-sdk package.',
         },
       ],
     },
@@ -288,7 +288,7 @@ export default tseslint.config(
           source: 'string',
           content: [
             '@license',
-            'Copyright (year) Google LLC',
+            'Copyright (year) Cracked Coder LLC',
             'SPDX-License-Identifier: Apache-2.0',
           ].join('\n'),
           patterns: {

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,13 +9,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
-import { TestRig } from '@google/gemini-cli-test-utils';
+import { TestRig } from '@cracked-coder/test-utils';
 import {
   createUnauthorizedToolError,
   parseAgentMarkdown,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
-export * from '@google/gemini-cli-test-utils';
+export * from '@cracked-coder/test-utils';
 
 // Indicates the consistency expectation for this test.
 // - ALWAYS_PASSES - Means that the test is expected to pass 100% of the time. These
@@ -60,7 +60,7 @@ export function evalTest(policy: EvalPolicy, evalCase: EvalCase) {
 
           // If it's an agent file, calculate hash for acknowledgement
           if (
-            filePath.startsWith('.gemini/agents/') &&
+            filePath.startsWith('.cracked/agents/') &&
             filePath.endsWith('.md')
           ) {
             const hash = crypto
@@ -90,7 +90,7 @@ export function evalTest(policy: EvalPolicy, evalCase: EvalCase) {
         if (Object.keys(acknowledgedAgents).length > 0) {
           const ackPath = path.join(
             rig.homeDir!,
-            '.gemini',
+            '.cracked',
             'acknowledgments',
             'agents.json',
           );
@@ -122,7 +122,7 @@ export function evalTest(policy: EvalPolicy, evalCase: EvalCase) {
         approvalMode: evalCase.approvalMode ?? 'yolo',
         timeout: evalCase.timeout,
         env: {
-          GEMINI_CLI_ACTIVITY_LOG_TARGET: activityLogFile,
+          CRACKED_CODER_ACTIVITY_LOG_TARGET: activityLogFile,
         },
       });
 

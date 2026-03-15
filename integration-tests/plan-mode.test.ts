@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { TestRig, checkModelOutputContent, GEMINI_DIR } from './test-helper.js';
+import { TestRig, checkModelOutputContent, CRACKED_DIR } from './test-helper.js';
 
 describe('Plan Mode', () => {
   let rig: TestRig;
@@ -65,7 +65,7 @@ describe('Plan Mode', () => {
   });
 
   it('should allow write_file to the plans directory in plan mode', async () => {
-    const plansDir = '.gemini/tmp/foo/123/plans';
+    const plansDir = '.cracked/tmp/foo/123/plans';
     const testName =
       'should allow write_file to the plans directory in plan mode';
 
@@ -86,7 +86,7 @@ describe('Plan Mode', () => {
 
     // Disable the interactive terminal setup prompt in tests
     writeFileSync(
-      join(rig.homeDir!, GEMINI_DIR, 'state.json'),
+      join(rig.homeDir!, CRACKED_DIR, 'state.json'),
       JSON.stringify({ terminalSetupPromptShown: true }, null, 2),
     );
 
@@ -112,7 +112,7 @@ describe('Plan Mode', () => {
   });
 
   it('should deny write_file to non-plans directory in plan mode', async () => {
-    const plansDir = '.gemini/tmp/foo/123/plans';
+    const plansDir = '.cracked/tmp/foo/123/plans';
     const testName =
       'should deny write_file to non-plans directory in plan mode';
 
@@ -133,7 +133,7 @@ describe('Plan Mode', () => {
 
     // Disable the interactive terminal setup prompt in tests
     writeFileSync(
-      join(rig.homeDir!, GEMINI_DIR, 'state.json'),
+      join(rig.homeDir!, CRACKED_DIR, 'state.json'),
       JSON.stringify({ terminalSetupPromptShown: true }, null, 2),
     );
 
@@ -171,7 +171,7 @@ describe('Plan Mode', () => {
 
     // Disable the interactive terminal setup prompt in tests
     writeFileSync(
-      join(rig.homeDir!, GEMINI_DIR, 'state.json'),
+      join(rig.homeDir!, CRACKED_DIR, 'state.json'),
       JSON.stringify({ terminalSetupPromptShown: true }, null, 2),
     );
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -53,7 +53,7 @@ export class OAuth2AuthProvider extends BaseA2AAuthProvider {
     super();
     this.tokenStorage = new MCPOAuthTokenStorage(
       Storage.getA2AOAuthTokensPath(),
-      'gemini-cli-a2a',
+      'cracked-coder-a2a',
     );
 
     // Seed from user config.

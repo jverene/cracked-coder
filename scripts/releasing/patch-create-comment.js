@@ -2,7 +2,7 @@
 
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -57,11 +57,11 @@ async function main() {
       default: false,
     })
     .example(
-      '$0 --original-pr 8655 --exit-code 0 --commit abc1234 --channel preview --repository google-gemini/gemini-cli --test',
+      '$0 --original-pr 8655 --exit-code 0 --commit abc1234 --channel preview --repository cracked-coder/cracked-coder --test',
       'Test success comment',
     )
     .example(
-      '$0 --original-pr 8655 --exit-code 1 --commit abc1234 --channel stable --repository google-gemini/gemini-cli --test',
+      '$0 --original-pr 8655 --exit-code 1 --commit abc1234 --channel stable --repository cracked-coder/cracked-coder --test',
       'Test failure comment',
     )
     .help()
@@ -82,7 +82,7 @@ async function main() {
   const channel = argv.channel || process.env.CHANNEL;
   const environment = argv.environment;
   const repository =
-    argv.repository || process.env.REPOSITORY || 'google-gemini/gemini-cli';
+    argv.repository || process.env.REPOSITORY || 'cracked-coder/cracked-coder';
   const runId = argv.runId || process.env.GITHUB_RUN_ID || '0';
 
   // Validate required parameters

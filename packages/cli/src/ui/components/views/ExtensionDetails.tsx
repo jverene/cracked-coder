@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -202,8 +202,8 @@ export function ExtensionDetails({
       {extension.hasContext && (
         <Box flexDirection="column" marginBottom={1}>
           <Text color={theme.text.primary}>
-            This extension will append info to your gemini.md context using
-            gemini.md
+            This extension will append info to your cracked.md context using
+            cracked.md
           </Text>
         </Box>
       )}

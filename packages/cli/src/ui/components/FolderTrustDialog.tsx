@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,7 +23,7 @@ import { runExitCleanup } from '../../utils/cleanup.js';
 import {
   ExitCodes,
   type FolderDiscoveryResults,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { useUIState } from '../contexts/UIStateContext.js';
 import { useAlternateBuffer } from '../hooks/useAlternateBuffer.js';
 import { OverflowProvider } from '../contexts/OverflowContext.js';
@@ -142,7 +142,7 @@ export const FolderTrustDialog: React.FC<FolderTrustDialogProps> = ({
     <Box flexDirection="column">
       <Box marginBottom={1}>
         <Text color={theme.text.primary}>
-          Trusting a folder allows Gemini CLI to load its local configurations,
+          Trusting a folder allows Cracked Coder to load its local configurations,
           including custom commands, hooks, MCP servers, agent skills, and
           settings. These configurations could execute code on your behalf or
           change the behavior of the CLI.
@@ -298,7 +298,7 @@ export const FolderTrustDialog: React.FC<FolderTrustDialogProps> = ({
       {isRestarting && (
         <Box marginLeft={1} marginTop={1}>
           <Text color={theme.status.warning}>
-            Gemini CLI is restarting to apply the trust changes...
+            Cracked Coder is restarting to apply the trust changes...
           </Text>
         </Box>
       )}

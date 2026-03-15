@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -38,8 +38,8 @@ describe('isGitHubRepository', async () => {
 
   it('returns true if the remote is github.com', async () => {
     vi.mocked(child_process.execSync).mockReturnValueOnce(`
-      origin  https://github.com/sethvargo/gemini-cli (fetch)
-      origin  https://github.com/sethvargo/gemini-cli (push)
+      origin  https://github.com/sethvargo/cracked-coder (fetch)
+      origin  https://github.com/sethvargo/cracked-coder (push)
     `);
     expect(isGitHubRepository()).toBe(true);
   });

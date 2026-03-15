@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -62,11 +62,11 @@ describe('IdeClient', () => {
       undefined;
 
     // Mock environment variables
-    process.env['GEMINI_CLI_IDE_WORKSPACE_PATH'] = '/test/workspace';
-    delete process.env['GEMINI_CLI_IDE_SERVER_PORT'];
-    delete process.env['GEMINI_CLI_IDE_SERVER_STDIO_COMMAND'];
-    delete process.env['GEMINI_CLI_IDE_SERVER_STDIO_ARGS'];
-    delete process.env['GEMINI_CLI_IDE_AUTH_TOKEN'];
+    process.env['CRACKED_CODER_IDE_WORKSPACE_PATH'] = '/test/workspace';
+    delete process.env['CRACKED_CODER_IDE_SERVER_PORT'];
+    delete process.env['CRACKED_CODER_IDE_SERVER_STDIO_COMMAND'];
+    delete process.env['CRACKED_CODER_IDE_SERVER_STDIO_ARGS'];
+    delete process.env['CRACKED_CODER_IDE_AUTH_TOKEN'];
 
     // Mock dependencies
     vi.spyOn(process, 'cwd').mockReturnValue('/test/workspace/sub-dir');
@@ -586,7 +586,7 @@ describe('IdeClient', () => {
       vi.mocked(getConnectionConfigFromFile).mockResolvedValue(undefined);
       vi.mocked(validateWorkspacePath).mockReturnValue({ isValid: true });
       vi.mocked(getPortFromEnv).mockReturnValue('9090');
-      process.env['GEMINI_CLI_IDE_AUTH_TOKEN'] = 'env-auth-token';
+      process.env['CRACKED_CODER_IDE_AUTH_TOKEN'] = 'env-auth-token';
 
       const ideClient = await IdeClient.getInstance();
       await ideClient.connect();

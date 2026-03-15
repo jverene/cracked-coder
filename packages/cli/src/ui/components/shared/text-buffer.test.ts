@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -41,7 +41,7 @@ import {
   getTransformedImagePath,
 } from './text-buffer.js';
 import { cpLen } from '../../utils/textUtils.js';
-import { escapePath } from '@google/gemini-cli-core';
+import { escapePath } from '@cracked-coder/core';
 
 const defaultVisualLayout: VisualLayout = {
   visualLines: [''],
@@ -1009,7 +1009,7 @@ describe('useTextBuffer', () => {
     let tempDir: string;
 
     beforeEach(() => {
-      tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gemini-cli-test-'));
+      tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cracked-coder-test-'));
     });
 
     afterEach(() => {

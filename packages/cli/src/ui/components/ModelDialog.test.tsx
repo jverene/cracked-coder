@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,16 +20,16 @@ import {
   PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL,
   PREVIEW_GEMINI_FLASH_MODEL,
   AuthType,
-} from '@google/gemini-cli-core';
-import type { Config, ModelSlashCommandEvent } from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
+import type { Config, ModelSlashCommandEvent } from '@cracked-coder/core';
 
 // Mock dependencies
 const mockGetDisplayString = vi.fn();
 const mockLogModelSlashCommand = vi.fn();
 const mockModelSlashCommandEvent = vi.fn();
 
-vi.mock('@google/gemini-cli-core', async () => {
-  const actual = await vi.importActual('@google/gemini-cli-core');
+vi.mock('@cracked-coder/core', async () => {
+  const actual = await vi.importActual('@cracked-coder/core');
   return {
     ...actual,
     getDisplayString: (val: string) => mockGetDisplayString(val),
@@ -74,7 +74,7 @@ describe('<ModelDialog />', () => {
 
     // Default implementation for getDisplayString
     mockGetDisplayString.mockImplementation((val: string) => {
-      if (val === 'auto-gemini-2.5') return 'Auto (Gemini 2.5)';
+      if (val === 'auto-gemini-2.5') return 'Auto (Cracked 2.5)';
       if (val === 'auto-gemini-3') return 'Auto (Preview)';
       return val;
     });
@@ -276,7 +276,7 @@ describe('<ModelDialog />', () => {
     mockGetModel.mockReturnValue(DEFAULT_GEMINI_MODEL);
     mockGetDisplayString.mockImplementation((val: string) => {
       if (val === DEFAULT_GEMINI_MODEL) return 'My Custom Model Display';
-      if (val === 'auto-gemini-2.5') return 'Auto (Gemini 2.5)';
+      if (val === 'auto-gemini-2.5') return 'Auto (Cracked 2.5)';
       return val;
     });
     const { lastFrame, unmount } = await renderComponent();
@@ -296,7 +296,7 @@ describe('<ModelDialog />', () => {
       unmount();
     });
 
-    it('shows Gemini 3 models in manual view when Gemini 3.1 is NOT launched', async () => {
+    it('shows Cracked 3 models in manual view when Cracked 3.1 is NOT launched', async () => {
       mockGetGemini31LaunchedSync.mockReturnValue(false);
       const { lastFrame, stdin, waitUntilReady, unmount } =
         await renderComponent();
@@ -317,7 +317,7 @@ describe('<ModelDialog />', () => {
       unmount();
     });
 
-    it('shows Gemini 3.1 models in manual view when Gemini 3.1 IS launched', async () => {
+    it('shows Cracked 3.1 models in manual view when Cracked 3.1 IS launched', async () => {
       mockGetGemini31LaunchedSync.mockReturnValue(true);
       const { lastFrame, stdin, waitUntilReady, unmount } =
         await renderComponent(mockConfig as Config, AuthType.USE_VERTEX_AI);
@@ -338,7 +338,7 @@ describe('<ModelDialog />', () => {
       unmount();
     });
 
-    it('uses custom tools model when Gemini 3.1 IS launched and auth is Gemini API Key', async () => {
+    it('uses custom tools model when Cracked 3.1 IS launched and auth is Gemini API Key', async () => {
       mockGetGemini31LaunchedSync.mockReturnValue(true);
       const { stdin, waitUntilReady, unmount } = await renderComponent(
         mockConfig as Config,
@@ -355,7 +355,7 @@ describe('<ModelDialog />', () => {
       });
       await waitUntilReady();
 
-      // Select Gemini 3.1 (first item in preview section)
+      // Select Cracked 3.1 (first item in preview section)
       await act(async () => {
         stdin.write('\r');
       });

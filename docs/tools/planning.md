@@ -1,6 +1,6 @@
-# Gemini CLI planning tools
+# Cracked Coder planning tools
 
-Planning tools let Gemini CLI switch into a safe, read-only "Plan Mode" for
+Planning tools let Cracked Coder switch into a safe, read-only "Plan Mode" for
 researching and planning complex changes, and to signal the finalization of a
 plan to the user.
 
@@ -38,7 +38,7 @@ finalized plan to the user and requests approval to start the implementation.
 - **Parameters:**
   - `plan_path` (string, required): The path to the finalized Markdown plan
     file. This file MUST be located within the project's temporary plans
-    directory (for example, `~/.gemini/tmp/<project>/plans/`).
+    directory (for example, `~/.cracked/tmp/<project>/plans/`).
 - **Behavior:**
   - Validates that the `plan_path` is within the allowed directory and that the
     file exists and has content.

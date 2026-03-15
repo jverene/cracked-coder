@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { appEvents, AppEvent } from '../../utils/events.js';
-import { coreEvents } from '@google/gemini-cli-core';
+import { coreEvents } from '@cracked-coder/core';
 import {
   profiler,
   DebugProfiler,

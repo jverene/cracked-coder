@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import type { HierarchicalMemory } from '../config/memory.js';
-import { GEMINI_DIR } from '../utils/paths.js';
+import { CRACKED_DIR } from '../utils/paths.js';
 import { ApprovalMode } from '../policy/types.js';
 import * as snippets from './snippets.js';
 import * as legacySnippets from './snippets.legacy.js';
@@ -85,7 +85,7 @@ export class PromptProvider {
 
     // --- Template File Override ---
     if (systemMdResolution.value && !systemMdResolution.isDisabled) {
-      let systemMdPath = path.resolve(path.join(GEMINI_DIR, 'system.md'));
+      let systemMdPath = path.resolve(path.join(CRACKED_DIR, 'system.md'));
       if (!systemMdResolution.isSwitch) {
         systemMdPath = systemMdResolution.value;
       }
@@ -229,7 +229,7 @@ export class PromptProvider {
     this.maybeWriteSystemMd(
       sanitizedPrompt,
       systemMdResolution,
-      path.resolve(path.join(GEMINI_DIR, 'system.md')),
+      path.resolve(path.join(CRACKED_DIR, 'system.md')),
     );
 
     return sanitizedPrompt;

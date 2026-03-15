@@ -20,7 +20,7 @@ runs:
       run: 'echo "$JSON_INPUTS"'
     - name: 'Run Tests'
       env:
-        GEMINI_API_KEY: '${{ inputs.gemini_api_key }}'
+        GEMINI_API_KEY: '${{ inputs.cracked_api_key }}'
       working-directory: '${{ inputs.working-directory }}'
       run: |-
         echo "::group::Build"

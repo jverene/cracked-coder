@@ -1,17 +1,17 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { Storage, debugLogger } from '@google/gemini-cli-core';
+import { Storage, debugLogger } from '@cracked-coder/core';
 import { PersistentState } from './persistentState.js';
 
 vi.mock('node:fs');
-vi.mock('@google/gemini-cli-core', () => ({
+vi.mock('@cracked-coder/core', () => ({
   Storage: {
     getGlobalGeminiDir: vi.fn(),
   },

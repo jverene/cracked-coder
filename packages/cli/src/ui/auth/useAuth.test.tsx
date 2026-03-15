@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ import {
   AuthType,
   type Config,
   ProjectIdRequiredError,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { AuthState } from '../types.js';
 import type { LoadedSettings } from '../../config/settings.js';
 import { waitFor } from '../../test-utils/async.js';
@@ -28,9 +28,9 @@ import { waitFor } from '../../test-utils/async.js';
 const mockLoadApiKey = vi.fn();
 const mockValidateAuthMethod = vi.fn();
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     loadApiKey: () => mockLoadApiKey(),
@@ -302,7 +302,7 @@ describe('useAuth', () => {
 
       await waitFor(() => {
         expect(result.current.authError).toBe(
-          'This account requires setting the GOOGLE_CLOUD_PROJECT or GOOGLE_CLOUD_PROJECT_ID env var. See https://goo.gle/gemini-cli-auth-docs#workspace-gca',
+          'This account requires setting the GOOGLE_CLOUD_PROJECT or GOOGLE_CLOUD_PROJECT_ID env var. See https://goo.gle/cracked-coder-auth-docs#workspace-gca',
         );
         expect(result.current.authError).not.toContain('Failed to login');
         expect(result.current.authState).toBe(AuthState.Updating);

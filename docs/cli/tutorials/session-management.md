@@ -1,12 +1,12 @@
 # Manage sessions and history
 
-Resume, browse, and rewind your conversations with Gemini CLI. In this guide,
+Resume, browse, and rewind your conversations with Cracked Coder. In this guide,
 you'll learn how to switch between tasks, manage your session history, and undo
 mistakes using the rewind feature.
 
 ## Prerequisites
 
-- Gemini CLI installed and authenticated.
+- Cracked Coder installed and authenticated.
 - At least one active or past session.
 
 ## How to resume where you left off
@@ -20,7 +20,7 @@ The fastest way to pick up your most recent work is with the `--resume` flag (or
 `-r`).
 
 ```bash
-gemini -r
+cracked -r
 ```
 
 This restores your chat history and memory, so you can say "Continue with the
@@ -55,15 +55,15 @@ You can also manage sessions from the command line:
 
 ```bash
 # List all sessions with their IDs
-gemini --list-sessions
+cracked --list-sessions
 
 # Delete a specific session by ID or index
-gemini --delete-session 1
+cracked --delete-session 1
 ```
 
 ## How to rewind time (Undo mistakes)
 
-Gemini CLI's **Rewind** feature is like `Ctrl+Z` for your workflow.
+Cracked Coder's **Rewind** feature is like `Ctrl+Z` for your workflow.
 
 ### Scenario: Triggering rewind
 

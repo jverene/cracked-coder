@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -40,7 +40,7 @@ describe('generate-settings-schema', () => {
       description:
         'The URL of the JSON schema for this settings file. Used by editors for validation and autocompletion.',
       default:
-        'https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json',
+        'https://raw.githubusercontent.com/cracked-coder/cracked-coder/main/schemas/settings.schema.json',
     });
   });
 });

@@ -1,6 +1,6 @@
 # Subagents (experimental)
 
-Subagents are specialized agents that operate within your main Gemini CLI
+Subagents are specialized agents that operate within your main Cracked Coder
 session. They are designed to handle specific, complex tasks—like deep codebase
 analysis, documentation lookup, or domain-specific reasoning—without cluttering
 the main agent's context or toolset.
@@ -45,7 +45,7 @@ in your prompt.
 
 ### Automatic delegation
 
-Gemini CLI's main agent is instructed to use specialized subagents when a task
+Cracked Coder's main agent is instructed to use specialized subagents when a task
 matches their expertise. For example, if you ask "How does the auth system
 work?", the main agent may decide to call the `codebase_investigator` subagent
 to perform the research.
@@ -68,7 +68,7 @@ primary model to use that specific subagent tool immediately.
 
 ## Built-in subagents
 
-Gemini CLI comes with the following built-in subagents:
+Cracked Coder comes with the following built-in subagents:
 
 ### Codebase Investigator
 
@@ -96,7 +96,7 @@ Gemini CLI comes with the following built-in subagents:
 ### CLI Help Agent
 
 - **Name:** `cli_help`
-- **Purpose:** Get expert knowledge about Gemini CLI itself, its commands,
+- **Purpose:** Get expert knowledge about Cracked Coder itself, its commands,
   configuration, and documentation.
 - **When to use:** "How do I configure a proxy?", "What does the `/rewind`
   command do?"
@@ -171,7 +171,7 @@ The available modes are:
 
 | Mode         | Description                                                                                                                                                                                 |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `persistent` | **(Default)** Launches Chrome with a persistent profile stored at `~/.gemini/cli-browser-profile/`. Cookies, history, and settings are preserved between sessions.                          |
+| `persistent` | **(Default)** Launches Chrome with a persistent profile stored at `~/.cracked/cli-browser-profile/`. Cookies, history, and settings are preserved between sessions.                          |
 | `isolated`   | Launches Chrome with a temporary profile that is deleted after each session. Use this for clean-state automation.                                                                           |
 | `existing`   | Attaches to an already-running Chrome instance. You must enable remote debugging first by navigating to `chrome://inspect/#remote-debugging` in Chrome. No new browser process is launched. |
 
@@ -245,15 +245,15 @@ specific personas. To use custom subagents, you must enable them in your
 Custom agents are defined as Markdown files (`.md`) with YAML frontmatter. You
 can place them in:
 
-1.  **Project-level:** `.gemini/agents/*.md` (Shared with your team)
-2.  **User-level:** `~/.gemini/agents/*.md` (Personal agents)
+1.  **Project-level:** `.cracked/agents/*.md` (Shared with your team)
+2.  **User-level:** `~/.cracked/agents/*.md` (Personal agents)
 
 ### File format
 
 The file **MUST** start with YAML frontmatter enclosed in triple-dashes `---`.
 The body of the markdown file becomes the agent's **System Prompt**.
 
-**Example: `.gemini/agents/security-auditor.md`**
+**Example: `.cracked/agents/security-auditor.md`**
 
 ```markdown
 ---
@@ -408,7 +408,7 @@ that your subagent was called with a specific prompt and the given description.
 
 ## Remote subagents (Agent2Agent) (experimental)
 
-Gemini CLI can also delegate tasks to remote subagents using the Agent-to-Agent
+Cracked Coder can also delegate tasks to remote subagents using the Agent-to-Agent
 (A2A) protocol.
 
 > **Note: Remote subagents are currently an experimental feature.**

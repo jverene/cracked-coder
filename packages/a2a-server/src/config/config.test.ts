@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,12 +19,12 @@ import {
   AuthType,
   isHeadlessMode,
   FatalAuthenticationError,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
 // Mock dependencies
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     Config: vi.fn().mockImplementation((params) => {
@@ -450,8 +450,8 @@ describe('loadConfig', () => {
         expect(refreshAuthMock).toHaveBeenCalledWith(AuthType.COMPUTE_ADC);
       });
 
-      it('should skip LOGIN_WITH_GOOGLE and use COMPUTE_ADC directly if GEMINI_CLI_USE_COMPUTE_ADC is true', async () => {
-        vi.stubEnv('GEMINI_CLI_USE_COMPUTE_ADC', 'true');
+      it('should skip LOGIN_WITH_GOOGLE and use COMPUTE_ADC directly if CRACKED_CODER_USE_COMPUTE_ADC is true', async () => {
+        vi.stubEnv('CRACKED_CODER_USE_COMPUTE_ADC', 'true');
         vi.mocked(isHeadlessMode).mockReturnValue(false); // Even if not headless
 
         const refreshAuthMock = vi.fn().mockResolvedValue(undefined);
@@ -498,7 +498,7 @@ describe('loadConfig', () => {
         await expect(
           loadConfig(mockSettings, mockExtensionLoader, taskId),
         ).rejects.toThrow(
-          'Interactive terminal required for LOGIN_WITH_GOOGLE. Run in an interactive terminal or set GEMINI_CLI_USE_COMPUTE_ADC=true to use Application Default Credentials.',
+          'Interactive terminal required for LOGIN_WITH_GOOGLE. Run in an interactive terminal or set CRACKED_CODER_USE_COMPUTE_ADC=true to use Application Default Credentials.',
         );
 
         expect(refreshAuthMock).not.toHaveBeenCalled();

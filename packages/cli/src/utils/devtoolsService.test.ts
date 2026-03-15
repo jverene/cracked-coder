@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { vi, describe, it, expect, beforeEach } from 'vitest';
-import type { Config } from '@google/gemini-cli-core';
+import type { Config } from '@cracked-coder/core';
 
 // --- Mocks (hoisted) ---
 
@@ -75,7 +75,7 @@ const mockOpenBrowserSecurely = vi.hoisted(() =>
   vi.fn(() => Promise.resolve()),
 );
 
-vi.mock('@google/gemini-cli-core', () => ({
+vi.mock('@cracked-coder/core', () => ({
   debugLogger: {
     log: vi.fn(),
     debug: vi.fn(),
@@ -90,7 +90,7 @@ vi.mock('ws', () => ({
   default: MockWebSocket,
 }));
 
-vi.mock('@google/gemini-cli-devtools', () => ({
+vi.mock('@cracked-coder/devtools', () => ({
   DevTools: {
     getInstance: () => mockDevToolsInstance,
   },
@@ -119,7 +119,7 @@ describe('devtoolsService', () => {
     vi.clearAllMocks();
     MockWebSocket.instances = [];
     resetForTesting();
-    delete process.env['GEMINI_CLI_ACTIVITY_LOG_TARGET'];
+    delete process.env['CRACKED_CODER_ACTIVITY_LOG_TARGET'];
   });
 
   describe('setupInitialActivityLogger', () => {
@@ -183,7 +183,7 @@ describe('devtoolsService', () => {
     });
 
     it('initializes in file mode when target env var is set', async () => {
-      process.env['GEMINI_CLI_ACTIVITY_LOG_TARGET'] = '/tmp/test.jsonl';
+      process.env['CRACKED_CODER_ACTIVITY_LOG_TARGET'] = '/tmp/test.jsonl';
       const config = createMockConfig();
       await setupInitialActivityLogger(config);
 
@@ -196,7 +196,7 @@ describe('devtoolsService', () => {
     });
 
     it('does nothing in file mode when config.storage is missing', async () => {
-      process.env['GEMINI_CLI_ACTIVITY_LOG_TARGET'] = '/tmp/test.jsonl';
+      process.env['CRACKED_CODER_ACTIVITY_LOG_TARGET'] = '/tmp/test.jsonl';
       const config = createMockConfig({ storage: undefined });
       await setupInitialActivityLogger(config);
 

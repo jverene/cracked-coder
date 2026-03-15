@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,7 +19,7 @@ export class ContextBuilder {
    * Builds the full context object with all available data.
    */
   buildFullContext(): SafetyCheckInput['context'] {
-    const clientHistory = this.context.geminiClient?.getHistory() || [];
+    const clientHistory = this.context.crackedClient?.getHistory() || [];
     const history = this.convertHistoryToTurns(clientHistory);
 
     debugLogger.debug(

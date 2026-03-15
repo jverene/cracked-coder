@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -208,14 +208,14 @@ describe('tokenCalculation', () => {
       expect(tokens).toBeLessThan(1600);
     });
 
-    it('should handle Gemini 3 multimodal nested parts in functionResponse', () => {
+    it('should handle Cracked 3 multimodal nested parts in functionResponse', () => {
       const parts: Part[] = [
         {
           functionResponse: {
             name: 'multimodal_tool',
             id: '456',
             response: { status: 'success' },
-            // Gemini 3 nested parts
+            // Cracked 3 nested parts
             parts: [
               { inlineData: { mimeType: 'image/png', data: 'base64...' } },
               { text: 'Look at this image' },

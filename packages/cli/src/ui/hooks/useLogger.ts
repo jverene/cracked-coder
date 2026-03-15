@@ -1,11 +1,11 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useState, useEffect } from 'react';
-import { sessionId, Logger, type Storage } from '@google/gemini-cli-core';
+import { sessionId, Logger, type Storage } from '@cracked-coder/core';
 
 /**
  * Hook to manage the logger instance.
@@ -17,7 +17,7 @@ export const useLogger = (storage: Storage) => {
     const newLogger = new Logger(sessionId, storage);
     /**
      * Start async initialization, no need to await. Using await slows down the
-     * time from launch to see the gemini-cli prompt and it's better to not save
+     * time from launch to see the cracked-coder prompt and it's better to not save
      * messages than for the cli to hanging waiting for the logger to loading.
      */
     newLogger

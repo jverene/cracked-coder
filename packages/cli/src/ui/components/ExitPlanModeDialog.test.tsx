@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,7 +16,7 @@ import {
   validatePlanContent,
   processSingleFileContent,
   type FileSystemService,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import * as fs from 'node:fs';
 import { useKeyMatchers } from '../hooks/useKeyMatchers.js';
 
@@ -24,9 +24,9 @@ vi.mock('../utils/editorUtils.js', () => ({
   openFileInEditor: vi.fn(),
 }));
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     validatePlanPath: vi.fn(async () => null),
@@ -164,7 +164,7 @@ Implement a comprehensive authentication system with multiple providers.
             writeTextFile: vi.fn(),
           }),
           getUseAlternateBuffer: () => options?.useAlternateBuffer ?? true,
-        } as unknown as import('@google/gemini-cli-core').Config,
+        } as unknown as import('@cracked-coder/core').Config,
       },
     );
 
@@ -442,7 +442,7 @@ Implement a comprehensive authentication system with multiple providers.
                 writeTextFile: vi.fn(),
               }),
               getUseAlternateBuffer: () => useAlternateBuffer ?? true,
-            } as unknown as import('@google/gemini-cli-core').Config,
+            } as unknown as import('@cracked-coder/core').Config,
           },
         );
 

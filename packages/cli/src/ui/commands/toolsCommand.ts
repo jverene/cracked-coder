@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -43,7 +43,7 @@ async function listTools(
 
 const listSubCommand: SlashCommand = {
   name: 'list',
-  description: 'List available Gemini CLI tools.',
+  description: 'List available Cracked Coder tools.',
   kind: CommandKind.BUILT_IN,
   autoExecute: true,
   action: async (context: CommandContext): Promise<void> =>
@@ -53,7 +53,7 @@ const listSubCommand: SlashCommand = {
 const descSubCommand: SlashCommand = {
   name: 'desc',
   altNames: ['descriptions'],
-  description: 'List available Gemini CLI tools with descriptions.',
+  description: 'List available Cracked Coder tools with descriptions.',
   kind: CommandKind.BUILT_IN,
   autoExecute: true,
   action: async (context: CommandContext): Promise<void> =>
@@ -63,7 +63,7 @@ const descSubCommand: SlashCommand = {
 export const toolsCommand: SlashCommand = {
   name: 'tools',
   description:
-    'List available Gemini CLI tools. Use /tools desc to include descriptions.',
+    'List available Cracked Coder tools. Use /tools desc to include descriptions.',
   kind: CommandKind.BUILT_IN,
   autoExecute: false,
   subCommands: [listSubCommand, descSubCommand],

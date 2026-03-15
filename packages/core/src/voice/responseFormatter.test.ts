@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -192,7 +192,7 @@ describe('formatForSpeech', () => {
 
     it('should abbreviate a Unix path containing a scoped npm package segment', () => {
       const result = formatForSpeech(
-        'at /home/user/project/node_modules/@google/gemini-cli-core/src/index.ts:12:3',
+        'at /home/user/project/node_modules/@cracked-coder/core/src/index.ts:12:3',
         { pathDepth: 5 },
       );
       expect(result).toContain('line 12');

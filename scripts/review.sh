@@ -11,17 +11,17 @@ if [ -z "$1" ]; then
 fi
 pr="$1"
 model="${2:-gemini-3.1-pro-preview}"
-REPO="google-gemini/gemini-cli"
-REVIEW_DIR="$HOME/git/review/gemini-cli"
+REPO="cracked-coder/cracked-coder"
+REVIEW_DIR="$HOME/git/review/cracked-coder"
 
 if [ ! -d "$REVIEW_DIR" ]; then
     echo "ERROR: Directory $REVIEW_DIR does not exist."
     echo ""
-    echo "Please create a new gemini-cli clone at that directory to use for reviews."
+    echo "Please create a new cracked-coder clone at that directory to use for reviews."
     echo "Instructions:"
     echo "  mkdir -p ~/git/review"
     echo "  cd ~/git/review"
-    echo "  git clone https://github.com/google-gemini/gemini-cli.git"
+    echo "  git clone https://github.com/cracked-coder/cracked-coder.git"
     exit 1
 fi
 

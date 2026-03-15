@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import { MessageType, type HistoryItemHelp } from '../types.js';
 export const helpCommand: SlashCommand = {
   name: 'help',
   kind: CommandKind.BUILT_IN,
-  description: 'For help on gemini-cli',
+  description: 'For help on cracked-coder',
   autoExecute: true,
   action: async (context) => {
     const helpItem: Omit<HistoryItemHelp, 'id'> = {

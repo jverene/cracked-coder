@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -48,7 +48,7 @@ describe('createPolicyUpdater', () => {
   it('should persist policy when persist flag is true', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     await messageBus.publish({
@@ -74,7 +74,7 @@ describe('createPolicyUpdater', () => {
   it('should not persist policy when persist flag is false or undefined', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     await messageBus.publish({
@@ -90,7 +90,7 @@ describe('createPolicyUpdater', () => {
   it('should append to existing policy file', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     const existingContent =
@@ -115,7 +115,7 @@ describe('createPolicyUpdater', () => {
   it('should handle toml with multiple rules correctly', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     const existingContent = `
@@ -148,7 +148,7 @@ decision = "deny"
   it('should include argsPattern if provided', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     await messageBus.publish({
@@ -167,7 +167,7 @@ decision = "deny"
   it('should include mcpName if provided', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const policyFile = '/mock/user/.gemini/policies/auto-saved.toml';
+    const policyFile = '/mock/user/.cracked/policies/auto-saved.toml';
     vi.spyOn(mockStorage, 'getAutoSavedPolicyPath').mockReturnValue(policyFile);
 
     await messageBus.publish({
@@ -200,7 +200,7 @@ decision = "deny"
   it('should persist to workspace when persistScope is workspace', async () => {
     createPolicyUpdater(policyEngine, messageBus, mockStorage);
 
-    const workspacePoliciesDir = '/mock/project/.gemini/policies';
+    const workspacePoliciesDir = '/mock/project/.cracked/policies';
     const policyFile = path.join(
       workspacePoliciesDir,
       AUTO_SAVED_POLICY_FILENAME,

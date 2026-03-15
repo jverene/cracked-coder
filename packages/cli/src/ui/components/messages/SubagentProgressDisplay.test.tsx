@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { render, cleanup } from '../../../test-utils/render.js';
 import { SubagentProgressDisplay } from './SubagentProgressDisplay.js';
-import type { SubagentProgress } from '@google/gemini-cli-core';
+import type { SubagentProgress } from '@cracked-coder/core';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { Text } from 'ink';
 

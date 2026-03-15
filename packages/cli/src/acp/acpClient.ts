@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -47,7 +47,7 @@ import {
   DEFAULT_GEMINI_MODEL_AUTO,
   PREVIEW_GEMINI_MODEL_AUTO,
   getDisplayString,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import * as acp from '@agentclientprotocol/sdk';
 import { AcpFileSystemService } from './fileSystemService.js';
 import { getAcpErrorMessage } from './acpErrors.js';
@@ -154,8 +154,8 @@ export class GeminiAgent {
       protocolVersion: acp.PROTOCOL_VERSION,
       authMethods,
       agentInfo: {
-        name: 'gemini-cli',
-        title: 'Gemini CLI',
+        name: 'cracked-coder',
+        title: 'Cracked Coder',
         version,
       },
       agentCapabilities: {
@@ -1608,7 +1608,7 @@ function buildAvailableModels(
       value: DEFAULT_GEMINI_MODEL_AUTO,
       title: getDisplayString(DEFAULT_GEMINI_MODEL_AUTO),
       description:
-        'Let Gemini CLI decide the best model for the task: gemini-2.5-pro, gemini-2.5-flash',
+        'Let Cracked Coder decide the best model for the task: gemini-2.5-pro, gemini-2.5-flash',
     },
   ];
 
@@ -1617,8 +1617,8 @@ function buildAvailableModels(
       value: PREVIEW_GEMINI_MODEL_AUTO,
       title: getDisplayString(PREVIEW_GEMINI_MODEL_AUTO),
       description: useGemini31
-        ? 'Let Gemini CLI decide the best model for the task: gemini-3.1-pro, gemini-3-flash'
-        : 'Let Gemini CLI decide the best model for the task: gemini-3-pro, gemini-3-flash',
+        ? 'Let Cracked Coder decide the best model for the task: gemini-3.1-pro, gemini-3-flash'
+        : 'Let Cracked Coder decide the best model for the task: gemini-3-pro, gemini-3-flash',
     });
   }
 

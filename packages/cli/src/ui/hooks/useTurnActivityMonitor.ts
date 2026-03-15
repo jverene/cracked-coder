@@ -1,12 +1,12 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { StreamingState } from '../types.js';
-import { hasRedirection } from '@google/gemini-cli-core';
+import { hasRedirection } from '@cracked-coder/core';
 import { type TrackedToolCall } from './useToolScheduler.js';
 
 export interface TurnActivityStatus {

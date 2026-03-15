@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -48,7 +48,7 @@ describe('<ContextSummaryDisplay />', () => {
     const props = {
       ...baseProps,
       geminiMdFileCount: 1,
-      contextFileNames: ['GEMINI.md'],
+      contextFileNames: ['CRACKED.md'],
       mcpServers: { 'test-server': { command: 'test' } },
       ideContext: {
         workspaceState: {
@@ -65,7 +65,7 @@ describe('<ContextSummaryDisplay />', () => {
     const props = {
       ...baseProps,
       geminiMdFileCount: 1,
-      contextFileNames: ['GEMINI.md'],
+      contextFileNames: ['CRACKED.md'],
       mcpServers: { 'test-server': { command: 'test' } },
       ideContext: {
         workspaceState: {
@@ -82,7 +82,7 @@ describe('<ContextSummaryDisplay />', () => {
     const props = {
       ...baseProps,
       geminiMdFileCount: 1,
-      contextFileNames: ['GEMINI.md'],
+      contextFileNames: ['CRACKED.md'],
       mcpServers: { 'test-server': { command: 'test' } },
       ideContext: {
         workspaceState: {

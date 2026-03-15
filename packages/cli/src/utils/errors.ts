@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { Config } from '@google/gemini-cli-core';
+import type { Config } from '@cracked-coder/core';
 import {
   OutputFormat,
   JsonFormatter,
@@ -19,7 +19,7 @@ import {
   debugLogger,
   coreEvents,
   getErrorMessage,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import { runSyncCleanup } from './cleanup.js';
 
 interface ErrorWithCode extends Error {

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,8 +30,8 @@ vi.mock('./extensions/validate.js', () => ({
   validateCommand: { command: 'validate' },
 }));
 
-// Mock gemini.js
-vi.mock('../gemini.js', () => ({
+// Mock cracked.js
+vi.mock('../cracked.js', () => ({
   initializeOutputListenersAndFlush: vi.fn(),
 }));
 
@@ -39,7 +39,7 @@ describe('extensionsCommand', () => {
   it('should have correct command and aliases', () => {
     expect(extensionsCommand.command).toBe('extensions <command>');
     expect(extensionsCommand.aliases).toEqual(['extension']);
-    expect(extensionsCommand.describe).toBe('Manage Gemini CLI extensions.');
+    expect(extensionsCommand.describe).toBe('Manage Cracked Coder extensions.');
   });
 
   it('should register all subcommands in builder', () => {

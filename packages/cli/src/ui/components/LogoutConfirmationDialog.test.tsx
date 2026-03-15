@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ describe('LogoutConfirmationDialog', () => {
 
     expect(lastFrame()).toContain('You are now signed out');
     expect(lastFrame()).toContain(
-      'Sign in again to continue using Gemini CLI, or exit the application.',
+      'Sign in again to continue using Cracked Coder, or exit the application.',
     );
     expect(lastFrame()).toContain('(Use Enter to select, Esc to close)');
     unmount();

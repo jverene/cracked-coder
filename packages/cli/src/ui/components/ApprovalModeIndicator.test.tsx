@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { render } from '../../test-utils/render.js';
 import { ApprovalModeIndicator } from './ApprovalModeIndicator.js';
 import { describe, it, expect } from 'vitest';
-import { ApprovalMode } from '@google/gemini-cli-core';
+import { ApprovalMode } from '@cracked-coder/core';
 
 describe('ApprovalModeIndicator', () => {
   it('renders correctly for AUTO_EDIT mode', async () => {

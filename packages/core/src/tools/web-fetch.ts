@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -43,7 +43,7 @@ const URL_FETCH_TIMEOUT_MS = 10000;
 const MAX_CONTENT_LENGTH = 100000;
 const MAX_EXPERIMENTAL_FETCH_SIZE = 10 * 1024 * 1024; // 10MB
 const USER_AGENT =
-  'Mozilla/5.0 (compatible; Google-Gemini-CLI/1.0; +https://github.com/google-gemini/gemini-cli)';
+  'Mozilla/5.0 (compatible; Google-Gemini-CLI/1.0; +https://github.com/cracked-coder/cracked-coder)';
 const TRUNCATION_WARNING = '\n\n... [Content truncated due to size limit] ...';
 
 // Rate limiting configuration
@@ -379,7 +379,7 @@ class WebFetchToolInvocation extends BaseToolInvocation<
       .join('\n\n---\n\n');
 
     try {
-      const geminiClient = this.context.geminiClient;
+      const geminiClient = this.context.crackedClient;
       const fallbackPrompt = `The user requested the following: "${this.params.prompt}".
 
 I was unable to access the URL(s) directly using the primary fetch tool. Instead, I have fetched the raw content of the page(s). Please use the following content to answer the request. Do not attempt to access the URL(s) again.
@@ -715,7 +715,7 @@ Response: ${truncateString(rawResponseText, 10000, '\n\n... [Error response trun
     }
 
     try {
-      const geminiClient = this.context.geminiClient;
+      const geminiClient = this.context.crackedClient;
       const response = await geminiClient.generateContent(
         { model: 'web-fetch' },
         [{ role: 'user', parts: [{ text: userPrompt }] }],

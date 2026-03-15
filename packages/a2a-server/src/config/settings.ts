@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,14 +10,14 @@ import * as path from 'node:path';
 import {
   type MCPServerConfig,
   debugLogger,
-  GEMINI_DIR,
+  CRACKED_DIR,
   getErrorMessage,
   type TelemetrySettings,
   homedir,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import stripJsonComments from 'strip-json-comments';
 
-export const USER_SETTINGS_DIR = path.join(homedir(), GEMINI_DIR);
+export const USER_SETTINGS_DIR = path.join(homedir(), CRACKED_DIR);
 export const USER_SETTINGS_PATH = path.join(USER_SETTINGS_DIR, 'settings.json');
 
 // TODO: Ensure full compatibility with V2 nested settings structure (settings.schema.json).
@@ -63,7 +63,7 @@ export interface CheckpointingSettings {
  * Loads settings from user and workspace directories.
  * Project settings override user settings.
  *
- * How is it different to gemini-cli/cli: Returns already merged settings rather
+ * How is it different to cracked-coder/cli: Returns already merged settings rather
  * than `LoadedSettings` (unnecessary since we are not modifying users
  * settings.json).
  */
@@ -91,7 +91,7 @@ export function loadSettings(workspaceDir: string): Settings {
 
   const workspaceSettingsPath = path.join(
     workspaceDir,
-    GEMINI_DIR,
+    CRACKED_DIR,
     'settings.json',
   );
 

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -44,8 +44,8 @@ import {
   getMockMessageBusInstance,
 } from '../test-utils/mock-message-bus.js';
 
-const rootDir = path.resolve(os.tmpdir(), 'gemini-cli-test-root');
-const plansDir = path.resolve(os.tmpdir(), 'gemini-cli-test-plans');
+const rootDir = path.resolve(os.tmpdir(), 'cracked-coder-test-root');
+const plansDir = path.resolve(os.tmpdir(), 'cracked-coder-test-plans');
 
 // --- MOCKS ---
 vi.mock('../core/client.js');

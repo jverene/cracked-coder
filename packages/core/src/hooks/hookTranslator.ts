@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ import { DEFAULT_GEMINI_FLASH_MODEL } from '../config/models.js';
 import { getResponseText } from '../utils/partUtils.js';
 
 /**
- * Decoupled LLM request format - stable across Gemini CLI versions
+ * Decoupled LLM request format - stable across Cracked Coder versions
  */
 export interface LLMRequest {
   model: string;
@@ -38,7 +38,7 @@ export interface LLMRequest {
 }
 
 /**
- * Decoupled LLM response format - stable across Gemini CLI versions
+ * Decoupled LLM response format - stable across Cracked Coder versions
  */
 export interface LLMResponse {
   text?: string;
@@ -63,7 +63,7 @@ export interface LLMResponse {
 }
 
 /**
- * Decoupled tool configuration - stable across Gemini CLI versions
+ * Decoupled tool configuration - stable across Cracked Coder versions
  */
 export interface HookToolConfig {
   mode?: 'AUTO' | 'ANY' | 'NONE';

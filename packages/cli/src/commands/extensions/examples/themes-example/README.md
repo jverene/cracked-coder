@@ -1,6 +1,6 @@
 # Themes Example
 
-This is an example of a Gemini CLI extension that adds a custom theme.
+This is an example of a Cracked Coder extension that adds a custom theme.
 
 ## How to use
 
@@ -10,7 +10,7 @@ This is an example of a Gemini CLI extension that adds a custom theme.
     gemini extensions link packages/cli/src/commands/extensions/examples/themes-example
     ```
 
-2.  Set the theme in your settings file (`~/.gemini/settings.json`):
+2.  Set the theme in your settings file (`~/.cracked/settings.json`):
 
     ```json
     {

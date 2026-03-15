@@ -1,6 +1,6 @@
 # Policy engine
 
-The Gemini CLI includes a powerful policy engine that provides fine-grained
+The Cracked Coder includes a powerful policy engine that provides fine-grained
 control over tool execution. It allows users and administrators to define rules
 that determine whether a tool call should be allowed, denied, or require user
 confirmation.
@@ -14,16 +14,16 @@ To create your first policy:
     **macOS/Linux**
 
     ```bash
-    mkdir -p ~/.gemini/policies
+    mkdir -p ~/.cracked/policies
     ```
 
     **Windows (PowerShell)**
 
     ```powershell
-    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini\policies"
+    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cracked\policies"
     ```
 
-2.  **Create a new policy file** (e.g., `~/.gemini/policies/my-rules.toml`). You
+2.  **Create a new policy file** (e.g., `~/.cracked/policies/my-rules.toml`). You
     can use any filename ending in `.toml`; all such files in this directory
     will be loaded and combined:
     ```toml
@@ -33,7 +33,7 @@ To create your first policy:
     decision = "allow"
     priority = 100
     ```
-3.  **Run a command** that triggers the policy (e.g., ask Gemini CLI to
+3.  **Run a command** that triggers the policy (e.g., ask Cracked Coder to
     `git status`). The tool will now execute automatically without prompting for
     confirmation.
 
@@ -117,7 +117,7 @@ has a designated number that forms the base of the final priority calculation.
 
 | Tier      | Base | Description                                                                |
 | :-------- | :--- | :------------------------------------------------------------------------- |
-| Default   | 1    | Built-in policies that ship with the Gemini CLI.                           |
+| Default   | 1    | Built-in policies that ship with the Cracked Coder.                           |
 | Extension | 2    | Policies defined in extensions.                                            |
 | Workspace | 3    | Policies defined in the current workspace's configuration directory.       |
 | User      | 4    | Custom policies defined by the user.                                       |
@@ -185,8 +185,8 @@ User, and (if configured) Admin directories.
 
 | Tier          | Type   | Location                                  |
 | :------------ | :----- | :---------------------------------------- |
-| **User**      | Custom | `~/.gemini/policies/*.toml`               |
-| **Workspace** | Custom | `$WORKSPACE_ROOT/.gemini/policies/*.toml` |
+| **User**      | Custom | `~/.cracked/policies/*.toml`               |
+| **Workspace** | Custom | `$WORKSPACE_ROOT/.cracked/policies/*.toml` |
 | **Admin**     | System | _See below (OS specific)_                 |
 
 #### System-wide policies (Admin)
@@ -201,9 +201,9 @@ These are the default paths the CLI searches for admin policies:
 
 | OS          | Policy Directory Path                             |
 | :---------- | :------------------------------------------------ |
-| **Linux**   | `/etc/gemini-cli/policies`                        |
+| **Linux**   | `/etc/cracked-coder/policies`                        |
 | **macOS**   | `/Library/Application Support/GeminiCli/policies` |
-| **Windows** | `C:\ProgramData\gemini-cli\policies`              |
+| **Windows** | `C:\ProgramData\cracked-coder\policies`              |
 
 ##### Supplemental Admin Policies
 
@@ -398,7 +398,7 @@ priority = 50
 
 ## Default policies
 
-The Gemini CLI ships with a set of default policies to provide a safe
+The Cracked Coder ships with a set of default policies to provide a safe
 out-of-the-box experience.
 
 - **Read-only tools** (like `read_file`, `glob`) are generally **allowed**.

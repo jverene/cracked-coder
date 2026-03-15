@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -517,7 +517,7 @@ describe('run_shell_command', () => {
       settings: { tools: { core: ['run_shell_command'] } },
     });
 
-    const varName = 'GEMINI_CLI_TEST_VAR';
+    const varName = 'CRACKED_CODER_TEST_VAR';
     const varValue = `test-value-${Math.random().toString(36).substring(7)}`;
     process.env[varName] = varValue;
 

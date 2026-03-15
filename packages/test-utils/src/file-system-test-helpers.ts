@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -84,7 +84,7 @@ async function create(dir: string, structure: FileSystemStructure) {
 export async function createTmpDir(
   structure: FileSystemStructure,
 ): Promise<string> {
-  const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'gemini-cli-test-'));
+  const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cracked-coder-test-'));
   await create(tmpDir, structure);
   return tmpDir;
 }

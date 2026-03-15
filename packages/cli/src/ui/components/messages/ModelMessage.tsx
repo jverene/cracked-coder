@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import type React from 'react';
 import { Text, Box } from 'ink';
 import { theme } from '../../semantic-colors.js';
-import { getDisplayString } from '@google/gemini-cli-core';
+import { getDisplayString } from '@cracked-coder/core';
 
 interface ModelMessageProps {
   model: string;

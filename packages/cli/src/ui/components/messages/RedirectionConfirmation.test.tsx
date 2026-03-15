@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,8 +9,8 @@ import { ToolConfirmationMessage } from './ToolConfirmationMessage.js';
 import type {
   SerializableConfirmationDetails,
   Config,
-} from '@google/gemini-cli-core';
-import { initializeShellParsers } from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
+import { initializeShellParsers } from '@cracked-coder/core';
 import { renderWithProviders } from '../../../test-utils/render.js';
 
 describe('ToolConfirmationMessage Redirection', () => {

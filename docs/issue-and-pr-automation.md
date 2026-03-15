@@ -154,7 +154,7 @@ and will never be auto-unassigned.
 ### 6. Release automation
 
 This workflow handles the process of packaging and publishing new versions of
-the Gemini CLI.
+the Cracked Coder.
 
 - **Workflow File**: `.github/workflows/release-manual.yml`
 - **When it runs**: On a daily schedule for "nightly" releases, and manually for

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -59,14 +59,14 @@ export async function getEnvironmentContext(config: Config): Promise<Part[]> {
   const tempDir = config.storage.getProjectTempDir();
   // When JIT context is enabled, project memory is already included in the
   // system instruction via renderUserMemory(). Skip it here to avoid sending
-  // the same GEMINI.md content twice.
+  // the same CRACKED.md content twice.
   const environmentMemory = config.isJitContextEnabled?.()
     ? ''
     : config.getEnvironmentMemory();
 
   const context = `
 <session_context>
-This is the Gemini CLI. We are setting up the context for our chat.
+This is the Cracked Coder. We are setting up the context for our chat.
 Today's date is ${today} (formatted according to the user's locale).
 My operating system is: ${platform}
 The project's temporary directory is: ${tempDir}

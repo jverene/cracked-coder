@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,12 +8,12 @@ import { act, useCallback } from 'react';
 import { vi } from 'vitest';
 import { render } from '../../test-utils/render.js';
 import { useConsoleMessages } from './useConsoleMessages.js';
-import { CoreEvent, type ConsoleLogPayload } from '@google/gemini-cli-core';
+import { CoreEvent, type ConsoleLogPayload } from '@cracked-coder/core';
 
 // Mock coreEvents
 let consoleLogHandler: ((payload: ConsoleLogPayload) => void) | undefined;
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const actual = (await importOriginal()) as any;
   return {

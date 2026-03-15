@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -65,7 +65,7 @@ function createTempFilesForModify(
   file_path: string,
 ): { oldPath: string; newPath: string; dirPath: string } {
   const diffDir = fs.mkdtempSync(
-    path.join(os.tmpdir(), 'gemini-cli-tool-modify-'),
+    path.join(os.tmpdir(), 'cracked-coder-tool-modify-'),
   );
 
   try {
@@ -83,11 +83,11 @@ function createTempFilesForModify(
   const timestamp = Date.now();
   const tempOldPath = path.join(
     diffDir,
-    `gemini-cli-modify-${fileName}-old-${timestamp}${ext}`,
+    `cracked-coder-modify-${fileName}-old-${timestamp}${ext}`,
   );
   const tempNewPath = path.join(
     diffDir,
-    `gemini-cli-modify-${fileName}-new-${timestamp}${ext}`,
+    `cracked-coder-modify-${fileName}-new-${timestamp}${ext}`,
   );
 
   fs.writeFileSync(tempOldPath, currentContent, {

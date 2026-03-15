@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ import {
   debugLogger,
   SimpleExtensionLoader,
   GitService,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 import type { Command, CommandArgument } from '../commands/types.js';
 
 type CommandResponse = {

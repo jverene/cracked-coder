@@ -1,37 +1,37 @@
-# Get started with Gemini CLI
+# Get started with Cracked Coder
 
-Welcome to Gemini CLI! This guide will help you install, configure, and start
-using the Gemini CLI to enhance your workflow right from your terminal.
+Welcome to Cracked Coder! This guide will help you install, configure, and start
+using the Cracked Coder to enhance your workflow right from your terminal.
 
-## Quickstart: Install, authenticate, configure, and use Gemini CLI
+## Quickstart: Install, authenticate, configure, and use Cracked Coder
 
-Gemini CLI brings the power of advanced language models directly to your command
-line interface. As an AI-powered assistant, Gemini CLI can help you with a
+Cracked Coder brings the power of advanced language models directly to your command
+line interface. As an AI-powered assistant, Cracked Coder can help you with a
 variety of tasks, from understanding and generating code to reviewing and
 editing documents.
 
 ## Install
 
-The standard method to install and run Gemini CLI uses `npm`:
+The standard method to install and run Cracked Coder uses `npm`:
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @google/cracked-coder
 ```
 
-Once Gemini CLI is installed, run Gemini CLI from your command line:
+Once Cracked Coder is installed, run Cracked Coder from your command line:
 
 ```bash
-gemini
+cracked
 ```
 
-For more installation options, see [Gemini CLI Installation](./installation.md).
+For more installation options, see [Cracked Coder Installation](./installation.md).
 
 ## Authenticate
 
-To begin using Gemini CLI, you must authenticate with a Google service. In most
+To begin using Cracked Coder, you must authenticate with a Google service. In most
 cases, you can log in with your existing Google account:
 
-1. Run Gemini CLI after installation:
+1. Run Cracked Coder after installation:
 
    ```bash
    gemini
@@ -46,23 +46,23 @@ cases, you can log in with your existing Google account:
 
 Certain account types may require you to configure a Google Cloud project. For
 more information, including other authentication methods, see
-[Gemini CLI Authentication Setup](./authentication.md).
+[Cracked Coder Authentication Setup](./authentication.md).
 
 ## Configure
 
-Gemini CLI offers several ways to configure its behavior, including environment
+Cracked Coder offers several ways to configure its behavior, including environment
 variables, command-line arguments, and settings files.
 
 To explore your configuration options, see
-[Gemini CLI Configuration](../reference/configuration.md).
+[Cracked Coder Configuration](../reference/configuration.md).
 
 ## Use
 
-Once installed and authenticated, you can start using Gemini CLI by issuing
+Once installed and authenticated, you can start using Cracked Coder by issuing
 commands and prompts in your terminal. Ask it to generate code, explain files,
 and more.
 
-To explore the power of Gemini CLI, see [Gemini CLI examples](./examples.md).
+To explore the power of Cracked Coder, see [Cracked Coder examples](./examples.md).
 
 ## Check usage and quota
 

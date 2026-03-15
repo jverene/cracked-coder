@@ -1,12 +1,12 @@
 # Plan tasks with todos
 
-Keep complex jobs on the rails with Gemini CLI's built-in task planning. In this
+Keep complex jobs on the rails with Cracked Coder's built-in task planning. In this
 guide, you'll learn how to ask for a plan, execute it step-by-step, and monitor
 progress with the todo list.
 
 ## Prerequisites
 
-- Gemini CLI installed and authenticated.
+- Cracked Coder installed and authenticated.
 - A complex task in mind (e.g., a multi-file refactor or new feature).
 
 ## Why use task planning?

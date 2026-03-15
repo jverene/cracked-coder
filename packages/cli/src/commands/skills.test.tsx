@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ vi.mock('./skills/disable.js', () => ({
   disableCommand: { command: 'disable <name>' },
 }));
 
-vi.mock('../gemini.js', () => ({
+vi.mock('../cracked.js', () => ({
   initializeOutputListenersAndFlush: vi.fn(),
 }));
 

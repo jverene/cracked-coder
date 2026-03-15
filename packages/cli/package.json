@@ -1,11 +1,11 @@
 {
-  "name": "@google/gemini-cli",
+  "name": "@cracked-coder/cli",
   "version": "0.35.0-nightly.20260313.bb060d7a9",
-  "description": "Gemini CLI",
+  "description": "Cracked Coder",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/google-gemini/gemini-cli.git"
+    "url": "git+https://github.com/cracked-coder/cracked-coder.git"
   },
   "type": "module",
   "main": "dist/index.js",
@@ -26,11 +26,11 @@
     "dist"
   ],
   "config": {
-    "sandboxImageUri": "us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.35.0-nightly.20260313.bb060d7a9"
+    "sandboxImageUri": "us-docker.pkg.dev/gemini-code-dev/cracked-coder/sandbox:0.35.0-nightly.20260313.bb060d7a9"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "^0.12.0",
-    "@google/gemini-cli-core": "file:../core",
+    "@cracked-coder/core": "file:../core",
     "@google/genai": "1.30.0",
     "@iarna/toml": "^2.2.5",
     "@modelcontextprotocol/sdk": "^1.23.0",
@@ -71,7 +71,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@google/gemini-cli-test-utils": "file:../test-utils",
+    "@cracked-coder/test-utils": "file:../test-utils",
     "@types/command-exists": "^1.2.3",
     "@types/hast": "^3.0.4",
     "@types/node": "^20.11.24",

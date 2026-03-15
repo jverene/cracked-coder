@@ -4,13 +4,13 @@ We would love to accept your patches and contributions to this project. This
 document includes:
 
 - **[Before you begin](#before-you-begin):** Essential steps to take before
-  becoming a Gemini CLI contributor.
+  becoming a Cracked Coder contributor.
 - **[Code contribution process](#code-contribution-process):** How to contribute
-  code to Gemini CLI.
+  code to Cracked Coder.
 - **[Development setup and workflow](#development-setup-and-workflow):** How to
   set up your development environment and workflow.
 - **[Documentation contribution process](#documentation-contribution-process):**
-  How to contribute documentation to Gemini CLI.
+  How to contribute documentation to Cracked Coder.
 
 We're looking forward to seeing your contributions!
 
@@ -90,7 +90,7 @@ You can run the review tool in two ways:
     it with the latest Flash model instead:
     `./scripts/review.sh <PR_NUMBER> gemini-3-flash-preview`.
 
-2.  **Manually from within Gemini CLI:** If you already have the PR checked out
+2.  **Manually from within Cracked Coder:** If you already have the PR checked out
     and built, you can run the tool directly from the CLI prompt:
 
     ```text
@@ -214,8 +214,8 @@ development setup of this project.
 To clone the repository:
 
 ```bash
-git clone https://github.com/google-gemini/gemini-cli.git # Or your fork's URL
-cd gemini-cli
+git clone https://github.com/cracked-coder/cracked-coder.git # Or your fork's URL
+cd cracked-coder
 ```
 
 To install dependencies defined in `package.json` as well as root dependencies:
@@ -252,17 +252,17 @@ To skip building the sandbox container, you can use `npm run build` instead.
 
 ### Running the CLI
 
-To start the Gemini CLI from the source code (after building), run the following
+To start the Cracked Coder from the source code (after building), run the following
 command from the root directory:
 
 ```bash
 npm start
 ```
 
-If you'd like to run the source build outside of the gemini-cli folder, you can
-utilize `npm link path/to/gemini-cli/packages/cli` (see:
+If you'd like to run the source build outside of the cracked-coder folder, you can
+utilize `npm link path/to/cracked-coder/packages/cli` (see:
 [docs](https://docs.npmjs.com/cli/v9/commands/npm-link)) or
-`alias gemini="node path/to/gemini-cli/packages/cli"` to run with `gemini`
+`alias gemini="node path/to/cracked-coder/packages/cli"` to run with `gemini`
 
 ### Running tests
 
@@ -283,7 +283,7 @@ comprehensive check, it is recommended to run `npm run preflight`.
 #### Integration tests
 
 The integration tests are designed to validate the end-to-end functionality of
-the Gemini CLI. They are not run as part of the default `npm run test` command.
+the Cracked Coder. They are not run as part of the default `npm run test` command.
 
 To run the integration tests, use the following command:
 
@@ -346,7 +346,7 @@ npm run lint
 
 - Please adhere to the coding style, patterns, and conventions used throughout
   the existing codebase.
-- Consult [GEMINI.md](../GEMINI.md) (typically found in the project root) for
+- Consult [CRACKED.md](../CRACKED.md) (typically found in the project root) for
   specific instructions related to AI-assisted development, including
   conventions for React, comments, and Git usage.
 - **Imports:** Pay special attention to import paths. The project uses ESLint to
@@ -355,13 +355,13 @@ npm run lint
 ### Project structure
 
 - `packages/`: Contains the individual sub-packages of the project.
-  - `a2a-server`: A2A server implementation for the Gemini CLI. (Experimental)
+  - `a2a-server`: A2A server implementation for the Cracked Coder. (Experimental)
   - `cli/`: The command-line interface.
-  - `core/`: The core backend logic for the Gemini CLI.
+  - `core/`: The core backend logic for the Cracked Coder.
   - `test-utils` Utilities for creating and cleaning temporary file systems for
     testing.
-  - `vscode-ide-companion/`: The Gemini CLI Companion extension pairs with
-    Gemini CLI.
+  - `vscode-ide-companion/`: The Cracked Coder Companion extension pairs with
+    Cracked Coder.
 - `docs/`: Contains all project documentation.
 - `scripts/`: Utility scripts for building, testing, and development tasks.
 
@@ -376,7 +376,7 @@ For more detailed architecture, see `docs/architecture.md`.
     ```bash
     npm run debug
     ```
-    This command runs `node --inspect-brk dist/gemini.js` within the
+    This command runs `node --inspect-brk dist/cracked.js` within the
     `packages/cli` directory, pausing execution until a debugger attaches. You
     can then open `chrome://inspect` in your Chrome browser to connect to the
     debugger.
@@ -394,14 +394,14 @@ DEBUG=1 gemini
 ```
 
 **Note:** If you have `DEBUG=true` in a project's `.env` file, it won't affect
-gemini-cli due to automatic exclusion. Use `.gemini/.env` files for gemini-cli
+cracked-coder due to automatic exclusion. Use `.cracked/.env` files for cracked-coder
 specific debug settings.
 
 ### React DevTools
 
 To debug the CLI's React-based UI, you can use React DevTools.
 
-1.  **Start the Gemini CLI in development mode:**
+1.  **Start the Cracked Coder in development mode:**
 
     ```bash
     DEV=true npm start
@@ -442,8 +442,8 @@ Available built-in profiles are `permissive-{open,proxied}`,
 `restrictive-{open,proxied}`, and `strict-{open,proxied}` (see below for proxied
 networking). You can also switch to a custom profile
 `SEATBELT_PROFILE=<profile>` if you also create a file
-`.gemini/sandbox-macos-<profile>.sb` under your project settings directory
-`.gemini`.
+`.cracked/sandbox-macos-<profile>.sb` under your project settings directory
+`.cracked`.
 
 #### Container-based sandboxing (all platforms)
 
@@ -459,12 +459,12 @@ sandbox.
 
 Container-based sandboxing mounts the project directory (and system temp
 directory) with read-write access and is started/stopped/removed automatically
-as you start/stop Gemini CLI. Files created within the sandbox should be
+as you start/stop Cracked Coder. Files created within the sandbox should be
 automatically mapped to your user/group on host machine. You can easily specify
 additional mounts, ports, or environment variables by setting
 `SANDBOX_{MOUNTS,PORTS,ENV}` as needed. You can also fully customize the sandbox
-for your projects by creating the files `.gemini/sandbox.Dockerfile` and/or
-`.gemini/sandbox.bashrc` under your project settings directory (`.gemini`) and
+for your projects by creating the files `.cracked/sandbox.Dockerfile` and/or
+`.cracked/sandbox.bashrc` under your project settings directory (`.cracked`) and
 running `gemini` with `BUILD_SANDBOX=1` to trigger building of your custom
 sandbox.
 
@@ -501,7 +501,7 @@ our documentation to be clear, concise, and helpful to our users. We value:
 - **Accuracy:** Ensure all information is correct and up-to-date.
 - **Completeness:** Cover all aspects of a feature or topic.
 - **Examples:** Provide practical examples to help users understand how to use
-  Gemini CLI.
+  Cracked Coder.
 
 ### Getting started
 
@@ -574,8 +574,8 @@ If you have questions about contributing documentation:
 
 - Check our [FAQ](https://geminicli.com/docs/resources/faq).
 - Review existing documentation for examples.
-- Open [an issue](https://github.com/google-gemini/gemini-cli/issues) to discuss
+- Open [an issue](https://github.com/cracked-coder/cracked-coder/issues) to discuss
   your proposed changes.
 - Reach out to the maintainers.
 
-We appreciate your contributions to making Gemini CLI documentation better!
+We appreciate your contributions to making Cracked Coder documentation better!

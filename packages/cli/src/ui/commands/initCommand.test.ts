@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import * as path from 'node:path';
 import { initCommand } from './initCommand.js';
 import { createMockCommandContext } from '../../test-utils/mockCommandContext.js';
 import type { CommandContext } from './types.js';
-import type { SubmitPromptActionReturn } from '@google/gemini-cli-core';
+import type { SubmitPromptActionReturn } from '@cracked-coder/core';
 
 // Mock the 'fs' module
 vi.mock('fs', async (importOriginal) => {
@@ -25,7 +25,7 @@ vi.mock('fs', async (importOriginal) => {
 describe('initCommand', () => {
   let mockContext: CommandContext;
   const targetDir = '/test/dir';
-  const geminiMdPath = path.join(targetDir, 'GEMINI.md');
+  const geminiMdPath = path.join(targetDir, 'CRACKED.md');
 
   beforeEach(() => {
     // Create a fresh mock context for each test
@@ -43,7 +43,7 @@ describe('initCommand', () => {
     vi.clearAllMocks();
   });
 
-  it('should inform the user if GEMINI.md already exists', async () => {
+  it('should inform the user if CRACKED.md already exists', async () => {
     // Arrange: Simulate that the file exists
     vi.mocked(fs.existsSync).mockReturnValue(true);
 
@@ -55,13 +55,13 @@ describe('initCommand', () => {
       type: 'message',
       messageType: 'info',
       content:
-        'A GEMINI.md file already exists in this directory. No changes were made.',
+        'A CRACKED.md file already exists in this directory. No changes were made.',
     });
     // Assert: Ensure no file was written
     expect(fs.writeFileSync).not.toHaveBeenCalled();
   });
 
-  it('should create GEMINI.md and submit a prompt if it does not exist', async () => {
+  it('should create CRACKED.md and submit a prompt if it does not exist', async () => {
     // Arrange: Simulate that the file does not exist
     vi.mocked(fs.existsSync).mockReturnValue(false);
 
@@ -78,7 +78,7 @@ describe('initCommand', () => {
     expect(mockContext.ui.addItem).toHaveBeenCalledWith(
       {
         type: 'info',
-        text: 'Empty GEMINI.md created. Now analyzing the project to populate it.',
+        text: 'Empty CRACKED.md created. Now analyzing the project to populate it.',
       },
       expect.any(Number),
     );

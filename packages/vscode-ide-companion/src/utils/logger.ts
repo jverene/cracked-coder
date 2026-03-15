@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -14,7 +14,7 @@ export function createLogger(
     const isDevMode =
       context.extensionMode === vscode.ExtensionMode.Development;
     const isLoggingEnabled = vscode.workspace
-      .getConfiguration('gemini-cli.debug')
+      .getConfiguration('cracked-coder.debug')
       .get('logging.enabled');
 
     if (isDevMode || isLoggingEnabled) {

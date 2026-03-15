@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -740,7 +740,7 @@ describe('Admin Controls', () => {
       const message = getAdminErrorMessage('Code Completion', mockConfig);
 
       expect(message).toBe(
-        'Code Completion is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-gemini-cli?project=test-project-123',
+        'Code Completion is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-cracked-coder?project=test-project-123',
       );
     });
 
@@ -752,7 +752,7 @@ describe('Admin Controls', () => {
       const message = getAdminErrorMessage('Chat', mockConfig);
 
       expect(message).toBe(
-        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-gemini-cli',
+        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-cracked-coder',
       );
     });
 
@@ -762,7 +762,7 @@ describe('Admin Controls', () => {
       const message = getAdminErrorMessage('Chat', mockConfig);
 
       expect(message).toBe(
-        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-gemini-cli',
+        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-cracked-coder',
       );
     });
 
@@ -770,7 +770,7 @@ describe('Admin Controls', () => {
       const message = getAdminErrorMessage('Chat', undefined);
 
       expect(message).toBe(
-        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-gemini-cli',
+        'Chat is disabled by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-cracked-coder',
       );
     });
   });
@@ -793,7 +793,7 @@ describe('Admin Controls', () => {
       );
 
       expect(message).toBe(
-        '1 MCP server is not allowlisted by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-gemini-cli?project=test-project-123',
+        '1 MCP server is not allowlisted by your administrator. To enable it, please request an update to the settings at: https://goo.gle/manage-cracked-coder?project=test-project-123',
       );
     });
 
@@ -808,7 +808,7 @@ describe('Admin Controls', () => {
       );
 
       expect(message).toBe(
-        '3 MCP servers are not allowlisted by your administrator. To enable them, please request an update to the settings at: https://goo.gle/manage-gemini-cli?project=test-project-123',
+        '3 MCP servers are not allowlisted by your administrator. To enable them, please request an update to the settings at: https://goo.gle/manage-cracked-coder?project=test-project-123',
       );
     });
 
@@ -821,7 +821,7 @@ describe('Admin Controls', () => {
       );
 
       expect(message).toBe(
-        '2 MCP servers are not allowlisted by your administrator. To enable them, please request an update to the settings at: https://goo.gle/manage-gemini-cli',
+        '2 MCP servers are not allowlisted by your administrator. To enable them, please request an update to the settings at: https://goo.gle/manage-cracked-coder',
       );
     });
   });

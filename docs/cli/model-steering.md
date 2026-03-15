@@ -1,6 +1,6 @@
 # Model steering (experimental)
 
-Model steering lets you provide real-time guidance and feedback to Gemini CLI
+Model steering lets you provide real-time guidance and feedback to Cracked Coder
 while it is actively executing a task. This lets you correct course, add missing
 context, or skip unnecessary steps without having to stop and restart the agent.
 
@@ -18,7 +18,7 @@ Model steering is an experimental feature and is disabled by default. You can
 enable it using the `/settings` command or by updating your `settings.json`
 file.
 
-1.  Type `/settings` in the Gemini CLI.
+1.  Type `/settings` in the Cracked Coder.
 2.  Search for **Model Steering**.
 3.  Set the value to **true**.
 
@@ -34,7 +34,7 @@ Alternatively, add the following to your `settings.json`:
 
 ## Using model steering
 
-When model steering is enabled, Gemini CLI treats any text you type while the
+When model steering is enabled, Cracked Coder treats any text you type while the
 agent is working as a steering hint.
 
 1.  Start a task (for example, "Refactor the database service").
@@ -42,7 +42,7 @@ agent is working as a steering hint.
     the input box.
 3.  Press **Enter**.
 
-Gemini CLI acknowledges your hint with a brief message and injects it directly
+Cracked Coder acknowledges your hint with a brief message and injects it directly
 into the model's context for the very next turn. The model then re-evaluates its
 current plan and adjusts its actions accordingly.
 
@@ -61,7 +61,7 @@ You can use steering hints to guide the model in several ways:
 
 ## How it works
 
-When you submit a steering hint, Gemini CLI performs the following actions:
+When you submit a steering hint, Cracked Coder performs the following actions:
 
 1.  **Immediate acknowledgment:** It uses a small, fast model to generate a
     one-sentence acknowledgment so you know your hint was received.

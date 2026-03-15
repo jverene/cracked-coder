@@ -1,10 +1,10 @@
 # Remote Subagents (experimental)
 
-Gemini CLI supports connecting to remote subagents using the Agent-to-Agent
-(A2A) protocol. This allows Gemini CLI to interact with other agents, expanding
+Cracked Coder supports connecting to remote subagents using the Agent-to-Agent
+(A2A) protocol. This allows Cracked Coder to interact with other agents, expanding
 its capabilities by delegating tasks to remote services.
 
-Gemini CLI can connect to any compliant A2A agent. You can find samples of A2A
+Cracked Coder can connect to any compliant A2A agent. You can find samples of A2A
 agents in the following repositories:
 
 - [ADK Samples (Python)](https://github.com/google/adk-samples/tree/main/python)
@@ -27,7 +27,7 @@ To use remote subagents, you must explicitly enable them in your
 
 ## Proxy support
 
-Gemini CLI routes traffic to remote agents through an HTTP/HTTPS proxy if one is
+Cracked Coder routes traffic to remote agents through an HTTP/HTTPS proxy if one is
 configured. It uses the `general.proxy` setting in your `settings.json` file or
 standard environment variables (`HTTP_PROXY`, `HTTPS_PROXY`).
 
@@ -44,8 +44,8 @@ standard environment variables (`HTTP_PROXY`, `HTTPS_PROXY`).
 Remote subagents are defined as Markdown files (`.md`) with YAML frontmatter.
 You can place them in:
 
-1.  **Project-level:** `.gemini/agents/*.md` (Shared with your team)
-2.  **User-level:** `~/.gemini/agents/*.md` (Personal agents)
+1.  **Project-level:** `.cracked/agents/*.md` (Shared with your team)
+2.  **User-level:** `~/.cracked/agents/*.md` (Personal agents)
 
 ### Configuration schema
 
@@ -87,14 +87,14 @@ Markdown file.
 
 ## Authentication
 
-Many remote agents require authentication. Gemini CLI supports several
+Many remote agents require authentication. Cracked Coder supports several
 authentication methods aligned with the
 [A2A security specification](https://a2a-protocol.org/latest/specification/#451-securityscheme).
 Add an `auth` block to your agent's frontmatter to configure credentials.
 
 ### Supported auth types
 
-Gemini CLI supports the following authentication types:
+Cracked Coder supports the following authentication types:
 
 | Type                 | Description                                                                                    |
 | :------------------- | :--------------------------------------------------------------------------------------------- |
@@ -297,7 +297,7 @@ auth:
 ### OAuth 2.0 (`oauth2`)
 
 Performs an interactive OAuth 2.0 Authorization Code flow with PKCE. On first
-use, Gemini CLI opens your browser for sign-in and persists the resulting tokens
+use, Cracked Coder opens your browser for sign-in and persists the resulting tokens
 for subsequent requests.
 
 | Field               | Type     | Required | Description                                                                                                                                        |
@@ -329,7 +329,7 @@ Tokens are persisted to disk and refreshed automatically when they expire.
 
 ### Auth validation
 
-When Gemini CLI loads a remote agent, it validates your auth configuration
+When Cracked Coder loads a remote agent, it validates your auth configuration
 against the agent card's declared `securitySchemes`. If the agent requires
 authentication that you haven't configured, you'll see an error describing
 what's needed.
@@ -346,7 +346,7 @@ is re-executed on retry to fetch a fresh key.
 
 ### Agent card fetching and auth
 
-When connecting to a remote agent, Gemini CLI first fetches the agent card
+When connecting to a remote agent, Cracked Coder first fetches the agent card
 **without** authentication. If the card endpoint returns a `401` or `403`, it
 retries the fetch **with** the configured auth headers. This lets agents have
 publicly accessible cards while protecting their task endpoints, or to protect
@@ -354,7 +354,7 @@ both behind auth.
 
 ## Managing Subagents
 
-Users can manage subagents using the following commands within the Gemini CLI:
+Users can manage subagents using the following commands within the Cracked Coder:
 
 - `/agents list`: Displays all available local and remote subagents.
 - `/agents reload`: Reloads the agent registry. Use this after adding or
@@ -362,5 +362,5 @@ Users can manage subagents using the following commands within the Gemini CLI:
 - `/agents enable <agent_name>`: Enables a specific subagent.
 - `/agents disable <agent_name>`: Disables a specific subagent.
 
-> **Tip:** You can use the `@cli_help` agent within Gemini CLI for assistance
+> **Tip:** You can use the `@cli_help` agent within Cracked Coder for assistance
 > with configuring subagents.

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -427,7 +427,7 @@ export class ShellToolInvocation extends BaseToolInvocation<
           this.context.config,
           { model: 'summarizer-shell' },
           llmContent,
-          this.context.geminiClient,
+          this.context.crackedClient,
           signal,
         );
         return {

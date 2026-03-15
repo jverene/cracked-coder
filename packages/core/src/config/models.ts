@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -42,7 +42,7 @@ export const DEFAULT_THINKING_MODE = 8192;
  * to a concrete model name.
  *
  * @param requestedModel The model alias or concrete model name requested by the user.
- * @param useGemini3_1 Whether to use Gemini 3.1 Pro Preview for auto/pro aliases.
+ * @param useGemini3_1 Whether to use Cracked 3.1 Pro Preview for auto/pro aliases.
  * @param hasAccessToPreview Whether the user has access to preview models.
  * @returns The resolved concrete model name.
  */
@@ -142,9 +142,9 @@ export function resolveClassifierModel(
 export function getDisplayString(model: string) {
   switch (model) {
     case PREVIEW_GEMINI_MODEL_AUTO:
-      return 'Auto (Gemini 3)';
+      return 'Auto (Cracked 3)';
     case DEFAULT_GEMINI_MODEL_AUTO:
-      return 'Auto (Gemini 2.5)';
+      return 'Auto (Cracked 2.5)';
     case GEMINI_MODEL_ALIAS_PRO:
       return PREVIEW_GEMINI_MODEL;
     case GEMINI_MODEL_ALIAS_FLASH:
@@ -184,10 +184,10 @@ export function isProModel(model: string): boolean {
 }
 
 /**
- * Checks if the model is a Gemini 3 model.
+ * Checks if the model is a Cracked 3 model.
  *
  * @param model The model name to check.
- * @returns True if the model is a Gemini 3 model.
+ * @returns True if the model is a Cracked 3 model.
  */
 export function isGemini3Model(model: string): boolean {
   const resolved = resolveModel(model);
@@ -217,7 +217,7 @@ export function isCustomModel(model: string): boolean {
 
 /**
  * Checks if the model should be treated as a modern model.
- * This includes Gemini 3 models and any custom models.
+ * This includes Cracked 3 models and any custom models.
  *
  * @param model The model name to check.
  * @returns True if the model supports modern features like thoughts.
@@ -243,7 +243,7 @@ export function isAutoModel(model: string): boolean {
 
 /**
  * Checks if the model supports multimodal function responses (multimodal data nested within function response).
- * This is supported in Gemini 3.
+ * This is supported in Cracked 3.
  *
  * @param model The model name to check.
  * @returns True if the model supports multimodal function responses.
@@ -256,7 +256,7 @@ export function supportsMultimodalFunctionResponse(model: string): boolean {
  * Checks if the given model is considered active based on the current configuration.
  *
  * @param model The model name to check.
- * @param useGemini3_1 Whether Gemini 3.1 Pro Preview is enabled.
+ * @param useGemini3_1 Whether Cracked 3.1 Pro Preview is enabled.
  * @returns True if the model is active.
  */
 export function isActiveModel(

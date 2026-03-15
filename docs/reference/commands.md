@@ -1,6 +1,6 @@
 # CLI commands
 
-Gemini CLI supports several built-in commands to help you manage your session,
+Cracked Coder supports several built-in commands to help you manage your session,
 customize the interface, and control its behavior. These commands are prefixed
 with a forward slash (`/`), an at symbol (`@`), or an exclamation mark (`!`).
 
@@ -25,8 +25,8 @@ Slash commands provide meta-level control over the CLI itself.
       and remote agents.
     - **Usage:** `/agents list`
   - **`reload`** (alias: `refresh`):
-    - **Description:** Rescans agent directories (`~/.gemini/agents` and
-      `.gemini/agents`) and reloads the registry.
+    - **Description:** Rescans agent directories (`~/.cracked/agents` and
+      `.cracked/agents`) and reloads the registry.
     - **Usage:** `/agents reload`
   - **`enable`**:
     - **Description:** Enables a specific subagent.
@@ -45,11 +45,11 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/bug`
 
-- **Description:** File an issue about Gemini CLI. By default, the issue is
-  filed within the GitHub repository for Gemini CLI. The string you enter after
+- **Description:** File an issue about Cracked Coder. By default, the issue is
+  filed within the GitHub repository for Cracked Coder. The string you enter after
   `/bug` will become the headline for the bug being filed. The default `/bug`
   behavior can be modified using the `advanced.bugCommand` setting in your
-  `.gemini/settings.json` files.
+  `.cracked/settings.json` files.
 
 ### `/chat`
 
@@ -78,15 +78,15 @@ Slash commands provide meta-level control over the CLI itself.
     - **Description:** Resumes a conversation from a previous save.
     - **Note:** You can only resume chats that were saved within the current
       project. To resume a chat from a different project, you must run the
-      Gemini CLI from that project's directory.
+      Cracked Coder from that project's directory.
     - **Equivalent:** `/resume resume <tag>`
   - **`save <tag>`**
     - **Description:** Saves the current conversation history. You must add a
       `<tag>` for identifying the conversation state.
     - **Details on checkpoint location:** The default locations for saved chat
       checkpoints are:
-      - Linux/macOS: `~/.gemini/tmp/<project_hash>/`
-      - Windows: `C:\Users\<YourUsername>\.gemini\tmp\<project_hash>\`
+      - Linux/macOS: `~/.cracked/tmp/<project_hash>/`
+      - Windows: `C:\Users\<YourUsername>\.cracked\tmp\<project_hash>\`
       - **Behavior:** Chats are saved into a project-specific directory,
         determined by where you run the CLI. Consequently, saved chats are only
         accessible when working within that same project.
@@ -115,8 +115,8 @@ Slash commands provide meta-level control over the CLI itself.
 - **Sub-commands:**
   - **`reload`**:
     - **Description:** Reload custom command definitions from all sources
-      (user-level `~/.gemini/commands/`, project-level
-      `<project>/.gemini/commands/`, MCP prompts, and extensions). Use this to
+      (user-level `~/.cracked/commands/`, project-level
+      `<project>/.cracked/commands/`, MCP prompts, and extensions). Use this to
       pick up new or modified `.toml` files without restarting the CLI.
     - **Usage:** `/commands reload`
 
@@ -128,7 +128,7 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/copy`
 
-- **Description:** Copies the last output produced by Gemini CLI to your
+- **Description:** Copies the last output produced by Cracked Coder to your
   clipboard, for easy sharing or reuse.
 - **Behavior:**
   - Local sessions use system clipboard tools (pbcopy/xclip/clip).
@@ -158,7 +158,7 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/docs`
 
-- **Description:** Open the Gemini CLI documentation in your browser.
+- **Description:** Open the Cracked Coder documentation in your browser.
 
 ### `/editor`
 
@@ -167,7 +167,7 @@ Slash commands provide meta-level control over the CLI itself.
 ### `/extensions`
 
 - **Description:** Manage extensions. See
-  [Gemini CLI Extensions](../extensions/index.md).
+  [Cracked Coder Extensions](../extensions/index.md).
 - **Sub-commands:**
   - **`config`**:
     - **Description:** Configure extension settings.
@@ -192,13 +192,13 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/help` (or `/?`)
 
-- **Description:** Display help information about Gemini CLI, including
+- **Description:** Display help information about Cracked Coder, including
   available commands and their usage.
 
 ### `/hooks`
 
 - **Description:** Manage hooks, which allow you to intercept and customize
-  Gemini CLI behavior at specific lifecycle events.
+  Cracked Coder behavior at specific lifecycle events.
 - **Sub-commands:**
   - **`disable-all`**:
     - **Description:** Disable all enabled hooks.
@@ -226,7 +226,7 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/init`
 
-- **Description:** To help users easily create a `GEMINI.md` file, this command
+- **Description:** To help users easily create a `CRACKED.md` file, this command
   analyzes the current directory and generates a tailored context file, making
   it simpler for them to provide project-specific instructions to the Gemini
   agent.
@@ -260,25 +260,25 @@ Slash commands provide meta-level control over the CLI itself.
 ### `/memory`
 
 - **Description:** Manage the AI's instructional context (hierarchical memory
-  loaded from `GEMINI.md` files).
+  loaded from `CRACKED.md` files).
 - **Sub-commands:**
   - **`add`**:
     - **Description:** Adds the following text to the AI's memory. Usage:
       `/memory add <text to remember>`
   - **`list`**:
-    - **Description:** Lists the paths of the GEMINI.md files in use for
+    - **Description:** Lists the paths of the CRACKED.md files in use for
       hierarchical memory.
   - **`refresh`**:
     - **Description:** Reload the hierarchical instructional memory from all
-      `GEMINI.md` files found in the configured locations (global,
+      `CRACKED.md` files found in the configured locations (global,
       project/ancestors, and sub-directories). This command updates the model
-      with the latest `GEMINI.md` content.
+      with the latest `CRACKED.md` content.
   - **`show`**:
     - **Description:** Display the full, concatenated content of the current
-      hierarchical memory that has been loaded from all `GEMINI.md` files. This
+      hierarchical memory that has been loaded from all `CRACKED.md` files. This
       lets you inspect the instructional context being provided to the Gemini
       model.
-  - **Note:** For more details on how `GEMINI.md` files contribute to
+  - **Note:** For more details on how `CRACKED.md` files contribute to
     hierarchical memory, see the
     [CLI Configuration documentation](./configuration.md).
 
@@ -324,7 +324,7 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/quit` (or `/exit`)
 
-- **Description:** Exit Gemini CLI.
+- **Description:** Exit Cracked Coder.
 
 ### `/restore`
 
@@ -387,11 +387,11 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/settings`
 
-- **Description:** Open the settings editor to view and modify Gemini CLI
+- **Description:** Open the settings editor to view and modify Cracked Coder
   settings.
 - **Details:** This command provides a user-friendly interface for changing
-  settings that control the behavior and appearance of Gemini CLI. It is
-  equivalent to manually editing the `.gemini/settings.json` file, but with
+  settings that control the behavior and appearance of Cracked Coder. It is
+  equivalent to manually editing the `.cracked/settings.json` file, but with
   validation and guidance to prevent errors. See the
   [settings documentation](../cli/settings.md) for a full list of available
   settings.
@@ -430,7 +430,7 @@ Slash commands provide meta-level control over the CLI itself.
 
 ### `/stats`
 
-- **Description:** Display detailed statistics for the current Gemini CLI
+- **Description:** Display detailed statistics for the current Cracked Coder
   session.
 - **Sub-commands:**
   - **`session`**:
@@ -455,7 +455,7 @@ Slash commands provide meta-level control over the CLI itself.
 ### `/tools`
 
 - **Description:** Display a list of tools that are currently available within
-  Gemini CLI.
+  Cracked Coder.
 - **Usage:** `/tools [desc]`
 - **Sub-commands:**
   - **`desc`** or **`descriptions`**:
@@ -484,7 +484,7 @@ Slash commands provide meta-level control over the CLI itself.
     `b`, `e`; go to line start/end with `0`, `$`, `^`; go to specific lines with
     `G` (or `gg` for first line)
   - **Persistent setting:** Vim mode preference is saved to
-    `~/.gemini/settings.json` and restored between sessions
+    `~/.cracked/settings.json` and restored between sessions
   - **Repeat last command:** Use `.` to repeat the last editing operation
   - **Status indicator:** When enabled, shows `[NORMAL]` or `[INSERT]` in the
     footer
@@ -557,7 +557,7 @@ your prompt to Gemini. These commands include git-aware filtering.
 ## Shell mode and passthrough commands (`!`)
 
 The `!` prefix lets you interact with your system's shell directly from within
-Gemini CLI.
+Cracked Coder.
 
 - **`!<shell_command>`**
   - **Description:** Execute the given `<shell_command>` using `bash` on
@@ -565,8 +565,8 @@ Gemini CLI.
     override `ComSpec`). Any output or errors from the command are displayed in
     the terminal.
   - **Examples:**
-    - `!ls -la` (executes `ls -la` and returns to Gemini CLI)
-    - `!git status` (executes `git status` and returns to Gemini CLI)
+    - `!ls -la` (executes `ls -la` and returns to Cracked Coder)
+    - `!git status` (executes `git status` and returns to Cracked Coder)
 
 - **`!` (Toggle shell mode)**
   - **Description:** Typing `!` on its own toggles shell mode.
@@ -583,6 +583,6 @@ Gemini CLI.
   same permissions and impact as if you ran them directly in your terminal.
 
 - **Environment variable:** When a command is executed via `!` or in shell mode,
-  the `GEMINI_CLI=1` environment variable is set in the subprocess's
+  the `CRACKED_CODER=1` environment variable is set in the subprocess's
   environment. This allows scripts or tools to detect if they are being run from
-  within the Gemini CLI.
+  within the Cracked Coder.

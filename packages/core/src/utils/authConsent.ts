@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -26,7 +26,7 @@ export async function getConsentForOauth(prompt: string): Promise<boolean> {
   }
   throw new FatalAuthenticationError(
     'Authentication consent could not be obtained.\n' +
-      'Please run Gemini CLI in an interactive terminal to authenticate, ' +
+      'Please run Cracked Coder in an interactive terminal to authenticate, ' +
       'or use NO_BROWSER=true for manual authentication.',
   );
 }

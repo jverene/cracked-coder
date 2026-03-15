@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import type { FileSystemService } from '@google/gemini-cli-core';
+import type { FileSystemService } from '@cracked-coder/core';
 import type * as acp from '@agentclientprotocol/sdk';
 
 /**

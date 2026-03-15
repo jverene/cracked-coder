@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -662,7 +662,7 @@ name = "invalid-name"
   });
 
   it('should allow overriding Plan Mode deny with user policy', async () => {
-    const userPolicyDir = '/tmp/gemini-cli-test/user/policies';
+    const userPolicyDir = '/tmp/cracked-coder-test/user/policies';
     vi.spyOn(Storage, 'getUserPoliciesDir').mockReturnValue(userPolicyDir);
 
     mockPolicyFile(
@@ -708,7 +708,7 @@ modes = ["plan"]
   });
 
   it('should deduplicate security warnings when called multiple times', async () => {
-    const systemPoliciesDir = '/tmp/gemini-cli-test/system/policies';
+    const systemPoliciesDir = '/tmp/cracked-coder-test/system/policies';
     vi.spyOn(Storage, 'getSystemPoliciesDir').mockReturnValue(
       systemPoliciesDir,
     );

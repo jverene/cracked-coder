@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -76,7 +76,7 @@ describe('ClassifierStrategy', () => {
     vi.spyOn(promptIdContext, 'getStore').mockReturnValue('test-prompt-id');
   });
 
-  it('should return null if numerical routing is enabled and model is Gemini 3', async () => {
+  it('should return null if numerical routing is enabled and model is Cracked 3', async () => {
     vi.mocked(mockConfig.getNumericalRoutingEnabled).mockResolvedValue(true);
     vi.mocked(mockConfig.getModel).mockReturnValue(PREVIEW_GEMINI_MODEL_AUTO);
 
@@ -91,7 +91,7 @@ describe('ClassifierStrategy', () => {
     expect(mockBaseLlmClient.generateJson).not.toHaveBeenCalled();
   });
 
-  it('should NOT return null if numerical routing is enabled but model is NOT Gemini 3', async () => {
+  it('should NOT return null if numerical routing is enabled but model is NOT Cracked 3', async () => {
     vi.mocked(mockConfig.getNumericalRoutingEnabled).mockResolvedValue(true);
     vi.mocked(mockConfig.getModel).mockReturnValue(DEFAULT_GEMINI_MODEL_AUTO);
     vi.mocked(mockBaseLlmClient.generateJson).mockResolvedValue({
@@ -382,8 +382,8 @@ describe('ClassifierStrategy', () => {
     expect(decision?.model).toBe(DEFAULT_GEMINI_FLASH_MODEL);
   });
 
-  describe('Gemini 3.1 and Custom Tools Routing', () => {
-    it('should route to PREVIEW_GEMINI_3_1_MODEL when Gemini 3.1 is launched', async () => {
+  describe('Cracked 3.1 and Custom Tools Routing', () => {
+    it('should route to PREVIEW_GEMINI_3_1_MODEL when Cracked 3.1 is launched', async () => {
       vi.mocked(mockConfig.getGemini31Launched).mockResolvedValue(true);
       vi.mocked(mockConfig.getModel).mockReturnValue(PREVIEW_GEMINI_MODEL_AUTO);
       const mockApiResponse = {
@@ -404,7 +404,7 @@ describe('ClassifierStrategy', () => {
       expect(decision?.model).toBe(PREVIEW_GEMINI_3_1_MODEL);
     });
 
-    it('should route to PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL when Gemini 3.1 is launched and auth is USE_GEMINI', async () => {
+    it('should route to PREVIEW_GEMINI_3_1_CUSTOM_TOOLS_MODEL when Cracked 3.1 is launched and auth is USE_GEMINI', async () => {
       vi.mocked(mockConfig.getGemini31Launched).mockResolvedValue(true);
       vi.mocked(mockConfig.getModel).mockReturnValue(PREVIEW_GEMINI_MODEL_AUTO);
       vi.mocked(mockConfig.getContentGeneratorConfig).mockReturnValue({

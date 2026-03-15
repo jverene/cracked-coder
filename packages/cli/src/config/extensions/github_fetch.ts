@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,7 +15,7 @@ export async function fetchJson<T>(
   redirectCount: number = 0,
 ): Promise<T> {
   const headers: { 'User-Agent': string; Authorization?: string } = {
-    'User-Agent': 'gemini-cli',
+    'User-Agent': 'cracked-coder',
   };
   const token = getGitHubToken();
   if (token) {

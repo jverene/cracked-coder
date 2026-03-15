@@ -1,6 +1,6 @@
 # IDE integration
 
-Gemini CLI can integrate with your IDE to provide a more seamless and
+Cracked Coder can integrate with your IDE to provide a more seamless and
 context-aware experience. This integration allows the CLI to understand your
 workspace better and enables powerful features like native in-editor diffing.
 
@@ -22,14 +22,14 @@ support VS Code extensions. To build support for other editors, see the
   changes directly within your IDE's native diff viewer. This allows you to
   review, edit, and accept or reject the suggested changes seamlessly.
 
-- **VS Code commands:** You can access Gemini CLI features directly from the VS
+- **VS Code commands:** You can access Cracked Coder features directly from the VS
   Code Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`):
-  - `Gemini CLI: Run`: Starts a new Gemini CLI session in the integrated
+  - `Cracked Coder: Run`: Starts a new Cracked Coder session in the integrated
     terminal.
-  - `Gemini CLI: Accept Diff`: Accepts the changes in the active diff editor.
-  - `Gemini CLI: Close Diff Editor`: Rejects the changes and closes the active
+  - `Cracked Coder: Accept Diff`: Accepts the changes in the active diff editor.
+  - `Cracked Coder: Close Diff Editor`: Rejects the changes and closes the active
     diff editor.
-  - `Gemini CLI: View Third-Party Notices`: Displays the third-party notices for
+  - `Cracked Coder: View Third-Party Notices`: Displays the third-party notices for
     the extension.
 
 ## Installation and setup
@@ -38,7 +38,7 @@ There are three ways to set up the IDE integration:
 
 ### 1. Automatic nudge (recommended)
 
-When you run Gemini CLI inside a supported editor, it will automatically detect
+When you run Cracked Coder inside a supported editor, it will automatically detect
 your environment and prompt you to connect. Answering "Yes" will automatically
 run the necessary setup, which includes installing the companion extension and
 enabling the connection.
@@ -46,7 +46,7 @@ enabling the connection.
 ### 2. Manual installation from CLI
 
 If you previously dismissed the prompt or want to install the extension
-manually, you can run the following command inside Gemini CLI:
+manually, you can run the following command inside Cracked Coder:
 
 ```
 /ide install
@@ -59,14 +59,14 @@ This will find the correct extension for your IDE and install it.
 You can also install the extension directly from a marketplace.
 
 - **For Visual Studio Code:** Install from the
-  [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=google.gemini-cli-vscode-ide-companion).
+  [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=google.cracked-coder-vscode-ide-companion).
 - **For VS Code forks:** To support forks of VS Code, the extension is also
   published on the
-  [Open VSX Registry](https://open-vsx.org/extension/google/gemini-cli-vscode-ide-companion).
+  [Open VSX Registry](https://open-vsx.org/extension/google/cracked-coder-vscode-ide-companion).
   Follow your editor's instructions for installing extensions from this
   registry.
 
-> NOTE: The "Gemini CLI Companion" extension may appear towards the bottom of
+> NOTE: The "Cracked Coder Companion" extension may appear towards the bottom of
 > search results. If you don't see it immediately, try scrolling down or sorting
 > by "Newly Published".
 >
@@ -88,7 +88,7 @@ You can control the IDE integration from within the CLI:
   /ide disable
   ```
 
-When enabled, Gemini CLI will automatically attempt to connect to the IDE
+When enabled, Cracked Coder will automatically attempt to connect to the IDE
 companion extension.
 
 ### Checking the status
@@ -115,14 +115,14 @@ editor.
 
 - Click the **checkmark icon** in the diff editor's title bar.
 - Save the file (e.g., with `Cmd+S` or `Ctrl+S`).
-- Open the Command Palette and run **Gemini CLI: Accept Diff**.
+- Open the Command Palette and run **Cracked Coder: Accept Diff**.
 - Respond with `yes` in the CLI when prompted.
 
 **To reject a diff**, you can:
 
 - Click the **'x' icon** in the diff editor's title bar.
 - Close the diff editor tab.
-- Open the Command Palette and run **Gemini CLI: Close Diff Editor**.
+- Open the Command Palette and run **Cracked Coder: Close Diff Editor**.
 - Respond with `no` in the CLI when prompted.
 
 You can also **modify the suggested changes** directly in the diff view before
@@ -133,12 +133,12 @@ up in the IDE as they will be auto-accepted.
 
 ## Using with sandboxing
 
-If you are using Gemini CLI within a sandbox, please be aware of the following:
+If you are using Cracked Coder within a sandbox, please be aware of the following:
 
 - **On macOS:** The IDE integration requires network access to communicate with
   the IDE companion extension. You must use a Seatbelt profile that allows
   network access.
-- **In a Docker container:** If you run Gemini CLI inside a Docker (or Podman)
+- **In a Docker container:** If you run Cracked Coder inside a Docker (or Podman)
   container, the IDE integration can still connect to the VS Code extension
   running on your host machine. The CLI is configured to automatically find the
   IDE server on `host.docker.internal`. No special configuration is usually
@@ -154,12 +154,12 @@ messages and how to resolve them.
 
 - **Message:**
   `🔴 Disconnected: Failed to connect to IDE companion extension in [IDE Name]. Please ensure the extension is running. To install the extension, run /ide install.`
-  - **Cause:** Gemini CLI could not find the necessary environment variables
-    (`GEMINI_CLI_IDE_WORKSPACE_PATH` or `GEMINI_CLI_IDE_SERVER_PORT`) to connect
+  - **Cause:** Cracked Coder could not find the necessary environment variables
+    (`CRACKED_CODER_IDE_WORKSPACE_PATH` or `CRACKED_CODER_IDE_SERVER_PORT`) to connect
     to the IDE. This usually means the IDE companion extension is not running or
     did not initialize correctly.
   - **Solution:**
-    1.  Make sure you have installed the **Gemini CLI Companion** extension in
+    1.  Make sure you have installed the **Cracked Coder Companion** extension in
         your IDE and that it is enabled.
     2.  Open a new terminal window in your IDE to ensure it picks up the correct
         environment.
@@ -172,30 +172,30 @@ messages and how to resolve them.
 
 ### Manual PID override
 
-If automatic IDE detection fails, or if you are running Gemini CLI in a
+If automatic IDE detection fails, or if you are running Cracked Coder in a
 standalone terminal and want to manually associate it with a specific IDE
-instance, you can set the `GEMINI_CLI_IDE_PID` environment variable to the
+instance, you can set the `CRACKED_CODER_IDE_PID` environment variable to the
 process ID (PID) of your IDE.
 
 **macOS/Linux**
 
 ```bash
-export GEMINI_CLI_IDE_PID=12345
+export CRACKED_CODER_IDE_PID=12345
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
-$env:GEMINI_CLI_IDE_PID=12345
+$env:CRACKED_CODER_IDE_PID=12345
 ```
 
-When this variable is set, Gemini CLI will skip automatic detection and attempt
+When this variable is set, Cracked Coder will skip automatic detection and attempt
 to connect using the provided PID.
 
 ### Configuration errors
 
 - **Message:**
-  `🔴 Disconnected: Directory mismatch. Gemini CLI is running in a different location than the open workspace in [IDE Name]. Please run the CLI from one of the following directories: [List of directories]`
+  `🔴 Disconnected: Directory mismatch. Cracked Coder is running in a different location than the open workspace in [IDE Name]. Please run the CLI from one of the following directories: [List of directories]`
   - **Cause:** The CLI's current working directory is outside the workspace you
     have open in your IDE.
   - **Solution:** `cd` into the same directory that is open in your IDE and
@@ -209,16 +209,16 @@ to connect using the provided PID.
 ### General errors
 
 - **Message:**
-  `IDE integration is not supported in your current environment. To use this feature, run Gemini CLI in one of these supported IDEs: [List of IDEs]`
-  - **Cause:** You are running Gemini CLI in a terminal or environment that is
+  `IDE integration is not supported in your current environment. To use this feature, run Cracked Coder in one of these supported IDEs: [List of IDEs]`
+  - **Cause:** You are running Cracked Coder in a terminal or environment that is
     not a supported IDE.
-  - **Solution:** Run Gemini CLI from the integrated terminal of a supported
+  - **Solution:** Run Cracked Coder from the integrated terminal of a supported
     IDE, like Antigravity or VS Code.
 
 - **Message:**
-  `No installer is available for IDE. Please install the Gemini CLI Companion extension manually from the marketplace.`
+  `No installer is available for IDE. Please install the Cracked Coder Companion extension manually from the marketplace.`
   - **Cause:** You ran `/ide install`, but the CLI does not have an automated
     installer for your specific IDE.
-  - **Solution:** Open your IDE's extension marketplace, search for "Gemini CLI
+  - **Solution:** Open your IDE's extension marketplace, search for "Cracked Coder
     Companion", and
     [install it manually](#3-manual-installation-from-a-marketplace).

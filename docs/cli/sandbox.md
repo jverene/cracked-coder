@@ -1,20 +1,20 @@
-# Sandboxing in the Gemini CLI
+# Sandboxing in the Cracked Coder
 
-This document provides a guide to sandboxing in the Gemini CLI, including
+This document provides a guide to sandboxing in the Cracked Coder, including
 prerequisites, quickstart, and configuration.
 
 ## Prerequisites
 
-Before using sandboxing, you need to install and set up the Gemini CLI:
+Before using sandboxing, you need to install and set up the Cracked Coder:
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @google/cracked-coder
 ```
 
 To verify the installation:
 
 ```bash
-gemini --version
+cracked --version
 ```
 
 ## Overview of sandboxing
@@ -63,7 +63,7 @@ strong security barrier between AI operations and the host OS.
 - Docker installed and running
 - gVisor/runsc runtime configured
 
-When you set `sandbox: "runsc"`, Gemini CLI runs
+When you set `sandbox: "runsc"`, Cracked Coder runs
 `docker run --runtime=runsc ...` to execute containers with gVisor isolation.
 runsc is not auto-detected; you must specify it explicitly (e.g.
 `GEMINI_SANDBOX=runsc` or `sandbox: "runsc"`).
@@ -85,7 +85,7 @@ such as Snapcraft and Rockcraft.
 
 - Linux only.
 - LXC/LXD must be installed (`snap install lxd` or `apt install lxd`).
-- A container must be created and running before starting Gemini CLI. Gemini
+- A container must be created and running before starting Cracked Coder. Gemini
   does **not** create the container automatically.
 
 **Quick setup**:
@@ -99,7 +99,7 @@ lxc launch ubuntu:24.04 gemini-sandbox
 
 # Enable LXC sandboxing
 export GEMINI_SANDBOX=lxc
-gemini -p "build the project"
+cracked -p "build the project"
 ```
 
 **Custom container name**:
@@ -107,7 +107,7 @@ gemini -p "build the project"
 ```bash
 export GEMINI_SANDBOX=lxc
 export GEMINI_SANDBOX_IMAGE=my-snapcraft-container
-gemini -p "build the snap"
+cracked -p "build the snap"
 ```
 
 **Limitations**:
@@ -131,14 +131,14 @@ gemini -s -p "analyze the code structure"
 
 ```bash
 export GEMINI_SANDBOX=true
-gemini -p "run the test suite"
+cracked -p "run the test suite"
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
 $env:GEMINI_SANDBOX="true"
-gemini -p "run the test suite"
+cracked -p "run the test suite"
 ```
 
 **Configure in settings.json**
@@ -254,7 +254,7 @@ DEBUG=1 gemini -s -p "debug command"
 ```
 
 **Note:** If you have `DEBUG=true` in a project's `.env` file, it won't affect
-gemini-cli due to automatic exclusion. Use `.gemini/.env` files for gemini-cli
+cracked-coder due to automatic exclusion. Use `.cracked/.env` files for cracked-coder
 specific debug settings.
 
 ### Inspect sandbox

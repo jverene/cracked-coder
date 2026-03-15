@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { enableMouseEvents, disableMouseEvents } from '@google/gemini-cli-core';
+import { enableMouseEvents, disableMouseEvents } from '@cracked-coder/core';
 import {
   SGR_MOUSE_REGEX,
   X11_MOUSE_REGEX,

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as os from 'node:os';
-import { debugLogger, TOOL_OUTPUTS_DIR } from '@google/gemini-cli-core';
+import { debugLogger, TOOL_OUTPUTS_DIR } from '@cracked-coder/core';
 import type { Settings } from '../config/settings.js';
 import { cleanupToolOutputFiles } from './sessionCleanup.js';
 

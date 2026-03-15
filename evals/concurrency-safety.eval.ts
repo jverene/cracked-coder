@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -31,7 +31,7 @@ describe('concurrency safety eval test cases', () => {
     prompt:
       'Update A.txt to say "A" and update B.txt to say "B". Delegate these tasks to two separate mutation-agent subagents. You MUST run these subagents in parallel at the same time.',
     files: {
-      '.gemini/agents/mutation-agent.md': MUTATION_AGENT_DEFINITION,
+      '.cracked/agents/mutation-agent.md': MUTATION_AGENT_DEFINITION,
     },
     assert: async (rig) => {
       const logs = rig.readToolLogs();

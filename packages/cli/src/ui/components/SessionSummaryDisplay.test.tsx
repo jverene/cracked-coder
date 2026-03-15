@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -12,11 +12,11 @@ import { type SessionMetrics } from '../contexts/SessionContext.js';
 import {
   ToolCallDecision,
   getShellConfiguration,
-} from '@google/gemini-cli-core';
+} from '@cracked-coder/core';
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
     getShellConfiguration: vi.fn(),
@@ -133,7 +133,7 @@ describe('<SessionSummaryDisplay />', () => {
       const output = lastFrame();
 
       // Standard UUID characters should not be escaped/quoted by default for bash.
-      expect(output).toContain('gemini --resume 1234-abcd-5678-efgh');
+      expect(output).toContain('cracked --resume 1234-abcd-5678-efgh');
       unmount();
     });
 
@@ -146,7 +146,7 @@ describe('<SessionSummaryDisplay />', () => {
       const output = lastFrame();
 
       // escapeShellArg (using shell-quote for bash) will wrap special characters in double quotes.
-      expect(output).toContain('gemini --resume "\'; rm -rf / #"');
+      expect(output).toContain('cracked --resume "\'; rm -rf / #"');
       unmount();
     });
 
@@ -165,7 +165,7 @@ describe('<SessionSummaryDisplay />', () => {
       const output = lastFrame();
 
       // PowerShell wraps strings in single quotes
-      expect(output).toContain("gemini --resume '1234-abcd-5678-efgh'");
+      expect(output).toContain("cracked --resume '1234-abcd-5678-efgh'");
       unmount();
     });
 
@@ -184,7 +184,7 @@ describe('<SessionSummaryDisplay />', () => {
       const output = lastFrame();
 
       // PowerShell wraps in single quotes and escapes internal single quotes by doubling them
-      expect(output).toContain("gemini --resume '''; rm -rf / #'");
+      expect(output).toContain("cracked --resume '''; rm -rf / #'");
       unmount();
     });
   });

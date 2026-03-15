@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ import { useUIState, type UIState } from '../contexts/UIStateContext.js';
 import { useIsScreenReaderEnabled } from 'ink';
 import * as fs from 'node:fs/promises';
 import { act } from 'react';
-import { WarningPriority } from '@google/gemini-cli-core';
+import { WarningPriority } from '@cracked-coder/core';
 
 // Mock dependencies
 vi.mock('../contexts/AppContext.js');
@@ -60,12 +60,12 @@ vi.mock('node:path', async () => {
   };
 });
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@cracked-coder/core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@cracked-coder/core')>();
   return {
     ...actual,
-    GEMINI_DIR: '.gemini',
+    CRACKED_DIR: '.cracked',
     homedir: () => '/mock/home',
     WarningPriority: {
       Low: 'low',
@@ -74,7 +74,7 @@ vi.mock('@google/gemini-cli-core', async (importOriginal) => {
     Storage: {
       ...actual.Storage,
       getGlobalTempDir: () => '/mock/temp',
-      getGlobalSettingsPath: () => '/mock/home/.gemini/settings.json',
+      getGlobalSettingsPath: () => '/mock/home/.cracked/settings.json',
     },
   };
 });

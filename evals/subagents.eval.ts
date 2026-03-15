@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -42,7 +42,7 @@ describe('subagent eval test cases', () => {
     },
     prompt: 'Please update README.md with a description of this library.',
     files: {
-      '.gemini/agents/test-agent.md': AGENT_DEFINITION,
+      '.cracked/agents/test-agent.md': AGENT_DEFINITION,
       'index.ts': INDEX_TS,
       'README.md': 'TODO: update the README.',
     },

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -41,9 +41,9 @@ describe('getFsErrorMessage', () => {
       {
         code: 'EACCES',
         message: 'EACCES: permission denied',
-        path: '/etc/gemini-cli/settings.json',
+        path: '/etc/cracked-coder/settings.json',
         expected:
-          "Permission denied: cannot access '/etc/gemini-cli/settings.json'. Check file permissions or run with elevated privileges.",
+          "Permission denied: cannot access '/etc/cracked-coder/settings.json'. Check file permissions or run with elevated privileges.",
       },
       {
         code: 'EACCES',

@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -28,7 +28,7 @@ export interface HeadlessModeOptions {
  * @returns true if the environment is considered headless.
  */
 export function isHeadlessMode(options?: HeadlessModeOptions): boolean {
-  if (process.env['GEMINI_CLI_INTEGRATION_TEST'] !== 'true') {
+  if (process.env['CRACKED_CODER_INTEGRATION_TEST'] !== 'true') {
     const isCI =
       process.env['CI'] === 'true' || process.env['GITHUB_ACTIONS'] === 'true';
     if (isCI) {

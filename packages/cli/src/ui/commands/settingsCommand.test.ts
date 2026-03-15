@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -30,7 +30,7 @@ describe('settingsCommand', () => {
   it('should have the correct name and description', () => {
     expect(settingsCommand.name).toBe('settings');
     expect(settingsCommand.description).toBe(
-      'View and edit Gemini CLI settings',
+      'View and edit Cracked Coder settings',
     );
   });
 });

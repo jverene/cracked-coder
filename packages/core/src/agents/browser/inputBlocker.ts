@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2026 Google LLC
+ * Copyright 2026 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -117,7 +117,7 @@ const INPUT_BLOCKER_FUNCTION = `() => {
   // Labels
   var label = document.createElement('span');
   label.style.cssText = 'font-weight: 600; letter-spacing: 0.01em;';
-  label.textContent = 'Gemini CLI is controlling this browser';
+  label.textContent = 'Cracked Coder is controlling this browser';
 
   var sep = document.createElement('span');
   sep.style.cssText = 'width: 1px; height: 14px; background: rgba(255,255,255,0.2); flex-shrink: 0;';

@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { debugLogger, type Config } from '@google/gemini-cli-core';
+import { debugLogger, type Config } from '@cracked-coder/core';
 import WebSocket from 'ws';
 import {
   initActivityLogger,
@@ -60,7 +60,7 @@ async function startOrJoinDevTools(
   defaultHost: string,
   defaultPort: number,
 ): Promise<{ host: string; port: number }> {
-  const mod = await import('@google/gemini-cli-devtools');
+  const mod = await import('@cracked-coder/devtools');
   const devtools: IDevTools = mod.DevTools.getInstance();
   const url = await devtools.start();
   const actualPort = devtools.getPort();
@@ -119,7 +119,7 @@ async function handlePromotion(config: Config) {
  * If an existing DevTools server is found, attaches transport eagerly.
  */
 export async function setupInitialActivityLogger(config: Config) {
-  const target = process.env['GEMINI_CLI_ACTIVITY_LOG_TARGET'];
+  const target = process.env['CRACKED_CODER_ACTIVITY_LOG_TARGET'];
 
   if (target) {
     if (!config.storage) return;
@@ -230,7 +230,7 @@ export async function toggleDevToolsPanel(
 
   try {
     const { openBrowserSecurely, shouldLaunchBrowser } = await import(
-      '@google/gemini-cli-core'
+      '@cracked-coder/core'
     );
     const url = await startDevToolsServer(config);
     if (shouldLaunchBrowser()) {

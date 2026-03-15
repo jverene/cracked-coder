@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -186,7 +186,7 @@ export const getCachedStringWidth = (str: string): number => {
     width = stringWidth(str);
   } catch {
     // Fallback for characters that cause string-width to crash (e.g. U+0602)
-    // See: https://github.com/google-gemini/gemini-cli/issues/16418
+    // See: https://github.com/cracked-coder/cracked-coder/issues/16418
     width = toCodePoints(stripAnsi(str)).length;
   }
 

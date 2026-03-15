@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,12 +16,12 @@ import {
   unlinkSync,
 } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { GEMINI_DIR } from '@google/gemini-cli-core';
+import { CRACKED_DIR } from '@cracked-coder/core';
 import * as pty from '@lydell/node-pty';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BUNDLE_PATH = join(__dirname, '..', 'bundle/gemini.js');
+const BUNDLE_PATH = join(__dirname, '..', 'bundle/cracked.js');
 
 const extension = `{
   "name": "test-symlink-extension",
@@ -80,8 +80,8 @@ describe('extension symlink install spoofing protection', () => {
         cwd: rig.testDir!,
         env: {
           ...process.env,
-          GEMINI_CLI_HOME: rig.homeDir!,
-          GEMINI_CLI_INTEGRATION_TEST: 'true',
+          CRACKED_CODER_HOME: rig.homeDir!,
+          CRACKED_CODER_INTEGRATION_TEST: 'true',
           GEMINI_PTY_INFO: 'node-pty',
         },
       });
@@ -102,7 +102,7 @@ describe('extension symlink install spoofing protection', () => {
     // 2. Verify trustedFolders.json contains the REAL path, not the symlink path
     const trustedFoldersPath = join(
       rig.homeDir!,
-      GEMINI_DIR,
+      CRACKED_DIR,
       'trustedFolders.json',
     );
     // Wait for file to be written

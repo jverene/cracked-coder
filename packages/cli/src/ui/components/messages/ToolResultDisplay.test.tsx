@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { renderWithProviders } from '../../../test-utils/render.js';
 import { ToolResultDisplay } from './ToolResultDisplay.js';
 import { describe, it, expect, vi } from 'vitest';
-import type { AnsiOutput } from '@google/gemini-cli-core';
+import type { AnsiOutput } from '@cracked-coder/core';
 
 describe('ToolResultDisplay', () => {
   beforeEach(() => {

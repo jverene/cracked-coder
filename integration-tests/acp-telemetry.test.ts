@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -52,7 +52,7 @@ describe('ACP telemetry', () => {
     });
 
     const telemetryPath = join(rig.homeDir!, 'telemetry.log');
-    const bundlePath = join(import.meta.dirname, '..', 'bundle/gemini.js');
+    const bundlePath = join(import.meta.dirname, '..', 'bundle/cracked.js');
 
     child = spawn(
       'node',
@@ -68,7 +68,7 @@ describe('ACP telemetry', () => {
         env: {
           ...process.env,
           GEMINI_API_KEY: 'fake-key',
-          GEMINI_CLI_HOME: rig.homeDir!,
+          CRACKED_CODER_HOME: rig.homeDir!,
           GEMINI_TELEMETRY_ENABLED: 'true',
           GEMINI_TELEMETRY_TARGET: 'local',
           GEMINI_TELEMETRY_OUTFILE: telemetryPath,

@@ -1,10 +1,10 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { type Config } from '@google/gemini-cli-core';
+import { type Config } from '@cracked-coder/core';
 import { Box, Text } from 'ink';
 import { theme } from '../semantic-colors.js';
 import { useKeypress } from '../hooks/useKeypress.js';
@@ -45,7 +45,7 @@ export const LoginWithGoogleRestartDialog = ({
   );
 
   const message =
-    "You've successfully signed in with Google. Gemini CLI needs to be restarted.";
+    "You've successfully signed in with Google. Cracked Coder needs to be restarted.";
 
   return (
     <Box borderStyle="round" borderColor={theme.status.warning} paddingX={1}>

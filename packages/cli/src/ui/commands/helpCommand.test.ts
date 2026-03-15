@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -45,6 +45,6 @@ describe('helpCommand', () => {
   it('should have the correct command properties', () => {
     expect(helpCommand.name).toBe('help');
     expect(helpCommand.kind).toBe(CommandKind.BUILT_IN);
-    expect(helpCommand.description).toBe('For help on gemini-cli');
+    expect(helpCommand.description).toBe('For help on cracked-coder');
   });
 });

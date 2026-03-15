@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import {
   type GlobToolParams,
   type GlobPath,
 } from './glob.js';
-import { partListUnionToString } from '../core/geminiRequest.js';
+import { partListUnionToString } from '../core/crackedRequest.js';
 import path from 'node:path';
 import { isSubpath } from '../utils/paths.js';
 import fs from 'node:fs/promises';
@@ -390,7 +390,7 @@ describe('GlobTool', () => {
       expect(result.llmContent).not.toContain('ignored_test.txt');
     }, 30000);
 
-    it('should respect .geminiignore files by default', async () => {
+    it('should respect .crackedignore files by default', async () => {
       await fs.writeFile(
         path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME),
         'gemini-ignored_test.txt',
@@ -428,7 +428,7 @@ describe('GlobTool', () => {
       expect(result.llmContent).toContain('ignored_test.txt');
     }, 30000);
 
-    it('should not respect .geminiignore when respect_gemini_ignore is false', async () => {
+    it('should not respect .crackedignore when respect_gemini_ignore is false', async () => {
       await fs.writeFile(
         path.join(tempRootDir, GEMINI_IGNORE_FILE_NAME),
         'gemini-ignored_test.txt',

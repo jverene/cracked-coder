@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -25,7 +25,7 @@ import {
 } from './constants.js';
 import { sessionId } from '../utils/session.js';
 
-const TRACER_NAME = 'gemini-cli';
+const TRACER_NAME = 'cracked-coder';
 const TRACER_VERSION = 'v1';
 
 /**

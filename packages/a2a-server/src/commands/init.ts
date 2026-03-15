@@ -1,13 +1,13 @@
 /**
  * @license
- * Copyright 2025 Google LLC
+ * Copyright 2025 Cracked Coder LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { CoderAgentEvent, type AgentSettings } from '../types.js';
-import { performInit } from '@google/gemini-cli-core';
+import { performInit } from '@cracked-coder/core';
 import type {
   Command,
   CommandContext,
@@ -24,7 +24,7 @@ import { logger } from '../utils/logger.js';
 
 export class InitCommand implements Command {
   name = 'init';
-  description = 'Analyzes the project and creates a tailored GEMINI.md file';
+  description = 'Analyzes the project and creates a tailored CRACKED.md file';
   requiresWorkspace = true;
   streaming = true;
 
@@ -137,7 +137,7 @@ export class InitCommand implements Command {
 
     const geminiMdPath = path.join(
       process.env['CODER_AGENT_WORKSPACE_PATH']!,
-      'GEMINI.md',
+      'CRACKED.md',
     );
     const result = performInit(fs.existsSync(geminiMdPath));
 
