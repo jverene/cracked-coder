@@ -30,7 +30,7 @@ export interface FilterReport {
 
 export class FileDiscoveryService {
   private gitIgnoreFilter: GitIgnoreFilter | null = null;
-  private geminiIgnoreFilter: IgnoreFileFilter | null = null;
+  private crackedIgnoreFilter: IgnoreFileFilter | null = null;
   private customIgnoreFilter: IgnoreFileFilter | null = null;
   private combinedIgnoreFilter: GitIgnoreFilter | IgnoreFileFilter | null =
     null;
@@ -67,7 +67,7 @@ export class FileDiscoveryService {
       this.combinedIgnoreFilter = new GitIgnoreParser(
         this.projectRoot,
         // customPatterns should go the last to ensure overwriting of geminiPatterns
-        [...crackedPatterns, ...customPatterns],
+        [...geminiPatterns, ...customPatterns],
       );
     } else {
       // Create combined parser when not git repo
@@ -77,7 +77,7 @@ export class FileDiscoveryService {
         : [];
       this.combinedIgnoreFilter = new IgnoreFileParser(
         this.projectRoot,
-        [...crackedPatterns, ...customPatterns],
+        [...geminiPatterns, ...customPatterns],
         true,
       );
     }
@@ -124,7 +124,10 @@ export class FileDiscoveryService {
       if (respectGitIgnore && this.gitIgnoreFilter?.isIgnored(filePath)) {
         return false;
       }
-      if (respectGeminiIgnore && this.crackedIgnoreFilter?.isIgnored(filePath)) {
+      if (
+        respectGeminiIgnore &&
+        this.crackedIgnoreFilter?.isIgnored(filePath)
+      ) {
         return false;
       }
       return true;
