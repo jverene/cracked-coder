@@ -79,7 +79,7 @@ export class ProjectRegistry {
   private async save(data: RegistryData): Promise<void> {
     const dir = path.dirname(this.registryPath);
     if (!fs.existsSync(dir)) {
-      await fs.promises.mkdir(dir, { recursive: true });
+      fs.mkdirSync(dir, { recursive: true });
     }
 
     try {
@@ -109,7 +109,7 @@ export class ProjectRegistry {
     // Ensure directory exists so we can create a lock file
     const dir = path.dirname(this.registryPath);
     if (!fs.existsSync(dir)) {
-      await fs.promises.mkdir(dir, { recursive: true });
+      fs.mkdirSync(dir, { recursive: true });
     }
     // Ensure the registry file exists so proper-lockfile can lock it
     if (!fs.existsSync(this.registryPath)) {
