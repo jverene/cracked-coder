@@ -115,7 +115,7 @@ jobs:
     if: "github.repository == 'cracked-coder/cracked-coder' && always()"
     steps:
       - name: 'Set pending status'
-        uses: 'myrotvorets/set-commit-status-action@16037e056d73b2d3c88e37e393ff369047f70886' # ratchet:myrotvorets/set-commit-status-action@master
+        uses: 'myrotvorets/set-commit-status-action@a94d4de359d4b3f041d01cce2251f65c493ee3eb' # ratchet:myrotvorets/set-commit-status-action@master
         if: "github.repository == 'cracked-coder/cracked-coder' && always()"
         with:
           allowForks: 'true'
@@ -373,7 +373,7 @@ jobs:
       - 'e2e'
     steps:
       - name: 'Set workflow status'
-        uses: 'myrotvorets/set-commit-status-action@16037e056d73b2d3c88e37e393ff369047f70886' # ratchet:myrotvorets/set-commit-status-action@master
+        uses: 'myrotvorets/set-commit-status-action@a94d4de359d4b3f041d01cce2251f65c493ee3eb' # ratchet:myrotvorets/set-commit-status-action@master
         if: "github.repository == 'cracked-coder/cracked-coder' && always()"
         with:
           allowForks: 'true'
