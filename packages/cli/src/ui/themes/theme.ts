@@ -310,14 +310,14 @@ export class Theme {
         },
       },
       border: {
-        default: this.colors.DarkGray,
+        default: this.colors.AccentPurple,
       },
       ui: {
         comment: this.colors.Gray,
-        symbol: this.colors.AccentCyan,
+        symbol: this.colors.AccentPurple,
         active: this.colors.AccentBlue,
         dark: this.colors.DarkGray,
-        focus: this.colors.FocusColor ?? this.colors.AccentGreen,
+        focus: this.colors.AccentPurple,
         gradient: this.colors.GradientColors,
       },
       status: {

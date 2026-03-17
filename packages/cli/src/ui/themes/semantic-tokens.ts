@@ -61,14 +61,14 @@ export const lightSemanticColors: SemanticColors = {
     },
   },
   border: {
-    default: lightTheme.DarkGray,
+    default: lightTheme.AccentPurple,
   },
   ui: {
     comment: lightTheme.Comment,
-    symbol: lightTheme.Gray,
+    symbol: lightTheme.AccentPurple,
     active: lightTheme.AccentBlue,
     dark: lightTheme.DarkGray,
-    focus: lightTheme.AccentGreen,
+    focus: lightTheme.AccentPurple,
     gradient: lightTheme.GradientColors,
   },
   status: {
@@ -97,14 +97,14 @@ export const darkSemanticColors: SemanticColors = {
     },
   },
   border: {
-    default: darkTheme.DarkGray,
+    default: darkTheme.AccentPurple,
   },
   ui: {
     comment: darkTheme.Comment,
-    symbol: darkTheme.Gray,
+    symbol: darkTheme.AccentPurple,
     active: darkTheme.AccentBlue,
     dark: darkTheme.DarkGray,
-    focus: darkTheme.AccentGreen,
+    focus: darkTheme.AccentPurple,
     gradient: darkTheme.GradientColors,
   },
   status: {
